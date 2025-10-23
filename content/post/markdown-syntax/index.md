@@ -7,6 +7,7 @@ tags = [
     "markdown",
 ]
 categories = [
+    "dev"
 ]
 series = ["Guia de Temas"]
 aliases = ["migrate-from-jekyl"]
