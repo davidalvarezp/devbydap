@@ -1,6 +1,6 @@
 baseurl: https://dev.davidalvarezp.com/
 languageCode: es
-theme: theme-hugo-dev
+theme: hugo-dev
 title: devbydap
 copyright: davidalvarezp
 
