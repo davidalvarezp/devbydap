@@ -1,0 +1,22 @@
+{{- $ThemeVersion := "3.31.0" -}}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} - 
+        {{ end }}
+        {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
+    </section>
+    
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+
+        {{- $Generator := `` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/davidalvarezp/theme-hugo-dev" target="_blank" rel="noopener" data-version="%s">dev</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<b><a href="https://davidalvarezp.com" target="_blank" rel="noopener">davidalvarezp</a></b> & <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+</footer>
