@@ -1,0 +1,16 @@
+# Archivos de Hugo generados
+/public/
+/resources/_gen/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos del editor
+*.swp
+*.swo
+*.idea/
+*.vscode/
+
+# Archivos de logs
+*.log
