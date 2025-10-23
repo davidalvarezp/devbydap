@@ -1,14 +1,14 @@
 +++
-author = "Hugo Authors"
-title = "Markdown Syntax Guide"
-date = "2019-03-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+author = "davidalvarezp"
+title = "Guía Sintaxis Markdown"
+date = "2025-10-22"
+description = "Artículo de ejemplo que muestra la sintaxis básica de Markdown y el formato de los elementos HTML."
 tags = [
     "markdown",
 ]
 categories = [
 ]
-series = ["Themes Guide"]
+series = ["Guia de Temas"]
 aliases = ["migrate-from-jekyl"]
 image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 +++
