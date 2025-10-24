@@ -1,9 +1,7 @@
 ---
-author: "davidalvarezp"
 title: "Política de Cookies"
 slug: cookies
 description: "Política de cookies de devbydap — información sobre el uso de cookies y cómo gestionarlas."
-date: 2025-10-20
 draft: false
 ---
 
