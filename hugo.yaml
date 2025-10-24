@@ -12,7 +12,7 @@ DefaultContentLanguage: es
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
 
-#services:
+services:
     # Change it to your Disqus shortname before using
 #    disqus:
 #        shortname: "devbydap"
