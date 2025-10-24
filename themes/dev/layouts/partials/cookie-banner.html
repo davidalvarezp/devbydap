@@ -1,22 +1,52 @@
 <!-- Cookie Banner -->
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;z-index:9999;display:none;">
-  <span>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de los usuarios. 
-    <strong><a href="/cookies/" style="color:#fff;text-decoration:underline;">Más información</a></strong>.
+<div id="cookie-banner" style="
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color:rgba(0,0,0,0.85);
+    color:#f1f1f1;
+    padding:12px 20px;
+    text-align:center;
+    font-size:0.9em;
+    z-index:9999;
+    display:none;
+    box-sizing:border-box;
+    backdrop-filter:blur(5px);
+    flex-wrap:wrap;
+    gap:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+">
+  <span style="flex:1; min-width:200px;">
+    Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de los usuarios. 
+    <a href="/cookies/" style="color:#ccc;text-decoration:underline;">Más información</a>.
   </span>
-  <button id="accept-cookies" style="margin-left:15px;padding:8px 15px;background:#787878;border:none;color:#000;cursor:pointer;">Aceptar</button>
+  <button id="accept-cookies" style="
+    padding:8px 16px;
+    background-color:#555;
+    color:#f1f1f1;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    flex-shrink:0;
+  ">Aceptar</button>
 </div>
 
 <script>
 (function(){
-  // Mostrar banner si no se ha aceptado antes
+  const banner = document.getElementById('cookie-banner');
+  const btn = document.getElementById('accept-cookies');
+
   if(!localStorage.getItem('cookies_accepted')){
-    document.getElementById('cookie-banner').style.display = 'block';
+    banner.style.display = 'flex';
   }
 
-  // Cuando el usuario acepta
-  document.getElementById('accept-cookies').addEventListener('click', function(){
+  btn.addEventListener('click', function(){
     localStorage.setItem('cookies_accepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'none';
+    banner.style.display = 'none';
 
     // Activar Google Analytics tras consentimiento
     if(typeof gtag === 'function'){
@@ -25,5 +55,19 @@
       });
     }
   });
+
+  // Ajuste responsivo para pantallas pequeñas
+  function adjustBanner(){
+    if(window.innerWidth < 500){
+      banner.style.flexDirection = 'column';
+      banner.style.textAlign = 'center';
+    } else {
+      banner.style.flexDirection = 'row';
+      banner.style.textAlign = 'center';
+    }
+  }
+
+  window.addEventListener('resize', adjustBanner);
+  adjustBanner();
 })();
 </script>
