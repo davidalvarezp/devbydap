@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on devbydap</title><link>https://dev.davidalvarezp.com/page/</link><description>Recent content in Pages on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Archivo</title><link>https://dev.davidalvarezp.com/archivo/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/archivo/</guid><description/></item><item><title>Sobre</title><link>https://dev.davidalvarezp.com/sobre/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/sobre/</guid><description>&lt;p&gt;texto&lt;/p&gt;</description></item><item><title>Buscar</title><link>https://dev.davidalvarezp.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/search/</guid><description/></item><item><title>Enlaces</title><link>https://dev.davidalvarezp.com/enlaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/enlaces/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on devbydap</title><link>https://dev.davidalvarezp.com/page/</link><description>Recent content in Pages on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Archivo</title><link>https://dev.davidalvarezp.com/archivo/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/archivo/</guid><description/></item><item><title>Sobre devbydap</title><link>https://dev.davidalvarezp.com/sobre-devbydap/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/sobre-devbydap/</guid><description>&lt;h1 id="sobre-devbydap"&gt;Sobre devbydap
+&lt;/h1&gt;&lt;p&gt;¡Bienvenido a &lt;strong&gt;devbydap&lt;/strong&gt;! Este proyecto nace de la pasión por la tecnología, la seguridad informática y el desarrollo. Nuestro objetivo es crear un &lt;strong&gt;blog técnico en español&lt;/strong&gt;, donde compartir conocimiento práctico, actual y de calidad, accesible para toda la comunidad hispanohablante.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="nuestra-misión"&gt;Nuestra misión
+&lt;/h2&gt;&lt;p&gt;En un mundo donde la información técnica suele estar dispersa o en inglés, queremos ofrecer &lt;strong&gt;recursos claros, actualizados y aplicables&lt;/strong&gt;, que ayuden a estudiantes, profesionales y entusiastas de la informática a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aprender &lt;strong&gt;ciberseguridad&lt;/strong&gt;, desde conceptos básicos hasta técnicas avanzadas.&lt;/li&gt;
+&lt;li&gt;Mejorar en &lt;strong&gt;administración de sistemas&lt;/strong&gt;, automatización y buenas prácticas.&lt;/li&gt;
+&lt;li&gt;Dominar &lt;strong&gt;desarrollo&lt;/strong&gt;, frameworks, herramientas y despliegues seguros.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="quiénes-somos"&gt;Quiénes somos
+&lt;/h2&gt;&lt;p&gt;Este proyecto está liderado por &lt;strong&gt;davidalvarezp&lt;/strong&gt;, con el apoyo de un pequeño equipo de jóvenes especialistas en desarrollo y sistemas. Nuestra filosofía es aprender haciendo, documentar paso a paso y compartir conocimiento &lt;strong&gt;de forma transparente y accesible&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;davidalvarezp&lt;/strong&gt; – Fundador y responsable técnico, administrador de sistemas y especialista en ciberseguridad.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt; – Expertos en desarrollo, infraestructura y seguridad, contribuyendo con artículos y revisiones técnicas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="nuestra-propuesta-de-valor"&gt;Nuestra propuesta de valor
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Contenido original en español (España)&lt;/strong&gt; – nada de traducciones automáticas ni artículos reciclados.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Calidad y profundidad técnica&lt;/strong&gt; – cada post incluye ejemplos prácticos, comandos, scripts y buenas prácticas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enfoque práctico&lt;/strong&gt; – tutoriales paso a paso para que puedas aplicar lo aprendido directamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt; – el blog está desarrollado por nosotros, sin publicidad invasiva ni agendas externas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="cómo-nos-organizamos"&gt;Cómo nos organizamos
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Publicamos &lt;strong&gt;artículos regulares&lt;/strong&gt;, con frecuencia constante para que siempre haya contenido nuevo.&lt;/li&gt;
+&lt;li&gt;Cada artículo incluye &lt;strong&gt;ejemplos, imágenes, código y referencias&lt;/strong&gt; para facilitar la comprensión.&lt;/li&gt;
+&lt;li&gt;Fomentamos la &lt;strong&gt;interacción con la comunidad&lt;/strong&gt;, a través de comentarios, sugerencias y contribuciones en GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="contacto-y-colaboración"&gt;Contacto y colaboración
+&lt;/h2&gt;&lt;p&gt;Si quieres &lt;strong&gt;colaborar&lt;/strong&gt; o &lt;strong&gt;contactarnos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Puedes enviar un mensaje a &lt;strong&gt;&lt;a class="link" href="https://davidalvarezp.com" target="_blank" rel="noopener"
+&gt;davidalvarezp&lt;/a&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Contribuciones técnicas o revisiones de artículos son bienvenidas en nuestro &lt;a class="link" href="https://github.com/davidalvarezp/devbydap" target="_blank" rel="noopener"
+&gt;repositorio de GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nuestro compromiso es construir un recurso técnico sólido, confiable y útil para todos los que quieren aprender y crecer en ciberseguridad, administración de sistemas y desarrollo web.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Buscar</title><link>https://dev.davidalvarezp.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/search/</guid><description/></item><item><title>Enlaces</title><link>https://dev.davidalvarezp.com/enlaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/enlaces/</guid><description/></item></channel></rss>
