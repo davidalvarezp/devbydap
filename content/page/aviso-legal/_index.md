@@ -1,7 +1,7 @@
 ---
 author: "davidalvarezp"
 title: "Aviso Legal"
-slug: "aviso-legal"
+slug: aviso-legal
 description: "Aviso legal de devbydap — información sobre el responsable y las condiciones de uso del sitio web."
 date: 2025-10-20
 draft: false
