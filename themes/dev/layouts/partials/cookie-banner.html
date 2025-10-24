@@ -1,9 +1,8 @@
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function() {
   const banner = document.getElementById('cookie-banner');
   const btn = document.getElementById('accept-cookies');
 
-  // Funciones para manejar cookies
   function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + (days*24*60*60*1000));
@@ -29,20 +28,15 @@
     banner.style.display = 'flex';
   }
 
-  // Al hacer clic en aceptar
   btn.addEventListener('click', function(){
-    setCookie('cookies_accepted', 'true', 365); // 365 días
+    setCookie('cookies_accepted', 'true', 365);
     banner.style.display = 'none';
 
-    // Activar Google Analytics tras consentimiento
     if(typeof gtag === 'function'){
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
     }
   });
 
-  // Ajuste responsivo
   function adjustBanner(){
     if(window.innerWidth < 500){
       banner.style.flexDirection = 'column';
@@ -55,5 +49,5 @@
 
   window.addEventListener('resize', adjustBanner);
   adjustBanner();
-})();
+});
 </script>
