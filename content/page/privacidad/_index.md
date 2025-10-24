@@ -1,7 +1,7 @@
 ---
 author: "davidalvarezp"
 title: "Política de Privacidad"
-slug: "privacidad"
+slug: privacidad
 description: "Política de privacidad de devbydap — información sobre el uso de datos y cookies en el sitio web."
 date: 2025-10-20
 draft: false
