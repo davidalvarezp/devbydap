@@ -1,5 +1,6 @@
 ---
 title: "Sobre devbydap"
+slug: about
 description: "Conoce devbydap: un blog en español sobre ciberseguridad, administración de sistemas y desarrollo web, creado por davidalvarezp y colaboradores jóvenes."
 author: "davidalvarezp"
 date: '2025-10-20'
@@ -8,6 +9,7 @@ aliases:
   - about-us
   - about
   - contact
+  - contacto
   - sobre
   - sobre-mi
 lastmod: '2025-10-22'
