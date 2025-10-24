@@ -191,11 +191,11 @@ menu:
     main: []
 
     social:
-        - identifier: web
-          name: Web
+        - identifier: website
+          name: Website
           url: https://davidalvarezp.com
           params:
-              icon: brand-twitter
+              icon: link
 
         - identifier: github
           name: GitHub
@@ -203,11 +203,11 @@ menu:
           params:
               icon: brand-github
 
-#        - identifier: twitter
-#          name: Twitter
-#          url: https://twitter.com/davidalvarezp
-#          params:
-#              icon: brand-twitter
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com/devbydap
+          params:
+              icon: brand-twitter
 
 related:
     includeNewer: true
