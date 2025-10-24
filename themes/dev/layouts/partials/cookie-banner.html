@@ -3,25 +3,36 @@
   const banner = document.getElementById('cookie-banner');
   const btn = document.getElementById('accept-cookies');
 
-  function showBanner() {
+  // Funciones para manejar cookies
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    const expires = "expires="+ d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+    }
+    return "";
+  }
+
+  // Mostrar banner solo si no hay cookie de aceptación
+  if(getCookie('cookies_accepted') === 'true'){
+    banner.style.display = 'none';
+  } else {
     banner.style.display = 'flex';
   }
 
-  function hideBanner() {
-    banner.style.display = 'none';
-  }
-
-  // Mostrar banner solo si no ha aceptado cookies
-  if(localStorage.getItem('cookies_accepted') === 'true'){
-    hideBanner();
-  } else {
-    showBanner();
-  }
-
-  // Botón de aceptar
+  // Al hacer clic en aceptar
   btn.addEventListener('click', function(){
-    localStorage.setItem('cookies_accepted', 'true');
-    hideBanner();
+    setCookie('cookies_accepted', 'true', 365); // 365 días
+    banner.style.display = 'none';
 
     // Activar Google Analytics tras consentimiento
     if(typeof gtag === 'function'){
