@@ -14,8 +14,8 @@
         {{ end }}
 
         {{- $Generator := `` -}}
-        {{- $Theme := printf `<b><a href="https://github.com/davidalvarezp/theme-hugo-dev" target="_blank" rel="noopener" data-version="%s">dev</a></b>` $ThemeVersion -}}
-        {{- $DesignedBy := `<b><a href="https://davidalvarezp.com" target="_blank" rel="noopener">davidalvarezp</a></b> & <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+        {{- $Theme := ` ` -}}
+        {{- $DesignedBy := `<a href="https://davidalvarezp.com" target="_blank" rel="noopener">davidalvarezp</a> & <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
 
         {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
     </section>

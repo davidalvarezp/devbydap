@@ -14,7 +14,8 @@ lastmod: '2025-10-22'
 license: false
 readingtime: false
 menu:
-    main: 
+    main:
+        name: "About"
         weight: -90
         params:
             icon: user

@@ -1,12 +1,14 @@
 ---
 title: "Buscar"
-slug: "search"
+description: "Encuentra artículos y recursos en devbydap sobre ciberseguridad, administración de sistemas y desarrollo web."
+slug: "buscar"
 layout: "search"
 outputs:
     - html
     - json
 menu:
     main:
+        name: "Buscar"
         weight: -60
         params: 
             icon: search
