@@ -1,11 +1,12 @@
 ---
+author: "davidalvarezp"
 title: "Política de Cookies"
-slug: cookies
+slug: "cookies"
+date: 2025-10-20
 description: "Política de cookies de devbydap — información sobre el uso de cookies y cómo gestionarlas."
 date: 2025-10-20
-
+draft: false
 ---
-
 # Política de Cookies
 
 En **devbydap** utilizamos cookies propias y de terceros con fines analíticos.
