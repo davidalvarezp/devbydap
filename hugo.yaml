@@ -17,8 +17,8 @@ hasCJKLanguage: false
 #    disqus:
 #        shortname: "devbydap"
     # GA Tracking ID
-    googleAnalytics:
-        id: G-LYELG1GGF4
+#    googleAnalytics:
+#        id: G-LYELG1GGF4
 
 pagination:
     pagerSize: 3
