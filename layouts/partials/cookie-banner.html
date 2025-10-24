@@ -1,0 +1,29 @@
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;z-index:9999;display:none;">
+  <span>Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de los usuarios. 
+    <a href="/cookies/" style="color:#4CAF50;text-decoration:underline;">Más información</a>.
+  </span>
+  <button id="accept-cookies" style="margin-left:15px;padding:8px 15px;background:#4CAF50;border:none;color:#fff;cursor:pointer;">Aceptar</button>
+</div>
+
+<script>
+(function(){
+  // Mostrar banner si no se ha aceptado antes
+  if(!localStorage.getItem('cookies_accepted')){
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+
+  // Cuando el usuario acepta
+  document.getElementById('accept-cookies').addEventListener('click', function(){
+    localStorage.setItem('cookies_accepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+
+    // Activar Google Analytics tras consentimiento
+    if(typeof gtag === 'function'){
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  });
+})();
+</script>
