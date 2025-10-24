@@ -1,52 +1,27 @@
-<!-- Cookie Banner -->
-<div id="cookie-banner" style="
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background-color:rgba(0,0,0,0.85);
-    color:#f1f1f1;
-    padding:12px 20px;
-    text-align:center;
-    font-size:0.9em;
-    z-index:9999;
-    display:none;
-    box-sizing:border-box;
-    backdrop-filter:blur(5px);
-    flex-wrap:wrap;
-    gap:8px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row;
-">
-  <span style="flex:1; min-width:200px;">
-    Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de los usuarios. 
-    <a href="/legal/#política-de-cookies" style="color:#ccc;text-decoration:underline;">Más información</a>.
-  </span>
-  <button id="accept-cookies" style="
-    padding:8px 16px;
-    background-color:#555;
-    color:#f1f1f1;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-    flex-shrink:0;
-  ">Aceptar</button>
-</div>
-
 <script>
 (function(){
   const banner = document.getElementById('cookie-banner');
   const btn = document.getElementById('accept-cookies');
 
-  if(!localStorage.getItem('cookies_accepted')){
+  function showBanner() {
     banner.style.display = 'flex';
   }
 
+  function hideBanner() {
+    banner.style.display = 'none';
+  }
+
+  // Mostrar banner solo si no ha aceptado cookies
+  if(localStorage.getItem('cookies_accepted') === 'true'){
+    hideBanner();
+  } else {
+    showBanner();
+  }
+
+  // Botón de aceptar
   btn.addEventListener('click', function(){
     localStorage.setItem('cookies_accepted', 'true');
-    banner.style.display = 'none';
+    hideBanner();
 
     // Activar Google Analytics tras consentimiento
     if(typeof gtag === 'function'){
@@ -56,7 +31,7 @@
     }
   });
 
-  // Ajuste responsivo para pantallas pequeñas
+  // Ajuste responsivo
   function adjustBanner(){
     if(window.innerWidth < 500){
       banner.style.flexDirection = 'column';
