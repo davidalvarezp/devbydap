@@ -1,4 +1,4 @@
-<img align="center" alt="banner" src="imgs/banner.png">
+<img align="center" alt="banner" src="static/banner.png">
 
 # devbydap ([dev.davidalvarezp.com](https://dev.davidalvarezp.com))
 
