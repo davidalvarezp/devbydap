@@ -2,7 +2,8 @@
 title: "Política de Cookies"
 slug: cookies
 description: "Política de cookies de devbydap — información sobre el uso de cookies y cómo gestionarlas."
-draft: false
+date: 2025-10-20
+
 ---
 
 # Política de Cookies
