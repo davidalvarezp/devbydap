@@ -1,13 +1,19 @@
-<script>
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; text-align:center; justify-content:center; align-items:center; z-index:9999; flex-wrap:wrap;">
+  <span>Usamos cookies para mejorar tu experiencia.</span>
+  <button id="accept-cookies" style="margin-left:1em;">Aceptar</button>
+</div>
+
+<script defer>
 document.addEventListener('DOMContentLoaded', function() {
   const banner = document.getElementById('cookie-banner');
   const btn = document.getElementById('accept-cookies');
+  if (!banner || !btn) return;
 
   function setCookie(name, value, days) {
     const d = new Date();
     d.setTime(d.getTime() + (days*24*60*60*1000));
     const expires = "expires="+ d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
   }
 
   function getCookie(name) {
@@ -21,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return "";
   }
 
-  // Mostrar banner solo si no hay cookie de aceptación
   if(getCookie('cookies_accepted') === 'true'){
     banner.style.display = 'none';
   } else {
@@ -31,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
   btn.addEventListener('click', function(){
     setCookie('cookies_accepted', 'true', 365);
     banner.style.display = 'none';
-
     if(typeof gtag === 'function'){
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
     }
