@@ -508,9 +508,14 @@ Aplicar las prácticas básicas que hemos visto —mantener el sistema actualiza
 &lt;blockquote&gt;
 &lt;p&gt;💡 &lt;strong&gt;Recuerda:&lt;/strong&gt; la mejor defensa es la prevención.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
-&lt;/h1&gt;&lt;p&gt;SvelteKit es un framework moderno para construir aplicaciones web rápidas y optimizadas.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;SvelteKit&lt;/strong&gt; es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.&lt;br&gt;
+Basado en &lt;strong&gt;Svelte&lt;/strong&gt;, aprovecha la compilación en tiempo de construcción (en lugar de en tiempo de ejecución) para generar aplicaciones altamente eficientes.&lt;/p&gt;
+&lt;p&gt;En este artículo aprenderás a crear tu primer proyecto con SvelteKit paso a paso, entendiendo su estructura y filosofía.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id="instala-nodejs"&gt;Instala Node.js
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/h2&gt;&lt;p&gt;Antes de empezar, asegúrate de tener instalado &lt;strong&gt;Node.js&lt;/strong&gt; y &lt;strong&gt;npm&lt;/strong&gt; (Node Package Manager), ya que son necesarios para crear y ejecutar proyectos con SvelteKit.&lt;/p&gt;
+&lt;p&gt;Comprueba tus versiones con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
@@ -520,8 +525,14 @@ Aplicar las prácticas básicas que hemos visto —mantener el sistema actualiza
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm -v
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="crea-un-nuevo-proyecto"&gt;Crea un nuevo proyecto
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;&lt;p&gt;Si no los tienes, puedes descargar Node.js desde &lt;a class="link" href="https://nodejs.org" target="_blank" rel="noopener"
+&gt;nodejs.org&lt;/a&gt;.&lt;br&gt;
+Te recomiendo instalar la versión LTS (Long Term Support) para mayor estabilidad.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crea-un-nuevo-proyecto-con-sveltekit"&gt;Crea un nuevo proyecto con SvelteKit
+&lt;/h2&gt;&lt;p&gt;SvelteKit incluye un asistente oficial que te permite crear un nuevo proyecto con una configuración básica en pocos segundos.&lt;/p&gt;
+&lt;p&gt;Ejecuta en tu terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
@@ -535,29 +546,86 @@ Aplicar las prácticas básicas que hemos visto —mantener el sistema actualiza
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm run dev
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="estructura-del-proyecto"&gt;Estructura del proyecto
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/src/routes&lt;/code&gt; → define páginas&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/src/lib&lt;/code&gt; → componentes reutilizables&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/static&lt;/code&gt; → assets&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="primer-componente"&gt;Primer componente
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;&lt;p&gt;Esto hará lo siguiente:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Creará un nuevo proyecto llamado &lt;strong&gt;my-app&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Instalará las dependencias necesarias.&lt;/li&gt;
+&lt;li&gt;Iniciará un servidor de desarrollo en &lt;code&gt;http://localhost:5173&lt;/code&gt; (o el puerto disponible).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Abre esa dirección en tu navegador y verás la página de inicio de SvelteKit.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="estructura-del-proyecto"&gt;Estructura del proyecto
+&lt;/h2&gt;&lt;p&gt;Una vez creado el proyecto, encontrarás una estructura similar a esta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
 &lt;/span&gt;&lt;span class="lnt"&gt;3
 &lt;/span&gt;&lt;span class="lnt"&gt;4
 &lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;my-app/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── src/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── routes/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── lib/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └── app.html
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── static/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── package.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── svelte.config.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="srcroutes"&gt;&lt;code&gt;/src/routes&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Aquí defines las &lt;strong&gt;rutas y páginas&lt;/strong&gt; de tu aplicación.&lt;br&gt;
+Cada archivo &lt;code&gt;.svelte&lt;/code&gt; dentro de esta carpeta corresponde a una ruta.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, &lt;code&gt;src/routes/about/+page.svelte&lt;/code&gt; creará la página &lt;code&gt;/about&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="srclib"&gt;&lt;code&gt;/src/lib&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Contiene &lt;strong&gt;componentes reutilizables&lt;/strong&gt;, como botones, menús o layouts.&lt;/p&gt;
+&lt;h3 id="static"&gt;&lt;code&gt;/static&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Guarda &lt;strong&gt;recursos estáticos&lt;/strong&gt; como imágenes, fuentes o íconos.&lt;br&gt;
+Todo lo que pongas aquí se servirá directamente desde la raíz del sitio.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crea-tu-primer-componente"&gt;Crea tu primer componente
+&lt;/h2&gt;&lt;p&gt;Ahora que ya tienes el proyecto funcionando, vamos a crear un componente simple.&lt;/p&gt;
+&lt;p&gt;Edita el archivo &lt;code&gt;src/routes/+page.svelte&lt;/code&gt; y reemplázalo con el siguiente contenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-svelte" data-lang="svelte"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;nombre&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;David&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Hola &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;nombre&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;, bienvenido a SvelteKit!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Hola &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;nombre&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;, ¡bienvenido a SvelteKit!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Tu primera app ya está corriendo localmente 🚀&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;¡Listo! Ahora tienes tu primer proyecto corriendo localmente.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Guarda el archivo y verás el cambio reflejado en tiempo real gracias al &lt;strong&gt;Hot Module Reloading (HMR)&lt;/strong&gt; integrado.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="por-qué-elegir-sveltekit"&gt;¿Por qué elegir SvelteKit?
+&lt;/h2&gt;&lt;p&gt;Algunas ventajas que hacen que SvelteKit destaque frente a otros frameworks como React o Next.js:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Renderizado híbrido&lt;/strong&gt; (SSR + CSR + SSG) sin configuración extra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rendimiento superior&lt;/strong&gt; gracias a la compilación de componentes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Menor tamaño de bundle&lt;/strong&gt;, lo que se traduce en tiempos de carga más rápidos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Excelente DX (Developer Experience)&lt;/strong&gt;: sintaxis limpia, feedback instantáneo y soporte moderno.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integración fácil&lt;/strong&gt; con adaptadores para Vercel, Netlify, Cloudflare y más.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Has creado tu primer proyecto con &lt;strong&gt;SvelteKit&lt;/strong&gt;, entendido su estructura y creado un componente básico.&lt;br&gt;
+Este framework es ideal para desarrolladores que buscan &lt;strong&gt;velocidad, simplicidad y rendimiento&lt;/strong&gt; en sus aplicaciones web.&lt;/p&gt;
+&lt;p&gt;En próximos artículos profundizaremos en temas como &lt;strong&gt;rutas dinámicas&lt;/strong&gt;, &lt;strong&gt;stores&lt;/strong&gt;, &lt;strong&gt;formularios&lt;/strong&gt; y &lt;strong&gt;despliegue en producción&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; explora la documentación oficial en &lt;a class="link" href="https://kit.svelte.dev" target="_blank" rel="noopener"
+&gt;kit.svelte.dev&lt;/a&gt; para descubrir todo su potencial.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item></channel></rss>
