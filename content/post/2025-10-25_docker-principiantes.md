@@ -6,7 +6,7 @@ date: 2025-10-25
 description: "Aprende a usar Docker desde cero para crear, ejecutar y gestionar contenedores, mejorando la eficiencia de tus entornos de desarrollo y servidores."
 tags: ["Docker", "Containers", "DevOps"]
 categories: ["SysAdmin"]
-draft: false
+draft: true
 keywords: ["docker", "contenedores", "DevOps", "tutorial Docker"]
 ---
 
