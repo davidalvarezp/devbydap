@@ -2,7 +2,7 @@
 author: "davidalvarezp"
 title: "Integración de CI/CD con GitHub Actions en proyectos Hugo"
 slug: "ci-cd-github-actions"
-date: 2025-10-22
+date: 2025-10-24
 description: "Aprende a configurar pipelines de CI/CD para tu sitio Hugo usando GitHub Actions y automatiza despliegues y pruebas."
 tags: ["WebDev", "Hugo", "Automatización", "GitHub"]
 categories: ["Dev"]
