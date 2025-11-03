@@ -30,37 +30,6 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Estas medidas reducen significativamente el riesgo de ataques automatizados.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
-&lt;/h1&gt;&lt;p&gt;Prometheus y Grafana permiten visualizar métricas clave de tus servidores.&lt;/p&gt;
-&lt;h2 id="instalar-prometheus"&gt;Instalar Prometheus
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="instalar-grafana"&gt;Instalar Grafana
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install grafana
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; grafana-server
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start grafana-server
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="configurar-dashboards"&gt;Configurar dashboards
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Conectar Prometheus como datasource en Grafana&lt;/li&gt;
-&lt;li&gt;Crear dashboards para CPU, memoria, tráfico de red&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Con esto podrás monitorizar tus servidores y anticiparte a problemas de rendimiento.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Gestión segura de contraseñas y autenticación 2FA</title><link>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</guid><description>&lt;h1 id="gestión-segura-de-contraseñas-y-autenticación-2fa"&gt;Gestión segura de contraseñas y autenticación 2FA
 &lt;/h1&gt;&lt;p&gt;La seguridad empieza por contraseñas fuertes y autenticación adicional.&lt;/p&gt;
 &lt;h2 id="usa-gestores-de-contraseñas"&gt;Usa gestores de contraseñas
