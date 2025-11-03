@@ -10,7 +10,6 @@ draft: false
 keywords: ["CI/CD", "GitHub Actions", "Hugo", "automatización"]
 ---
 
-
 # Integración de CI/CD con GitHub Actions en proyectos Hugo
 
 El desarrollo moderno de sitios web estáticos, como los generados con **Hugo**, se beneficia enormemente de la automatización.  
