@@ -2,7 +2,7 @@
 author: "davidalvarezp"
 title: "Gestión segura de contraseñas y autenticación 2FA"
 slug: "gestion-contraseñas-2fa"
-date: 2025-10-23
+date: 2025-10-27
 description: "Aprende las mejores prácticas para gestionar contraseñas y configurar autenticación de dos factores (2FA) en tus servicios."
 tags: ["2FA", "Seguridad"]
 categories: ["CyberSec"]
