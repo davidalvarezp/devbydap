@@ -2,7 +2,7 @@
 author: "davidalvarezp"
 title: "Introducción a SvelteKit: crea tu primer proyecto"
 slug: "sveltekit-introduccion"
-date: 2025-10-20
+date: 2025-10-21
 description: "Aprende a crear tu primer proyecto con SvelteKit y descubre cómo construir aplicaciones web modernas de forma rápida y eficiente."
 tags: ["WebDev", "Frontend", "JavaScript"]
 categories: ["Dev"]
