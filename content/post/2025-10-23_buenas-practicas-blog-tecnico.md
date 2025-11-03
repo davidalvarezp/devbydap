@@ -9,7 +9,7 @@ categories: ["Dev"]
 draft: false
 keywords: ["blog técnico", "seguridad", "SEO", "mantenimiento"]
 ---
-
+ 
 # Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
 
 Publicar un blog técnico es una excelente manera de compartir conocimiento, construir reputación profesional y contribuir a la comunidad.  
