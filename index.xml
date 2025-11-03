@@ -46,22 +46,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Con estos pasos básicos, puedes empezar a usar Docker para simplificar despliegues y entornos de desarrollo.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Gestión segura de contraseñas y autenticación 2FA</title><link>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</guid><description>&lt;h1 id="gestión-segura-de-contraseñas-y-autenticación-2fa"&gt;Gestión segura de contraseñas y autenticación 2FA
-&lt;/h1&gt;&lt;p&gt;La seguridad empieza por contraseñas fuertes y autenticación adicional.&lt;/p&gt;
-&lt;h2 id="usa-gestores-de-contraseñas"&gt;Usa gestores de contraseñas
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;1Password, Bitwarden, KeePass&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="configura-2fa-siempre-que-sea-posible"&gt;Configura 2FA siempre que sea posible
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Google Authenticator, Authy, YubiKey&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="evita-reutilizar-contraseñas"&gt;Evita reutilizar contraseñas
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Cada cuenta debe tener credenciales únicas&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Siguiendo estas prácticas, mejorarás notablemente la seguridad de tus cuentas.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
 &lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
 Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
