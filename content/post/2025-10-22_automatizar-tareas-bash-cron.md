@@ -9,7 +9,7 @@ categories: ["SysAdmin"]
 draft: false
 keywords: ["bash", "cron", "automatización", "linux scripts"]
 ---
-
+ 
 # Automatiza tus tareas con Bash y Cron
 
 La **automatización** es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.  
