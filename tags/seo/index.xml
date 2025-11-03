@@ -23,25 +23,175 @@
 &lt;blockquote&gt;
 &lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento</title><link>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</guid><description>&lt;h1 id="buenas-prácticas-al-publicar-un-blog-técnico-seguridad-seo-y-mantenimiento"&gt;Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
-&lt;/h1&gt;&lt;p&gt;Mantener un blog profesional requiere atención a seguridad, optimización y mantenimiento.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Publicar un blog técnico es una excelente manera de compartir conocimiento, construir reputación profesional y contribuir a la comunidad.&lt;br&gt;
+Sin embargo, más allá de escribir buenos artículos, es fundamental cuidar la &lt;strong&gt;seguridad&lt;/strong&gt;, la &lt;strong&gt;optimización SEO&lt;/strong&gt; y el &lt;strong&gt;mantenimiento continuo&lt;/strong&gt; del sitio.&lt;br&gt;
+Un blog descuidado puede volverse lento, inseguro o perder visibilidad en buscadores.&lt;/p&gt;
+&lt;p&gt;En esta guía práctica veremos cómo aplicar buenas prácticas en cada uno de estos pilares.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id="seguridad"&gt;Seguridad
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Actualiza Hugo y dependencias&lt;/li&gt;
-&lt;li&gt;Usa HTTPS y certificados válidos&lt;/li&gt;
-&lt;li&gt;Protege accesos con contraseñas seguras&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="seo"&gt;SEO
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Meta tags completos y descriptivos&lt;/li&gt;
-&lt;li&gt;URLs limpias y slug amigable&lt;/li&gt;
-&lt;li&gt;Sitemap y robots.txt&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="mantenimiento"&gt;Mantenimiento
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Backups regulares&lt;/li&gt;
-&lt;li&gt;Monitorización del servidor&lt;/li&gt;
-&lt;li&gt;Revisión periódica de enlaces rotos&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/h2&gt;&lt;p&gt;Un blog técnico puede parecer un objetivo poco atractivo para atacantes, pero en la práctica es &lt;strong&gt;uno de los blancos más comunes&lt;/strong&gt; para bots automatizados que buscan vulnerabilidades en servidores o plataformas de publicación.&lt;/p&gt;
+&lt;p&gt;A continuación, algunos pasos esenciales para fortalecer la seguridad de tu blog:&lt;/p&gt;
+&lt;h3 id="1-actualiza-hugo-y-dependencias"&gt;1. Actualiza Hugo y dependencias
+&lt;/h3&gt;&lt;p&gt;Si usas un generador estático como &lt;strong&gt;Hugo&lt;/strong&gt;, &lt;strong&gt;Jekyll&lt;/strong&gt; o &lt;strong&gt;Next.js&lt;/strong&gt;, mantén tanto el framework como los temas y módulos actualizados. Las actualizaciones suelen incluir parches de seguridad y mejoras de rendimiento.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod get -u ./...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;También asegúrate de mantener actualizado tu entorno de despliegue (por ejemplo, GitHub Pages, Netlify o Cloudflare Pages).&lt;/p&gt;
+&lt;h3 id="2-usa-https-y-certificados-válidos"&gt;2. Usa HTTPS y certificados válidos
+&lt;/h3&gt;&lt;p&gt;Un sitio sin HTTPS no solo es inseguro, sino que también puede ser penalizado por los navegadores modernos y por Google.&lt;br&gt;
+Puedes obtener un certificado gratuito de &lt;strong&gt;Let’s Encrypt&lt;/strong&gt; y configurarlo fácilmente con Nginx o Apache:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo para Nginx:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;301&lt;/span&gt; &lt;span class="s"&gt;https://&lt;/span&gt;&lt;span class="nv"&gt;$host$request_uri&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;ssl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/fullchain.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate_key&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/privkey.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-protege-accesos-con-contraseñas-seguras-y-autenticación-2fa"&gt;3. Protege accesos con contraseñas seguras y autenticación 2FA
+&lt;/h3&gt;&lt;p&gt;Si tu flujo de publicación involucra servicios externos (como CI/CD, Netlify o Cloudflare), &lt;strong&gt;usa autenticación de dos factores (2FA)&lt;/strong&gt; y &lt;strong&gt;tokens de acceso&lt;/strong&gt; con permisos mínimos.&lt;br&gt;
+Evita almacenar contraseñas o claves API en texto plano dentro de tus repositorios.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Siguiendo estas buenas prácticas, tu blog será seguro, rápido y fácil de mantener.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; Usa un gestor de secretos (por ejemplo, GitHub Secrets o 1Password CLI) para guardar tus credenciales de despliegue.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="seo-optimización-para-buscadores"&gt;SEO (Optimización para buscadores)
+&lt;/h2&gt;&lt;p&gt;El SEO no solo mejora la visibilidad de tu blog, sino que también ayuda a que los lectores encuentren rápidamente el contenido que necesitan.&lt;br&gt;
+Estas prácticas básicas te ayudarán a mejorar tu posicionamiento sin complicarte.&lt;/p&gt;
+&lt;h3 id="1-meta-tags-completos-y-descriptivos"&gt;1. Meta tags completos y descriptivos
+&lt;/h3&gt;&lt;p&gt;Cada página debe incluir etiquetas &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt; y &lt;code&gt;keywords&lt;/code&gt; bien escritas. En &lt;strong&gt;Hugo&lt;/strong&gt;, puedes configurarlas desde el &lt;code&gt;front matter&lt;/code&gt; de cada post:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Buenas prácticas al publicar un blog técnico&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Aprende a mantener tu blog técnico seguro, optimizado y actualizado.&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;blog técnico&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;SEO&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;seguridad web&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="2-urls-limpias-y-slugs-amigables"&gt;2. URLs limpias y slugs amigables
+&lt;/h3&gt;&lt;p&gt;Evita URLs largas o con caracteres extraños. Los &lt;strong&gt;slugs cortos y descriptivos&lt;/strong&gt; mejoran el SEO y la experiencia del usuario:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;✅ /buenas-practicas-blog-tecnico
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ /2025/10/20/post-numero-12345
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-sitemap-y-robotstxt"&gt;3. Sitemap y robots.txt
+&lt;/h3&gt;&lt;p&gt;Un &lt;code&gt;sitemap.xml&lt;/code&gt; facilita la indexación de tu contenido por los motores de búsqueda.&lt;br&gt;
+Hugo puede generarlo automáticamente con una simple opción en &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;enableRobotsTXT&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además, incluye un archivo &lt;code&gt;robots.txt&lt;/code&gt; que permita rastrear solo las secciones relevantes del sitio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;User-agent: *
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Disallow: /drafts/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Allow: /
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Sitemap: https://tu-dominio.com/sitemap.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Registra tu blog en &lt;strong&gt;Google Search Console&lt;/strong&gt; para monitorear el tráfico y detectar errores de indexación.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="mantenimiento"&gt;Mantenimiento
+&lt;/h2&gt;&lt;p&gt;El mantenimiento es el aspecto menos glamuroso, pero más crítico, de cualquier blog técnico.&lt;br&gt;
+Asegura la &lt;strong&gt;disponibilidad&lt;/strong&gt;, &lt;strong&gt;rendimiento&lt;/strong&gt; y &lt;strong&gt;salud&lt;/strong&gt; del sitio a lo largo del tiempo.&lt;/p&gt;
+&lt;h3 id="1-backups-regulares"&gt;1. Backups regulares
+&lt;/h3&gt;&lt;p&gt;Haz copias de seguridad automáticas de tu contenido y configuración.&lt;br&gt;
+Si usas Git, aprovecha los commits y repositorios remotos para tener un historial completo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;Backup automático del blog&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;También puedes usar servicios como &lt;strong&gt;rclone&lt;/strong&gt; o &lt;strong&gt;Restic&lt;/strong&gt; para enviar copias cifradas a la nube.&lt;/p&gt;
+&lt;h3 id="2-monitorización-del-servidor"&gt;2. Monitorización del servidor
+&lt;/h3&gt;&lt;p&gt;Si tu blog está en un VPS, monitorea el &lt;strong&gt;uptime&lt;/strong&gt; y rendimiento del servidor.&lt;br&gt;
+Herramientas gratuitas como &lt;strong&gt;UptimeRobot&lt;/strong&gt;, &lt;strong&gt;Netdata&lt;/strong&gt; o &lt;strong&gt;Grafana Cloud&lt;/strong&gt; te permiten recibir alertas si algo falla.&lt;/p&gt;
+&lt;h3 id="3-revisión-de-enlaces-rotos"&gt;3. Revisión de enlaces rotos
+&lt;/h3&gt;&lt;p&gt;Los enlaces rotos perjudican el SEO y la experiencia del lector.&lt;br&gt;
+Puedes automatizar su detección con herramientas como:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npx broken-link-checker https://tu-blog.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;O usar un flujo CI/CD que verifique enlaces en cada despliegue.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Publicar un blog técnico implica más que escribir artículos: también requiere &lt;strong&gt;disciplina en seguridad, SEO y mantenimiento&lt;/strong&gt;.&lt;br&gt;
+Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item></channel></rss>
