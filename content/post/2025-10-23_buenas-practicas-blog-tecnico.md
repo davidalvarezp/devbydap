@@ -2,7 +2,7 @@
 author: "davidalvarezp"
 title: "Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento"
 slug: "buenas-practicas-blog-tecnico"
-date: 2025-10-21
+date: 2025-10-23
 description: "Checklist completa de buenas prácticas para mantener un blog técnico seguro, optimizado para SEO y fácil de mantener."
 tags: ["WebDev", "SEO"]
 categories: ["Dev"]
