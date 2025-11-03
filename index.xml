@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sat, 25 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
+&lt;/h1&gt;&lt;p&gt;Para que tu blog sea encontrado fácilmente, sigue estas recomendaciones:&lt;/p&gt;
+&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa títulos claros y descriptivos&lt;/li&gt;
+&lt;li&gt;Incluye meta description únicas por página&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="urls-limpias"&gt;URLs limpias
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Evita caracteres extraños&lt;/li&gt;
+&lt;li&gt;Usa guiones en lugar de espacios&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa H1, H2, H3 correctamente&lt;/li&gt;
+&lt;li&gt;Listas y subtítulos para mejorar lectura&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Hugo genera sitemap.xml automáticamente&lt;/li&gt;
+&lt;li&gt;Configura robots.txt para motores de búsqueda&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
 &lt;/h1&gt;&lt;p&gt;Docker permite empaquetar aplicaciones y dependencias en contenedores ligeros.&lt;/p&gt;
 &lt;h2 id="instalar-docker"&gt;Instalar Docker
 &lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -512,30 +536,6 @@ La sintaxis de Cron sigue el formato:&lt;/p&gt;
 &lt;p&gt;Implementar una estrategia de automatización no solo mejora la eficiencia, sino que también garantiza &lt;strong&gt;consistencia&lt;/strong&gt; y &lt;strong&gt;disponibilidad&lt;/strong&gt; en tus operaciones diarias.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; un buen sysadmin no trabaja más, trabaja más &lt;em&gt;automatizado&lt;/em&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
-&lt;/h1&gt;&lt;p&gt;Para que tu blog sea encontrado fácilmente, sigue estas recomendaciones:&lt;/p&gt;
-&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa títulos claros y descriptivos&lt;/li&gt;
-&lt;li&gt;Incluye meta description únicas por página&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="urls-limpias"&gt;URLs limpias
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Evita caracteres extraños&lt;/li&gt;
-&lt;li&gt;Usa guiones en lugar de espacios&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa H1, H2, H3 correctamente&lt;/li&gt;
-&lt;li&gt;Listas y subtítulos para mejorar lectura&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Hugo genera sitemap.xml automáticamente&lt;/li&gt;
-&lt;li&gt;Configura robots.txt para motores de búsqueda&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;SvelteKit&lt;/strong&gt; es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.&lt;br&gt;
 Basado en &lt;strong&gt;Svelte&lt;/strong&gt;, aprovecha la compilación en tiempo de construcción (en lugar de en tiempo de ejecución) para generar aplicaciones altamente eficientes.&lt;/p&gt;

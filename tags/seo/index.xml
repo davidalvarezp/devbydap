@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SEO on devbydap</title><link>https://dev.davidalvarezp.com/tags/seo/</link><description>Recent content in SEO on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/seo/index.xml" rel="self" type="application/rss+xml"/><item><title>Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento</title><link>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</guid><description>&lt;h1 id="buenas-prácticas-al-publicar-un-blog-técnico-seguridad-seo-y-mantenimiento"&gt;Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SEO on devbydap</title><link>https://dev.davidalvarezp.com/tags/seo/</link><description>Recent content in SEO on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/seo/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
+&lt;/h1&gt;&lt;p&gt;Para que tu blog sea encontrado fácilmente, sigue estas recomendaciones:&lt;/p&gt;
+&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa títulos claros y descriptivos&lt;/li&gt;
+&lt;li&gt;Incluye meta description únicas por página&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="urls-limpias"&gt;URLs limpias
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Evita caracteres extraños&lt;/li&gt;
+&lt;li&gt;Usa guiones en lugar de espacios&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa H1, H2, H3 correctamente&lt;/li&gt;
+&lt;li&gt;Listas y subtítulos para mejorar lectura&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Hugo genera sitemap.xml automáticamente&lt;/li&gt;
+&lt;li&gt;Configura robots.txt para motores de búsqueda&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento</title><link>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</guid><description>&lt;h1 id="buenas-prácticas-al-publicar-un-blog-técnico-seguridad-seo-y-mantenimiento"&gt;Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
 &lt;/h1&gt;&lt;p&gt;Publicar un blog técnico es una excelente manera de compartir conocimiento, construir reputación profesional y contribuir a la comunidad.&lt;br&gt;
 Sin embargo, más allá de escribir buenos artículos, es fundamental cuidar la &lt;strong&gt;seguridad&lt;/strong&gt;, la &lt;strong&gt;optimización SEO&lt;/strong&gt; y el &lt;strong&gt;mantenimiento continuo&lt;/strong&gt; del sitio.&lt;br&gt;
 Un blog descuidado puede volverse lento, inseguro o perder visibilidad en buscadores.&lt;/p&gt;
@@ -170,28 +194,4 @@ Puedes automatizar su detección con herramientas como:&lt;/p&gt;
 Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
-&lt;/h1&gt;&lt;p&gt;Para que tu blog sea encontrado fácilmente, sigue estas recomendaciones:&lt;/p&gt;
-&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa títulos claros y descriptivos&lt;/li&gt;
-&lt;li&gt;Incluye meta description únicas por página&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="urls-limpias"&gt;URLs limpias
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Evita caracteres extraños&lt;/li&gt;
-&lt;li&gt;Usa guiones en lugar de espacios&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa H1, H2, H3 correctamente&lt;/li&gt;
-&lt;li&gt;Listas y subtítulos para mejorar lectura&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Hugo genera sitemap.xml automáticamente&lt;/li&gt;
-&lt;li&gt;Configura robots.txt para motores de búsqueda&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item></channel></rss>
