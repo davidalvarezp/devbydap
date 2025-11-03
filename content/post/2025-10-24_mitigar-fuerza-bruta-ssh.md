@@ -6,7 +6,7 @@ date: 2025-10-24
 description: "Aprende a proteger tus servidores SSH de ataques de fuerza bruta y a configurar medidas de seguridad para evitar accesos no autorizados."
 tags: ["Seguridad"]
 categories: ["CyberSec", "SysAdmin"]
-draft: false
+draft: true
 keywords: ["SSH", "fuerza bruta", "seguridad servidores"]
 ---
 
