@@ -9,7 +9,7 @@ categories: ["Dev"]
 draft: false
 keywords: ["SvelteKit", "web development", "frontend", "tutorial"]
 ---
-
+ 
 # Introducción a SvelteKit: crea tu primer proyecto
 
 **SvelteKit** es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.  
