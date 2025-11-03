@@ -354,7 +354,7 @@ Puedes automatizar su detección con herramientas como:&lt;/p&gt;
 Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
+&lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;SvelteKit&lt;/strong&gt; es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.&lt;br&gt;
 Basado en &lt;strong&gt;Svelte&lt;/strong&gt;, aprovecha la compilación en tiempo de construcción (en lugar de en tiempo de ejecución) para generar aplicaciones altamente eficientes.&lt;/p&gt;
 &lt;p&gt;En este artículo aprenderás a crear tu primer proyecto con SvelteKit paso a paso, entendiendo su estructura y filosofía.&lt;/p&gt;
