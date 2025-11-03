@@ -1,28 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
-&lt;/h1&gt;&lt;p&gt;Para que tu blog sea encontrado fácilmente, sigue estas recomendaciones:&lt;/p&gt;
-&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa títulos claros y descriptivos&lt;/li&gt;
-&lt;li&gt;Incluye meta description únicas por página&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="urls-limpias"&gt;URLs limpias
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Evita caracteres extraños&lt;/li&gt;
-&lt;li&gt;Usa guiones en lugar de espacios&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa H1, H2, H3 correctamente&lt;/li&gt;
-&lt;li&gt;Listas y subtítulos para mejorar lectura&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Hugo genera sitemap.xml automáticamente&lt;/li&gt;
-&lt;li&gt;Configura robots.txt para motores de búsqueda&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Siguiendo estas prácticas, tu blog será más visible en Google y otros motores de búsqueda.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
 &lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
 Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
 &lt;p&gt;En este artículo aprenderás a configurar &lt;strong&gt;GitHub Actions&lt;/strong&gt; para construir y desplegar tu sitio Hugo en GitHub Pages o cualquier otro servicio compatible.&lt;/p&gt;
