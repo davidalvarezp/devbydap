@@ -1,36 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on devbydap</title><link>https://dev.davidalvarezp.com/post/</link><description>Recent content in Posts on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Cómo detectar y mitigar ataques de fuerza bruta en SSH</title><link>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</guid><description>&lt;h1 id="cómo-detectar-y-mitigar-ataques-de-fuerza-bruta-en-ssh"&gt;Cómo detectar y mitigar ataques de fuerza bruta en SSH
-&lt;/h1&gt;&lt;p&gt;Los ataques de fuerza bruta son intentos repetidos de adivinar contraseñas de usuarios en SSH.&lt;/p&gt;
-&lt;h2 id="revisar-intentos-de-acceso"&gt;Revisar intentos de acceso
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;grep &lt;span class="s2"&gt;&amp;#34;Failed password&amp;#34;&lt;/span&gt; /var/log/auth.log
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="configurar-fail2ban"&gt;Configurar fail2ban
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install fail2ban
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; fail2ban
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start fail2ban
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="ajustar-ssh"&gt;Ajustar SSH
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Cambiar puerto por defecto&lt;/li&gt;
-&lt;li&gt;Deshabilitar root login&lt;/li&gt;
-&lt;li&gt;Usar claves en lugar de contraseñas&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Estas medidas reducen significativamente el riesgo de ataques automatizados.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on devbydap</title><link>https://dev.davidalvarezp.com/post/</link><description>Recent content in Posts on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
 &lt;/h1&gt;&lt;p&gt;Docker permite empaquetar aplicaciones y dependencias en contenedores ligeros.&lt;/p&gt;
 &lt;h2 id="instalar-docker"&gt;Instalar Docker
 &lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
