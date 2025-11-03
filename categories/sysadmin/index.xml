@@ -46,7 +46,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Con estos pasos básicos, puedes empezar a usar Docker para simplificar despliegues y entornos de desarrollo.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
+&lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
 &lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
 Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
 &lt;p&gt;En esta guía aprenderás cómo crear un &lt;strong&gt;script Bash&lt;/strong&gt; y cómo programarlo con &lt;strong&gt;Cron&lt;/strong&gt; para que se ejecute de manera periódica.&lt;/p&gt;

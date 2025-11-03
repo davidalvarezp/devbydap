@@ -1,4 +1,138 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Automatización on devbydap</title><link>https://dev.davidalvarezp.com/tags/automatizaci%C3%B3n/</link><description>Recent content in Automatización on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/automatizaci%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Automatización on devbydap</title><link>https://dev.davidalvarezp.com/tags/automatizaci%C3%B3n/</link><description>Recent content in Automatización on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/automatizaci%C3%B3n/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
+&lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
+Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
+&lt;p&gt;En esta guía aprenderás cómo crear un &lt;strong&gt;script Bash&lt;/strong&gt; y cómo programarlo con &lt;strong&gt;Cron&lt;/strong&gt; para que se ejecute de manera periódica.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crear-un-script-bash"&gt;Crear un script Bash
+&lt;/h2&gt;&lt;p&gt;Comienza escribiendo un script simple. Por ejemplo, un script para realizar un respaldo de base de datos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Backup de la base de datos iniciado&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# comando de backup aquí&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Guárdalo como &lt;code&gt;backup.sh&lt;/code&gt; en el directorio deseado, por ejemplo &lt;code&gt;/usr/local/bin/&lt;/code&gt; o &lt;code&gt;/home/usuario/scripts/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Este script puede incluir cualquier comando o secuencia de tareas que desees automatizar: copias de seguridad, limpieza de logs, sincronización de archivos, actualizaciones, etc.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="hacerlo-ejecutable"&gt;Hacerlo ejecutable
+&lt;/h2&gt;&lt;p&gt;Antes de poder ejecutarlo, debes dar permisos de ejecución al archivo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chmod +x backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Puedes probarlo ejecutándolo manualmente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Si todo funciona correctamente, verás el mensaje en consola.&lt;br&gt;
+Recuerda que también puedes revisar logs o redirigir la salida del script a un archivo, por ejemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="programar-el-script-con-cron"&gt;Programar el script con Cron
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Cron&lt;/strong&gt; es un demonio del sistema que permite programar tareas recurrentes (llamadas &lt;em&gt;cron jobs&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Edita la tabla de Cron con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;crontab -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Agrega una línea como esta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * /ruta/a/backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto ejecutará el script &lt;strong&gt;todos los días a las 2:00 AM&lt;/strong&gt;.&lt;br&gt;
+La sintaxis de Cron sigue el formato:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌───────────── minuto (0 - 59)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌───────────── hora (0 - 23)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────── día del mes (1 - 31)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ ┌───────────── mes (1 - 12)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ ┌───────────── día de la semana (0 - 7) (domingo = 0 o 7)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* * * * * comando a ejecutar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 3 * * 1&lt;/code&gt; → Ejecuta todos los lunes a las 3:00 AM&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*/15 * * * *&lt;/code&gt; → Ejecuta cada 15 minutos&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@reboot&lt;/code&gt; → Ejecuta el comando al iniciar el sistema&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="consejos-útiles"&gt;Consejos útiles
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa &lt;strong&gt;rutas absolutas&lt;/strong&gt; dentro del script (&lt;code&gt;/usr/bin/pg_dump&lt;/code&gt; en lugar de &lt;code&gt;pg_dump&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Redirige salidas de error a un log para detectar fallos:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/ruta/a/backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Comprueba los logs de Cron si algo no funciona:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo grep CRON /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Usa &lt;code&gt;crontab -l&lt;/code&gt; para listar las tareas programadas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con &lt;strong&gt;Bash + Cron&lt;/strong&gt;, puedes automatizar casi cualquier tarea repetitiva en tu servidor: desde respaldos y actualizaciones, hasta mantenimiento y reportes automáticos.&lt;/p&gt;
+&lt;p&gt;Implementar una estrategia de automatización no solo mejora la eficiencia, sino que también garantiza &lt;strong&gt;consistencia&lt;/strong&gt; y &lt;strong&gt;disponibilidad&lt;/strong&gt; en tus operaciones diarias.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; un buen sysadmin no trabaja más, trabaja más &lt;em&gt;automatizado&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
 &lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
 Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
 &lt;p&gt;En este artículo aprenderás a configurar &lt;strong&gt;GitHub Actions&lt;/strong&gt; para construir y desplegar tu sitio Hugo en GitHub Pages o cualquier otro servicio compatible.&lt;/p&gt;
@@ -158,138 +292,4 @@ Crearemos uno llamado &lt;code&gt;deploy-hugo.yml&lt;/code&gt; con los pasos bá
 Cada commit se convierte en una versión pública de tu sitio, con un proceso completamente automatizado y controlado desde el repositorio.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Ahora cada push construirá y desplegará automáticamente tu sitio. ¡Tu blog estará siempre al día y sin esfuerzo!&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
-&lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
-Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
-&lt;p&gt;En esta guía aprenderás cómo crear un &lt;strong&gt;script Bash&lt;/strong&gt; y cómo programarlo con &lt;strong&gt;Cron&lt;/strong&gt; para que se ejecute de manera periódica.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="crear-un-script-bash"&gt;Crear un script Bash
-&lt;/h2&gt;&lt;p&gt;Comienza escribiendo un script simple. Por ejemplo, un script para realizar un respaldo de base de datos:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Backup de la base de datos iniciado&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# comando de backup aquí&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Guárdalo como &lt;code&gt;backup.sh&lt;/code&gt; en el directorio deseado, por ejemplo &lt;code&gt;/usr/local/bin/&lt;/code&gt; o &lt;code&gt;/home/usuario/scripts/&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Este script puede incluir cualquier comando o secuencia de tareas que desees automatizar: copias de seguridad, limpieza de logs, sincronización de archivos, actualizaciones, etc.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="hacerlo-ejecutable"&gt;Hacerlo ejecutable
-&lt;/h2&gt;&lt;p&gt;Antes de poder ejecutarlo, debes dar permisos de ejecución al archivo:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chmod +x backup.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Puedes probarlo ejecutándolo manualmente:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Si todo funciona correctamente, verás el mensaje en consola.&lt;br&gt;
-Recuerda que también puedes revisar logs o redirigir la salida del script a un archivo, por ejemplo:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="programar-el-script-con-cron"&gt;Programar el script con Cron
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Cron&lt;/strong&gt; es un demonio del sistema que permite programar tareas recurrentes (llamadas &lt;em&gt;cron jobs&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;Edita la tabla de Cron con:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;crontab -e
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Agrega una línea como esta:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * /ruta/a/backup.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Esto ejecutará el script &lt;strong&gt;todos los días a las 2:00 AM&lt;/strong&gt;.&lt;br&gt;
-La sintaxis de Cron sigue el formato:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;span class="lnt"&gt;5
-&lt;/span&gt;&lt;span class="lnt"&gt;6
-&lt;/span&gt;&lt;span class="lnt"&gt;7
-&lt;/span&gt;&lt;span class="lnt"&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌───────────── minuto (0 - 59)
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌───────────── hora (0 - 23)
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────── día del mes (1 - 31)
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ ┌───────────── mes (1 - 12)
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ ┌───────────── día de la semana (0 - 7) (domingo = 0 o 7)
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* * * * * comando a ejecutar
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Por ejemplo:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 3 * * 1&lt;/code&gt; → Ejecuta todos los lunes a las 3:00 AM&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;*/15 * * * *&lt;/code&gt; → Ejecuta cada 15 minutos&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;@reboot&lt;/code&gt; → Ejecuta el comando al iniciar el sistema&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="consejos-útiles"&gt;Consejos útiles
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Usa &lt;strong&gt;rutas absolutas&lt;/strong&gt; dentro del script (&lt;code&gt;/usr/bin/pg_dump&lt;/code&gt; en lugar de &lt;code&gt;pg_dump&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Redirige salidas de error a un log para detectar fallos:
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/ruta/a/backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;Comprueba los logs de Cron si algo no funciona:
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo grep CRON /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;Usa &lt;code&gt;crontab -l&lt;/code&gt; para listar las tareas programadas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Con &lt;strong&gt;Bash + Cron&lt;/strong&gt;, puedes automatizar casi cualquier tarea repetitiva en tu servidor: desde respaldos y actualizaciones, hasta mantenimiento y reportes automáticos.&lt;/p&gt;
-&lt;p&gt;Implementar una estrategia de automatización no solo mejora la eficiencia, sino que también garantiza &lt;strong&gt;consistencia&lt;/strong&gt; y &lt;strong&gt;disponibilidad&lt;/strong&gt; en tus operaciones diarias.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; un buen sysadmin no trabaja más, trabaja más &lt;em&gt;automatizado&lt;/em&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item></channel></rss>
