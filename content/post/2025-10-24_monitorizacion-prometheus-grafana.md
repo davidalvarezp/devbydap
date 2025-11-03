@@ -6,7 +6,7 @@ date: 2025-10-24
 description: "Aprende a configurar Prometheus y Grafana para monitorizar métricas de tus servidores y visualizar dashboards en tiempo real."
 tags: ["Seguridad", "Monitorización"]
 categories: ["SysAdmin"]
-draft: false
+draft: true
 keywords: ["monitorización", "Prometheus", "Grafana", "servidores"]
 ---
 
