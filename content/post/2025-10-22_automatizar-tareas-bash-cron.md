@@ -2,7 +2,7 @@
 author: "davidalvarezp"
 title: "Automatiza tus tareas con Bash y Cron"
 slug: "automatizar-tareas-bash-cron"
-date: 2025-10-21
+date: 2025-10-22
 description: "Aprende a automatizar tareas en Linux usando scripts Bash y cron, optimizando la gestión de servidores y procesos repetitivos."
 tags: ["Linux", "Automatización", "Bash"]
 categories: ["SysAdmin"]
