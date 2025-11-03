@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sat, 25 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
+&lt;/h1&gt;&lt;p&gt;Docker permite empaquetar aplicaciones y dependencias en contenedores ligeros.&lt;/p&gt;
+&lt;h2 id="instalar-docker"&gt;Instalar Docker
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install docker.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="ejecutar-un-contenedor"&gt;Ejecutar un contenedor
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --name mi-contenedor ubuntu bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="crear-una-imagen-propia"&gt;Crear una imagen propia
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker build -t mi-imagen .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="gestionar-contenedores"&gt;Gestionar contenedores
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker stop mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rm mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Con estos pasos básicos, puedes empezar a usar Docker para simplificar despliegues y entornos de desarrollo.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
 &lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
 Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
 &lt;p&gt;En este artículo aprenderás a configurar &lt;strong&gt;GitHub Actions&lt;/strong&gt; para construir y desplegar tu sitio Hugo en GitHub Pages o cualquier otro servicio compatible.&lt;/p&gt;
@@ -330,54 +378,6 @@ Puedes automatizar su detección con herramientas como:&lt;/p&gt;
 Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
-&lt;/h1&gt;&lt;p&gt;Docker permite empaquetar aplicaciones y dependencias en contenedores ligeros.&lt;/p&gt;
-&lt;h2 id="instalar-docker"&gt;Instalar Docker
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install docker.io
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start docker
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="ejecutar-un-contenedor"&gt;Ejecutar un contenedor
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --name mi-contenedor ubuntu bash
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="crear-una-imagen-propia"&gt;Crear una imagen propia
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker build -t mi-imagen .
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="gestionar-contenedores"&gt;Gestionar contenedores
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker stop mi-contenedor
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rm mi-contenedor
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;Con estos pasos básicos, puedes empezar a usar Docker para simplificar despliegues y entornos de desarrollo.&lt;/p&gt;
 &lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
 &lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
 Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
