@@ -5,7 +5,7 @@
 &lt;h2 id="qué-es-un-contenedor"&gt;¿Qué es un contenedor?
 &lt;/h2&gt;&lt;p&gt;Un &lt;strong&gt;contenedor&lt;/strong&gt; es una instancia ejecutable de una imagen. Las imágenes son plantillas inmutables que definen el entorno y el software que se ejecutará dentro del contenedor.&lt;br&gt;
 A diferencia de las máquinas virtuales, los contenedores comparten el &lt;strong&gt;kernel del sistema operativo&lt;/strong&gt; del host, lo que los hace mucho más ligeros y rápidos.&lt;/p&gt;
-&lt;p&gt;📦 &lt;strong&gt;Ventajas principales:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ventajas principales:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Aislamiento de procesos y dependencias&lt;/li&gt;
 &lt;li&gt;Portabilidad entre entornos (local, staging, producción)&lt;/li&gt;
