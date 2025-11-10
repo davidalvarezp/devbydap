@@ -23,7 +23,7 @@ En este artículo veremos cómo instalar Docker, ejecutar tu primer contenedor, 
 Un **contenedor** es una instancia ejecutable de una imagen. Las imágenes son plantillas inmutables que definen el entorno y el software que se ejecutará dentro del contenedor.  
 A diferencia de las máquinas virtuales, los contenedores comparten el **kernel del sistema operativo** del host, lo que los hace mucho más ligeros y rápidos.
 
-📦 **Ventajas principales:**
+**Ventajas principales:**
 - Aislamiento de procesos y dependencias  
 - Portabilidad entre entornos (local, staging, producción)  
 - Despliegues consistentes y reproducibles  
