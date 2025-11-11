@@ -7,7 +7,7 @@ tags: ["MySQL", "PostgreSQL", "Bases de datos", "Rendimiento"]
 categories: ["SysAdmin"]
 draft: false
 keywords: ["mysql", "postgresql", "optimización", "tuning", "bases de datos"]
-date: "2025-11-19"
+date: "2025-11-10"
 ---
 
 # Optimización de bases de datos MySQL y PostgreSQL
