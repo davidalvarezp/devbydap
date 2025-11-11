@@ -8,7 +8,7 @@ license: false
 readingtime: false
 robots: noindex
 ---
-
+ 
 # Aviso Legal y Políticas
 
 Bienvenido a **devbydap**. En esta página encontrarás toda la información legal, de privacidad y cookies relacionada con el sitio.
