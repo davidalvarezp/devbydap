@@ -9,5 +9,3 @@ menu:
         params:
             icon: home
 ---
-
-¡Bienvendidx a DevByDAP!
