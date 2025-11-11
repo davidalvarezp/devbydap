@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 Allow: /p/
+Disallow: /archivo/
+Disallow: /buscar/
+Disallow: /legal/
 Disallow: /tags/
 Disallow: /tag/
 Disallow: /categories/
