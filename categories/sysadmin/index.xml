@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitorización de contenedores con cAdvisor y Prometheus</title><link>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</link><pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</guid><description>&lt;h1 id="monitorización-de-contenedores-con-cadvisor-y-prometheus"&gt;Monitorización de contenedores con cAdvisor y Prometheus
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Seguridad avanzada en Linux con AppArmor y SELinux</title><link>https://dev.davidalvarezp.com/p/seguridad-linux-apparmor-selinux/</link><pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seguridad-linux-apparmor-selinux/</guid><description>&lt;h1 id="seguridad-avanzada-en-linux-con-apparmor-y-selinux"&gt;Seguridad avanzada en Linux con AppArmor y SELinux
+&lt;/h1&gt;&lt;p&gt;Linux ofrece mecanismos avanzados de control de acceso como &lt;strong&gt;AppArmor&lt;/strong&gt; y &lt;strong&gt;SELinux&lt;/strong&gt;, que permiten restringir la ejecución de procesos y el acceso a archivos sensibles. En este artículo exploraremos su configuración y buenas prácticas.&lt;/p&gt;
+&lt;h2 id="apparmor"&gt;AppArmor
+&lt;/h2&gt;&lt;p&gt;AppArmor aplica perfiles de seguridad a procesos individuales, limitando qué recursos pueden usar.&lt;/p&gt;
+&lt;h3 id="instalación-y-activación"&gt;Instalación y activación
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install apparmor apparmor-utils -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; apparmor
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start apparmor
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo aa-status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="configuración-de-perfiles"&gt;Configuración de perfiles
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Crear un perfil personalizado:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo aa-genprof /usr/bin/mi-aplicacion
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo aa-enforce /etc/apparmor.d/mi-aplicacion
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Monitorear violaciones con &lt;code&gt;dmesg&lt;/code&gt; o &lt;code&gt;/var/log/syslog&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="selinux"&gt;SELinux
+&lt;/h2&gt;&lt;p&gt;SELinux proporciona &lt;strong&gt;Mandatory Access Control (MAC)&lt;/strong&gt; para un control granular sobre procesos y recursos.&lt;/p&gt;
+&lt;h3 id="instalación-y-estado"&gt;Instalación y estado
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install selinux-basics selinux-policy-default -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo selinux-activate
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sestatus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="modos-de-selinux"&gt;Modos de SELinux
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Enforcing: aplica políticas estrictas&lt;/li&gt;
+&lt;li&gt;Permissive: registra violaciones pero no bloquea&lt;/li&gt;
+&lt;li&gt;Disabled: desactiva SELinux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="políticas-y-contextos"&gt;Políticas y contextos
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Visualizar contextos: &lt;code&gt;ls -Z /etc/passwd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Cambiar contexto: &lt;code&gt;chcon -t httpd_sys_content_t /var/www/html&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Mantener perfiles actualizados y revisados periódicamente&lt;/li&gt;
+&lt;li&gt;Auditar logs para detectar violaciones&lt;/li&gt;
+&lt;li&gt;Combinar con firewall y hardening adicional&lt;/li&gt;
+&lt;li&gt;Evitar deshabilitar SELinux a menos que sea estrictamente necesario&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Combinando AppArmor y SELinux, se logra un &lt;strong&gt;entorno de ejecución controlado&lt;/strong&gt;, reduciendo riesgos de vulnerabilidades y exploits.&lt;/p&gt;</description></item><item><title>Monitorización de contenedores con cAdvisor y Prometheus</title><link>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</link><pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</guid><description>&lt;h1 id="monitorización-de-contenedores-con-cadvisor-y-prometheus"&gt;Monitorización de contenedores con cAdvisor y Prometheus
 &lt;/h1&gt;&lt;p&gt;cAdvisor proporciona métricas en tiempo real de contenedores Docker. Combinado con Prometheus, permite análisis histórico y alertas basadas en uso de recursos.&lt;/p&gt;
 &lt;h2 id="instalación-de-cadvisor"&gt;Instalación de cAdvisor
 &lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
