@@ -9,7 +9,7 @@ date: "2025-10-30"
 keywords: ["terraform", "infraestructura como código", "IaC", "cloud", "automatización"]
 draft: false
 ---
-
+ 
 # Introducción a Terraform: Infraestructura como Código
 
 Terraform es una herramienta de Infraestructura como Código (IaC) que permite definir, provisionar y gestionar infraestructura en la nube de forma declarativa. Con Terraform puedes crear recursos en AWS, Azure, Google Cloud y otros proveedores de manera consistente y reproducible.
