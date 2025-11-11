@@ -1,1 +1,905 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
+&lt;/h1&gt;&lt;p&gt;En entornos modernos, la observabilidad es fundamental para garantizar la disponibilidad y el rendimiento de los sistemas. Prometheus y Grafana forman una de las combinaciones más potentes para recolectar, almacenar y visualizar métricas de servidores y servicios.&lt;/p&gt;
+&lt;p&gt;Prometheus se encarga de recopilar y almacenar métricas mediante un modelo pull (consultando endpoints /metrics), mientras que Grafana actúa como interfaz visual, permitiendo construir paneles interactivos y alertas basadas en esas métricas.&lt;/p&gt;
+&lt;h2 id="instalar-prometheus"&gt;Instalar Prometheus
+&lt;/h2&gt;&lt;p&gt;Para comenzar, instala Prometheus desde los repositorios oficiales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El servicio Prometheus se instala y se ejecuta automáticamente como un demonio del sistema (prometheus.service). Puedes verificar su estado con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl status prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por defecto, Prometheus expone su interfaz web en el puerto 9090, accesible desde http://&amp;lt;ip_servidor&amp;gt;:9090. Desde ahí puedes ejecutar consultas PromQL (Prometheus Query Language) para inspeccionar métricas.&lt;/p&gt;
+&lt;p&gt;La configuración principal se encuentra en /etc/prometheus/prometheus.yml, donde puedes definir los targets (hosts o servicios) desde los cuales se recopilarán métricas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;scrape_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;job_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;servidores&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;static_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;targets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;localhost:9100&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Para obtener métricas de sistemas Linux (CPU, RAM, red, disco, etc.), instala el exporter correspondiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus-node-exporter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este componente expone métricas del sistema en :9100/metrics, que luego Prometheus recolectará automáticamente.&lt;/p&gt;
+&lt;h2 id="instalar-grafana"&gt;Instalar Grafana
+&lt;/h2&gt;&lt;p&gt;Grafana es la capa de visualización de la pila de monitorización. Permite crear dashboards personalizables y configurar alertas.&lt;/p&gt;
+&lt;p&gt;Instala Grafana con los siguientes comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install grafana
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El servicio se ejecuta por defecto en el puerto 3000 (http://&amp;lt;ip_servidor&amp;gt;:3000) y las credenciales iniciales son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usuario: admin&lt;/li&gt;
+&lt;li&gt;Contraseña: admin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se recomienda cambiar la contraseña en el primer inicio de sesión.&lt;/p&gt;
+&lt;p&gt;Una vez dentro, el siguiente paso es conectar Prometheus como fuente de datos (Data Source):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En el panel lateral, ve a Connections → Data sources → Add data source.&lt;/li&gt;
+&lt;li&gt;Selecciona Prometheus.&lt;/li&gt;
+&lt;li&gt;En el campo URL, introduce:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://localhost:9090
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Guarda la configuración haciendo clic en Save &amp;amp; Test.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="configurar-dashboards"&gt;Configurar dashboards
+&lt;/h2&gt;&lt;p&gt;Una vez establecida la conexión, puedes crear dashboards personalizados para visualizar métricas clave.&lt;/p&gt;
+&lt;p&gt;Algunos ejemplos de paneles recomendados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU Usage: métrica node_cpu_seconds_total filtrada por modo idle o user.&lt;/li&gt;
+&lt;li&gt;Memoria RAM: node_memory_MemAvailable_bytes y node_memory_MemTotal_bytes.&lt;/li&gt;
+&lt;li&gt;Tráfico de red: node_network_receive_bytes_total y node_network_transmit_bytes_total.&lt;/li&gt;
+&lt;li&gt;Espacio en disco: node_filesystem_avail_bytes y node_filesystem_size_bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Puedes importar dashboards preconstruidos desde grafana.com/grafana/dashboards
+Un ejemplo muy usado es el Node Exporter Full (ID: 1860), que ofrece visualizaciones completas para hosts Linux.&lt;/p&gt;
+&lt;p&gt;Para importar un dashboard:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En Grafana, ve a Dashboards → Import.&lt;/li&gt;
+&lt;li&gt;Introduce el ID (1860) y selecciona la fuente de datos Prometheus.&lt;/li&gt;
+&lt;li&gt;Haz clic en Load y luego Import.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="buenas-prácticas-de-monitorización"&gt;Buenas prácticas de monitorización
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Mantén Prometheus y Grafana actualizados a la última versión estable.&lt;/li&gt;
+&lt;li&gt;Limita el acceso web mediante autenticación o VPN.&lt;/li&gt;
+&lt;li&gt;Configura retención de métricas según tus necesidades (&amp;ndash;storage.tsdb.retention.time=15d).&lt;/li&gt;
+&lt;li&gt;Crea alertas en Grafana para CPU alta, uso de memoria o pérdida de conectividad.&lt;/li&gt;
+&lt;li&gt;Centraliza la monitorización de múltiples servidores en una misma instancia de Prometheus mediante federation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con Prometheus y Grafana, puedes obtener una visión completa del estado de tus servidores y anticiparte a problemas de rendimiento o disponibilidad. Esta combinación permite implementar una cultura de observabilidad, clave en entornos DevOps y de producción moderna.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con esto podrás monitorizar tus servidores y anticiparte a problemas de rendimiento.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Cómo detectar y mitigar ataques de fuerza bruta en SSH</title><link>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</link><pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</guid><description>&lt;h1 id="cómo-detectar-y-mitigar-ataques-de-fuerza-bruta-en-ssh"&gt;Cómo detectar y mitigar ataques de fuerza bruta en SSH
+&lt;/h1&gt;&lt;p&gt;Los ataques de fuerza bruta son intentos automatizados y repetitivos para adivinar contraseñas de usuarios a través del servicio SSH (Secure Shell). Este tipo de ataque aprovecha configuraciones débiles o credenciales predecibles, y puede comprometer por completo un servidor si no se aplican medidas de protección adecuadas.&lt;/p&gt;
+&lt;h2 id="revisar-intentos-de-acceso"&gt;Revisar intentos de acceso
+&lt;/h2&gt;&lt;p&gt;El primer paso para mitigar un ataque de fuerza bruta es detectar los intentos fallidos de autenticación. El log del sistema registra estos eventos en /var/log/auth.log (en distribuciones basadas en Debian) o /var/log/secure (en Red Hat y derivados).&lt;/p&gt;
+&lt;p&gt;Para listar los intentos fallidos puedes usar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;grep &lt;span class="s2"&gt;&amp;#34;Failed password&amp;#34;&lt;/span&gt; /var/log/auth.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este comando muestra líneas con información sobre la IP origen, el usuario objetivo y la hora del intento. También puedes contar el número de ataques por dirección IP:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;grep &lt;span class="s2"&gt;&amp;#34;Failed password&amp;#34;&lt;/span&gt; /var/log/auth.log &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $(NF-3)}&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c &lt;span class="p"&gt;|&lt;/span&gt; sort -nr &lt;span class="p"&gt;|&lt;/span&gt; head
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este análisis permite identificar patrones de ataque y decidir si es necesario bloquear direcciones IP manualmente mediante iptables, ufw, o herramientas de detección automática.&lt;/p&gt;
+&lt;h2 id="configurar-fail2ban"&gt;Configurar fail2ban
+&lt;/h2&gt;&lt;p&gt;Fail2ban es una herramienta que analiza los logs del sistema y bloquea automáticamente las direcciones IP que muestran un comportamiento sospechoso (por ejemplo, múltiples intentos de login fallidos en poco tiempo).&lt;/p&gt;
+&lt;p&gt;Para instalar y habilitar fail2ban:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Una vez instalado, puedes crear una configuración personalizada en /etc/fail2ban/jail.local:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;sshd&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;enabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;filter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sshd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;logpath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; /var/log/auth.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;maxretry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;bantime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;findtime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;En este ejemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;maxretry define el número máximo de intentos fallidos antes del bloqueo.&lt;/li&gt;
+&lt;li&gt;bantime indica el tiempo (en segundos) que la IP permanecerá bloqueada.&lt;/li&gt;
+&lt;li&gt;findtime establece el periodo de análisis para esos intentos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para verificar que fail2ban está funcionando correctamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo fail2ban-client status sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este comando muestra cuántas IPs han sido bloqueadas y cuáles siguen activas.&lt;/p&gt;
+&lt;h2 id="ajustar-configuración-de-ssh"&gt;Ajustar configuración de SSH
+&lt;/h2&gt;&lt;p&gt;Una configuración segura del demonio SSH (sshd) es esencial para reducir la superficie de ataque. Edita el archivo /etc/ssh/sshd_config y aplica los siguientes ajustes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambiar el puerto por defecto:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Port &lt;span class="m"&gt;2222&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto reduce los intentos automatizados dirigidos al puerto 22.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deshabilitar el acceso directo como root:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PermitRootLogin no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Evita que un atacante intente adivinar la contraseña del usuario root directamente.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usar autenticación por claves públicas en lugar de contraseñas:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PasswordAuthentication no
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PubkeyAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Las claves SSH utilizan criptografía asimétrica (RSA, Ed25519 o ECDSA) y son prácticamente imposibles de forzar por métodos de fuerza bruta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Limitar usuarios permitidos:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;AllowUsers admin devops
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Solo los usuarios listados podrán autenticarse vía SSH.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activar logs detallados:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;LogLevel VERBOSE
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto facilita auditorías y análisis de incidentes.&lt;/p&gt;
+&lt;p&gt;Una vez realizados los cambios, recarga el servicio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl reload ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="monitoreo-continuo-y-alertas"&gt;Monitoreo continuo y alertas
+&lt;/h2&gt;&lt;p&gt;Además de fail2ban, es recomendable implementar monitoreo continuo mediante herramientas como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OSSEC o Wazuh: detección de intrusiones y correlación de eventos.&lt;/li&gt;
+&lt;li&gt;Prometheus + Grafana: visualización de métricas de intentos SSH.&lt;/li&gt;
+&lt;li&gt;Syslog remoto o SIEM (Security Information and Event Management) para correlacionar eventos entre múltiples servidores.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;La protección de servicios SSH es un pilar esencial de la seguridad en servidores Linux. Detectar intentos de fuerza bruta, aplicar reglas de bloqueo automático con fail2ban y endurecer la configuración de SSH son pasos críticos para minimizar riesgos.&lt;/p&gt;
+&lt;p&gt;.&amp;gt; Estas medidas reducen significativamente el riesgo de ataques automatizados y mejoran la resiliencia general de tu infraestructura.&lt;/p&gt;</description></item><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
+&lt;/h1&gt;&lt;p&gt;Docker ha revolucionado la forma en que desarrollamos, desplegamos y ejecutamos aplicaciones. En lugar de lidiar con entornos inconsistentes o dependencias rotas, Docker permite &lt;strong&gt;empaquetar todo lo necesario&lt;/strong&gt; (código, librerías y configuraciones) dentro de &lt;strong&gt;contenedores ligeros y portables&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos cómo instalar Docker, ejecutar tu primer contenedor, crear una imagen personalizada y gestionar contenedores en tu sistema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="qué-es-un-contenedor"&gt;¿Qué es un contenedor?
+&lt;/h2&gt;&lt;p&gt;Un &lt;strong&gt;contenedor&lt;/strong&gt; es una instancia ejecutable de una imagen. Las imágenes son plantillas inmutables que definen el entorno y el software que se ejecutará dentro del contenedor.&lt;br&gt;
+A diferencia de las máquinas virtuales, los contenedores comparten el &lt;strong&gt;kernel del sistema operativo&lt;/strong&gt; del host, lo que los hace mucho más ligeros y rápidos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ventajas principales:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aislamiento de procesos y dependencias&lt;/li&gt;
+&lt;li&gt;Portabilidad entre entornos (local, staging, producción)&lt;/li&gt;
+&lt;li&gt;Despliegues consistentes y reproducibles&lt;/li&gt;
+&lt;li&gt;Menor consumo de recursos frente a las VMs tradicionales&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="instalación-de-docker"&gt;Instalación de Docker
+&lt;/h2&gt;&lt;p&gt;En distribuciones basadas en Debian o Ubuntu, puedes instalar Docker directamente desde los repositorios oficiales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install docker.io -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Verifica que la instalación haya sido exitosa con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y prueba que el servicio esté en ejecución:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl status docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Consejo: Si prefieres evitar usar sudo cada vez, agrega tu usuario al grupo docker:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;newgrp docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="ejecutar-tu-primer-contenedor"&gt;Ejecutar tu primer contenedor
+&lt;/h2&gt;&lt;p&gt;El siguiente comando descarga la imagen oficial de Ubuntu y ejecuta un contenedor interactivo con una shell bash:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --name mi-contenedor ubuntu bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-it: Permite interactuar con el contenedor (modo terminal).&lt;/li&gt;
+&lt;li&gt;&amp;ndash;name: Asigna un nombre personalizado al contenedor.&lt;/li&gt;
+&lt;li&gt;ubuntu: Es la imagen base.&lt;/li&gt;
+&lt;li&gt;bash: El comando que se ejecutará dentro del contenedor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dentro del contenedor, notarás un prompt similar a este:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root@&amp;lt;container_id&amp;gt;:/#
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Estás dentro de un entorno aislado, con su propio sistema de archivos. Puedes instalar paquetes, ejecutar comandos, o incluso montar volúmenes externos.&lt;/p&gt;
+&lt;p&gt;Para salir sin detener el contenedor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="crear-tu-propia-imagen"&gt;Crear tu propia imagen
+&lt;/h2&gt;&lt;p&gt;Supongamos que quieres crear una imagen personalizada basada en Ubuntu que tenga curl y git instalados.
+Primero, crea un archivo llamado Dockerfile en un directorio vacío con el siguiente contenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-dockerfile" data-lang="dockerfile"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Imagen base&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ubuntu:latest&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Instalar dependencias&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;RUN&lt;/span&gt; apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install -y curl git&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Comando por defecto&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;bash&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Luego, construye la imagen con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker build -t mi-imagen .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-t mi-imagen: Asigna un nombre a la imagen.&lt;/li&gt;
+&lt;li&gt;.: Indica el contexto de construcción (directorio actual).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para comprobar que se creó correctamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y puedes ejecutarla con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it mi-imagen
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="gestión-básica-de-contenedores"&gt;Gestión básica de contenedores
+&lt;/h2&gt;&lt;p&gt;Una vez que empieces a usar Docker de forma habitual, necesitarás gestionar tus contenedores activos e inactivos.&lt;/p&gt;
+&lt;p&gt;Listar contenedores en ejecución:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Listar todos los contenedores (incluidos los detenidos):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Detener un contenedor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker stop mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Eliminar un contenedor detenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rm mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Eliminar imágenes que ya no necesites:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rmi mi-imagen
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y para limpiar recursos huérfanos o temporales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker system prune
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="docker-hub-el-repositorio-de-imágenes"&gt;Docker Hub: el repositorio de imágenes
+&lt;/h2&gt;&lt;p&gt;Docker Hub es el repositorio público oficial de Docker, donde puedes descargar imágenes ya preparadas o subir tus propias imágenes.
+Por ejemplo, puedes ejecutar una aplicación Node.js sin necesidad de instalar Node en tu host:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --rm node:20 bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Docker simplifica el ciclo de vida del desarrollo al empaquetar entornos completos en contenedores reproducibles y portables.&lt;/p&gt;
+&lt;p&gt;Con unos pocos comandos, puedes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crear y ejecutar contenedores en segundos&lt;/li&gt;
+&lt;li&gt;Construir imágenes personalizadas&lt;/li&gt;
+&lt;li&gt;Mantener entornos limpios y consistentes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si sigues estos pasos básicos, tendrás las bases sólidas para adentrarte en temas más avanzados como Docker Compose, volúmenes persistentes, y redes personalizadas, que veremos en futuras entregas.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con Docker, la frase “en mi máquina sí funciona” pasa a ser cosa del pasado.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
+&lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
+Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
+&lt;p&gt;En esta guía aprenderás cómo crear un &lt;strong&gt;script Bash&lt;/strong&gt; y cómo programarlo con &lt;strong&gt;Cron&lt;/strong&gt; para que se ejecute de manera periódica.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crear-un-script-bash"&gt;Crear un script Bash
+&lt;/h2&gt;&lt;p&gt;Comienza escribiendo un script simple. Por ejemplo, un script para realizar un respaldo de base de datos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Backup de la base de datos iniciado&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# comando de backup aquí&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Guárdalo como &lt;code&gt;backup.sh&lt;/code&gt; en el directorio deseado, por ejemplo &lt;code&gt;/usr/local/bin/&lt;/code&gt; o &lt;code&gt;/home/usuario/scripts/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Este script puede incluir cualquier comando o secuencia de tareas que desees automatizar: copias de seguridad, limpieza de logs, sincronización de archivos, actualizaciones, etc.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="hacerlo-ejecutable"&gt;Hacerlo ejecutable
+&lt;/h2&gt;&lt;p&gt;Antes de poder ejecutarlo, debes dar permisos de ejecución al archivo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chmod +x backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Puedes probarlo ejecutándolo manualmente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Si todo funciona correctamente, verás el mensaje en consola.&lt;br&gt;
+Recuerda que también puedes revisar logs o redirigir la salida del script a un archivo, por ejemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="programar-el-script-con-cron"&gt;Programar el script con Cron
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Cron&lt;/strong&gt; es un demonio del sistema que permite programar tareas recurrentes (llamadas &lt;em&gt;cron jobs&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Edita la tabla de Cron con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;crontab -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Agrega una línea como esta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * /ruta/a/backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto ejecutará el script &lt;strong&gt;todos los días a las 2:00 AM&lt;/strong&gt;.&lt;br&gt;
+La sintaxis de Cron sigue el formato:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌───────────── minuto (0 - 59)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌───────────── hora (0 - 23)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────── día del mes (1 - 31)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ ┌───────────── mes (1 - 12)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ ┌───────────── día de la semana (0 - 7) (domingo = 0 o 7)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* * * * * comando a ejecutar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 3 * * 1&lt;/code&gt; → Ejecuta todos los lunes a las 3:00 AM&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*/15 * * * *&lt;/code&gt; → Ejecuta cada 15 minutos&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@reboot&lt;/code&gt; → Ejecuta el comando al iniciar el sistema&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="consejos-útiles"&gt;Consejos útiles
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa &lt;strong&gt;rutas absolutas&lt;/strong&gt; dentro del script (&lt;code&gt;/usr/bin/pg_dump&lt;/code&gt; en lugar de &lt;code&gt;pg_dump&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Redirige salidas de error a un log para detectar fallos:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/ruta/a/backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Comprueba los logs de Cron si algo no funciona:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo grep CRON /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Usa &lt;code&gt;crontab -l&lt;/code&gt; para listar las tareas programadas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con &lt;strong&gt;Bash + Cron&lt;/strong&gt;, puedes automatizar casi cualquier tarea repetitiva en tu servidor: desde respaldos y actualizaciones, hasta mantenimiento y reportes automáticos.&lt;/p&gt;
+&lt;p&gt;Implementar una estrategia de automatización no solo mejora la eficiencia, sino que también garantiza &lt;strong&gt;consistencia&lt;/strong&gt; y &lt;strong&gt;disponibilidad&lt;/strong&gt; en tus operaciones diarias.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; un buen sysadmin no trabaja más, trabaja más &lt;em&gt;automatizado&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Guía práctica de hardening en Linux</title><link>https://dev.davidalvarezp.com/p/hardening-linux/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/hardening-linux/</guid><description>&lt;h1 id="guía-práctica-de-hardening-en-linux"&gt;Guía práctica de hardening en Linux
+&lt;/h1&gt;&lt;p&gt;El &lt;strong&gt;hardening&lt;/strong&gt; (o endurecimiento del sistema) es el proceso de reducir la superficie de ataque de un servidor, minimizando las vulnerabilidades y mejorando su resistencia frente a amenazas.&lt;br&gt;
+En esta guía aprenderás, paso a paso, cómo aplicar buenas prácticas de seguridad en tu servidor &lt;strong&gt;Linux&lt;/strong&gt;, desde la gestión de usuarios hasta la protección de servicios y registros del sistema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="mantén-tu-sistema-actualizado"&gt;Mantén tu sistema actualizado
+&lt;/h2&gt;&lt;p&gt;Un sistema desactualizado es uno de los principales vectores de ataque. Las actualizaciones corrigen vulnerabilidades conocidas, por lo que mantener tu distribución al día debe ser una prioridad.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además, puedes habilitar actualizaciones automáticas para paquetes críticos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install unattended-upgrades
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo dpkg-reconfigure --priority&lt;span class="o"&gt;=&lt;/span&gt;low unattended-upgrades
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto garantizará que tu sistema reciba parches de seguridad incluso si olvidas actualizarlos manualmente.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="gestión-segura-de-usuarios-y-permisos"&gt;Gestión segura de usuarios y permisos
+&lt;/h2&gt;&lt;p&gt;Controlar quién puede acceder al sistema es esencial. Algunas recomendaciones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deshabilita o elimina cuentas innecesarias:&lt;/strong&gt;&lt;br&gt;
+Cada cuenta es un posible punto de entrada. Usa &lt;code&gt;sudo deluser&lt;/code&gt; o &lt;code&gt;sudo usermod -L usuario&lt;/code&gt; para desactivarlas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Evita el uso del usuario root:&lt;/strong&gt;&lt;br&gt;
+Trabaja con una cuenta estándar y usa &lt;code&gt;sudo&lt;/code&gt; para tareas administrativas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo adduser admin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo usermod -aG sudo admin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Usa contraseñas fuertes o autenticación multifactor:&lt;/strong&gt;&lt;br&gt;
+Apóyate en herramientas como &lt;code&gt;pam_cracklib&lt;/code&gt; o &lt;code&gt;libpam-pwquality&lt;/code&gt; para reforzar políticas de contraseñas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Revisa permisos de archivos críticos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;600&lt;/span&gt; /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;644&lt;/span&gt; /etc/passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="configura-un-ssh-seguro"&gt;Configura un SSH seguro
+&lt;/h2&gt;&lt;p&gt;SSH es la puerta de entrada más usada a los servidores Linux, por lo que merece especial atención.&lt;/p&gt;
+&lt;p&gt;Edita el archivo de configuración:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y aplica las siguientes medidas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cambia el puerto por defecto&lt;/strong&gt; (por ejemplo, al 2222):
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Port 2222
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Desactiva el login directo de root:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PermitRootLogin no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Usa autenticación con clave pública:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PasswordAuthentication no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Habilita solo los protocolos seguros:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Protocol 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finalmente, reinicia el servicio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="firewall-y-servicios"&gt;Firewall y servicios
+&lt;/h2&gt;&lt;p&gt;Un firewall bien configurado es la primera línea de defensa frente a accesos no deseados.&lt;br&gt;
+En Ubuntu y derivados, &lt;strong&gt;UFW (Uncomplicated Firewall)&lt;/strong&gt; simplifica esta tarea:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw &lt;span class="nb"&gt;enable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 22/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 80/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 443/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Desactiva servicios innecesarios:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl disable nombre_servicio
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl stop nombre_servicio
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lista los servicios activos:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ss -tuln
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl list-unit-files --type&lt;span class="o"&gt;=&lt;/span&gt;service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cuantos menos servicios en ejecución, menor será la superficie de ataque.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="monitoreo-y-registros"&gt;Monitoreo y registros
+&lt;/h2&gt;&lt;p&gt;Un servidor seguro no solo se protege, también &lt;strong&gt;se vigila&lt;/strong&gt;.&lt;br&gt;
+Configura herramientas que te alerten ante comportamientos sospechosos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fail2ban:&lt;/strong&gt; bloquea IPs que realizan intentos de acceso fallidos repetidos.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Auditd:&lt;/strong&gt; registra eventos importantes del sistema.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install auditd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; auditd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Puedes revisar los logs con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo aureport -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Revisión periódica de logs:&lt;/strong&gt;
+Los archivos más relevantes se encuentran en &lt;code&gt;/var/log/&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;syslog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fail2ban&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Analizar estos registros te permitirá detectar patrones de ataque o configuraciones inseguras.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="medidas-adicionales-de-hardening"&gt;Medidas adicionales de hardening
+&lt;/h2&gt;&lt;p&gt;Si quieres ir un paso más allá:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instala &lt;strong&gt;AppArmor&lt;/strong&gt; o &lt;strong&gt;SELinux&lt;/strong&gt; para control de acceso obligatorio (MAC).&lt;/li&gt;
+&lt;li&gt;Configura &lt;strong&gt;logs remotos&lt;/strong&gt; o alertas por correo.&lt;/li&gt;
+&lt;li&gt;Implementa &lt;strong&gt;copias de seguridad cifradas&lt;/strong&gt; y regulares.&lt;/li&gt;
+&lt;li&gt;Usa &lt;strong&gt;integridad de archivos&lt;/strong&gt; con herramientas como &lt;code&gt;AIDE&lt;/code&gt; o &lt;code&gt;Tripwire&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;hardening en Linux&lt;/strong&gt; no es una acción puntual, sino un proceso continuo.&lt;br&gt;
+Aplicar las prácticas básicas que hemos visto —mantener el sistema actualizado, controlar usuarios, asegurar SSH, configurar un firewall y monitorizar los registros— puede marcar la diferencia entre un servidor seguro y uno vulnerable.&lt;/p&gt;
+&lt;p&gt;Dedicar tiempo a reforzar la seguridad desde el principio te ahorrará muchos problemas en el futuro.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;Recuerda:&lt;/strong&gt; la mejor defensa es la prevención.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>

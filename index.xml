@@ -1,128 +1,719 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía Sintaxis Markdown</title><link>https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/</guid><description>&lt;img src="https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Guía Sintaxis Markdown" /&gt;&lt;p&gt;Este artículo ofrece un ejemplo de la sintaxis básica de &lt;strong&gt;Markdown&lt;/strong&gt; que puede utilizarse en los archivos de contenido de &lt;strong&gt;Hugo&lt;/strong&gt;, y además muestra cómo se decoran los elementos HTML básicos con CSS dentro de un tema de Hugo.&lt;/p&gt;
-&lt;h2 id="encabezados"&gt;Encabezados
-&lt;/h2&gt;&lt;p&gt;Los elementos HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; representan seis niveles de encabezados de sección. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; es el nivel más alto, mientras que &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; es el más bajo.&lt;/p&gt;
-&lt;h1 id="h1"&gt;H1
-&lt;/h1&gt;&lt;h2 id="h2"&gt;H2
-&lt;/h2&gt;&lt;h3 id="h3"&gt;H3
-&lt;/h3&gt;&lt;h4 id="h4"&gt;H4
-&lt;/h4&gt;&lt;h5 id="h5"&gt;H5
-&lt;/h5&gt;&lt;h6 id="h6"&gt;H6
-&lt;/h6&gt;&lt;h2 id="párrafos"&gt;Párrafos
-&lt;/h2&gt;&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
-&lt;p&gt;¿Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
-&lt;h2 id="citas-en-bloque"&gt;Citas en bloque
-&lt;/h2&gt;&lt;p&gt;El elemento &lt;em&gt;blockquote&lt;/em&gt; representa contenido citado de otra fuente, opcionalmente con una referencia o cita dentro de un elemento &lt;code&gt;footer&lt;/code&gt; o &lt;code&gt;cite&lt;/code&gt;, y con posibles cambios en línea como anotaciones o abreviaturas.&lt;/p&gt;
-&lt;h4 id="cita-sin-atribución"&gt;Cita sin atribución
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.&lt;br&gt;
-&lt;strong&gt;Nota&lt;/strong&gt; que puedes usar &lt;em&gt;sintaxis Markdown&lt;/em&gt; dentro de una cita.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id="cita-con-atribución"&gt;Cita con atribución
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;No comuniques compartiendo memoria, comparte memoria comunicándote.&lt;br&gt;
-— &lt;cite&gt;Rob Pike&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="tablas"&gt;Tablas
-&lt;/h2&gt;&lt;p&gt;Las tablas no forman parte del estándar básico de Markdown, pero &lt;strong&gt;Hugo&lt;/strong&gt; las admite de forma nativa.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Nombre&lt;/th&gt;
-&lt;th&gt;Edad&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Bob&lt;/td&gt;
-&lt;td&gt;27&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Alicia&lt;/td&gt;
-&lt;td&gt;23&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id="markdown-en-línea-dentro-de-tablas"&gt;Markdown en línea dentro de tablas
-&lt;/h4&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Italics&lt;/th&gt;
-&lt;th&gt;Bold&lt;/th&gt;
-&lt;th&gt;Code&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;A&lt;/th&gt;
-&lt;th&gt;B&lt;/th&gt;
-&lt;th&gt;C&lt;/th&gt;
-&lt;th&gt;D&lt;/th&gt;
-&lt;th&gt;E&lt;/th&gt;
-&lt;th&gt;F&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
-&lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
-&lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
-&lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
-&lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
-&lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="bloques-de-código"&gt;Bloques de código
-&lt;/h2&gt;&lt;h4 id="bloque-de-código-con-comillas-invertidas"&gt;Bloque de código con comillas invertidas
-&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap | SysAdmin &amp; CyberSec on devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content in devbydap | SysAdmin &amp; CyberSec on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
+&lt;/h1&gt;&lt;p&gt;En entornos modernos, la observabilidad es fundamental para garantizar la disponibilidad y el rendimiento de los sistemas. Prometheus y Grafana forman una de las combinaciones más potentes para recolectar, almacenar y visualizar métricas de servidores y servicios.&lt;/p&gt;
+&lt;p&gt;Prometheus se encarga de recopilar y almacenar métricas mediante un modelo pull (consultando endpoints /metrics), mientras que Grafana actúa como interfaz visual, permitiendo construir paneles interactivos y alertas basadas en esas métricas.&lt;/p&gt;
+&lt;h2 id="instalar-prometheus"&gt;Instalar Prometheus
+&lt;/h2&gt;&lt;p&gt;Para comenzar, instala Prometheus desde los repositorios oficiales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
-&lt;/span&gt;&lt;span class="lnt"&gt; 2
-&lt;/span&gt;&lt;span class="lnt"&gt; 3
-&lt;/span&gt;&lt;span class="lnt"&gt; 4
-&lt;/span&gt;&lt;span class="lnt"&gt; 5
-&lt;/span&gt;&lt;span class="lnt"&gt; 6
-&lt;/span&gt;&lt;span class="lnt"&gt; 7
-&lt;/span&gt;&lt;span class="lnt"&gt; 8
-&lt;/span&gt;&lt;span class="lnt"&gt; 9
-&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Documento HTML5 de ejemplo&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Prueba&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id="bloque-de-código-con-indentación-de-cuatro-espacios"&gt;Bloque de código con indentación de cuatro espacios
-&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang=&amp;quot;es&amp;quot;&amp;gt;
-&amp;lt;head&amp;gt;
-&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
-&amp;lt;title&amp;gt;Documento HTML5 de ejemplo&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;p&amp;gt;Prueba&amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="bloque-de-código-con-el-shortcode-interno-de-resaltado-de-hugo"&gt;Bloque de código con el shortcode interno de resaltado de Hugo
-&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;&lt;p&gt;El servicio Prometheus se instala y se ejecuta automáticamente como un demonio del sistema (prometheus.service). Puedes verificar su estado con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl status prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por defecto, Prometheus expone su interfaz web en el puerto 9090, accesible desde http://&amp;lt;ip_servidor&amp;gt;:9090. Desde ahí puedes ejecutar consultas PromQL (Prometheus Query Language) para inspeccionar métricas.&lt;/p&gt;
+&lt;p&gt;La configuración principal se encuentra en /etc/prometheus/prometheus.yml, donde puedes definir los targets (hosts o servicios) desde los cuales se recopilarán métricas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;scrape_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;job_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;servidores&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;static_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;targets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;localhost:9100&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Para obtener métricas de sistemas Linux (CPU, RAM, red, disco, etc.), instala el exporter correspondiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus-node-exporter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este componente expone métricas del sistema en :9100/metrics, que luego Prometheus recolectará automáticamente.&lt;/p&gt;
+&lt;h2 id="instalar-grafana"&gt;Instalar Grafana
+&lt;/h2&gt;&lt;p&gt;Grafana es la capa de visualización de la pila de monitorización. Permite crear dashboards personalizables y configurar alertas.&lt;/p&gt;
+&lt;p&gt;Instala Grafana con los siguientes comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install grafana
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El servicio se ejecuta por defecto en el puerto 3000 (http://&amp;lt;ip_servidor&amp;gt;:3000) y las credenciales iniciales son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usuario: admin&lt;/li&gt;
+&lt;li&gt;Contraseña: admin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se recomienda cambiar la contraseña en el primer inicio de sesión.&lt;/p&gt;
+&lt;p&gt;Una vez dentro, el siguiente paso es conectar Prometheus como fuente de datos (Data Source):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En el panel lateral, ve a Connections → Data sources → Add data source.&lt;/li&gt;
+&lt;li&gt;Selecciona Prometheus.&lt;/li&gt;
+&lt;li&gt;En el campo URL, introduce:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://localhost:9090
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Guarda la configuración haciendo clic en Save &amp;amp; Test.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="configurar-dashboards"&gt;Configurar dashboards
+&lt;/h2&gt;&lt;p&gt;Una vez establecida la conexión, puedes crear dashboards personalizados para visualizar métricas clave.&lt;/p&gt;
+&lt;p&gt;Algunos ejemplos de paneles recomendados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU Usage: métrica node_cpu_seconds_total filtrada por modo idle o user.&lt;/li&gt;
+&lt;li&gt;Memoria RAM: node_memory_MemAvailable_bytes y node_memory_MemTotal_bytes.&lt;/li&gt;
+&lt;li&gt;Tráfico de red: node_network_receive_bytes_total y node_network_transmit_bytes_total.&lt;/li&gt;
+&lt;li&gt;Espacio en disco: node_filesystem_avail_bytes y node_filesystem_size_bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Puedes importar dashboards preconstruidos desde grafana.com/grafana/dashboards
+Un ejemplo muy usado es el Node Exporter Full (ID: 1860), que ofrece visualizaciones completas para hosts Linux.&lt;/p&gt;
+&lt;p&gt;Para importar un dashboard:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En Grafana, ve a Dashboards → Import.&lt;/li&gt;
+&lt;li&gt;Introduce el ID (1860) y selecciona la fuente de datos Prometheus.&lt;/li&gt;
+&lt;li&gt;Haz clic en Load y luego Import.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="buenas-prácticas-de-monitorización"&gt;Buenas prácticas de monitorización
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Mantén Prometheus y Grafana actualizados a la última versión estable.&lt;/li&gt;
+&lt;li&gt;Limita el acceso web mediante autenticación o VPN.&lt;/li&gt;
+&lt;li&gt;Configura retención de métricas según tus necesidades (&amp;ndash;storage.tsdb.retention.time=15d).&lt;/li&gt;
+&lt;li&gt;Crea alertas en Grafana para CPU alta, uso de memoria o pérdida de conectividad.&lt;/li&gt;
+&lt;li&gt;Centraliza la monitorización de múltiples servidores en una misma instancia de Prometheus mediante federation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con Prometheus y Grafana, puedes obtener una visión completa del estado de tus servidores y anticiparte a problemas de rendimiento o disponibilidad. Esta combinación permite implementar una cultura de observabilidad, clave en entornos DevOps y de producción moderna.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con esto podrás monitorizar tus servidores y anticiparte a problemas de rendimiento.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Cómo detectar y mitigar ataques de fuerza bruta en SSH</title><link>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</link><pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</guid><description>&lt;h1 id="cómo-detectar-y-mitigar-ataques-de-fuerza-bruta-en-ssh"&gt;Cómo detectar y mitigar ataques de fuerza bruta en SSH
+&lt;/h1&gt;&lt;p&gt;Los ataques de fuerza bruta son intentos automatizados y repetitivos para adivinar contraseñas de usuarios a través del servicio SSH (Secure Shell). Este tipo de ataque aprovecha configuraciones débiles o credenciales predecibles, y puede comprometer por completo un servidor si no se aplican medidas de protección adecuadas.&lt;/p&gt;
+&lt;h2 id="revisar-intentos-de-acceso"&gt;Revisar intentos de acceso
+&lt;/h2&gt;&lt;p&gt;El primer paso para mitigar un ataque de fuerza bruta es detectar los intentos fallidos de autenticación. El log del sistema registra estos eventos en /var/log/auth.log (en distribuciones basadas en Debian) o /var/log/secure (en Red Hat y derivados).&lt;/p&gt;
+&lt;p&gt;Para listar los intentos fallidos puedes usar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;grep &lt;span class="s2"&gt;&amp;#34;Failed password&amp;#34;&lt;/span&gt; /var/log/auth.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este comando muestra líneas con información sobre la IP origen, el usuario objetivo y la hora del intento. También puedes contar el número de ataques por dirección IP:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;grep &lt;span class="s2"&gt;&amp;#34;Failed password&amp;#34;&lt;/span&gt; /var/log/auth.log &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $(NF-3)}&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c &lt;span class="p"&gt;|&lt;/span&gt; sort -nr &lt;span class="p"&gt;|&lt;/span&gt; head
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este análisis permite identificar patrones de ataque y decidir si es necesario bloquear direcciones IP manualmente mediante iptables, ufw, o herramientas de detección automática.&lt;/p&gt;
+&lt;h2 id="configurar-fail2ban"&gt;Configurar fail2ban
+&lt;/h2&gt;&lt;p&gt;Fail2ban es una herramienta que analiza los logs del sistema y bloquea automáticamente las direcciones IP que muestran un comportamiento sospechoso (por ejemplo, múltiples intentos de login fallidos en poco tiempo).&lt;/p&gt;
+&lt;p&gt;Para instalar y habilitar fail2ban:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Una vez instalado, puedes crear una configuración personalizada en /etc/fail2ban/jail.local:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;sshd&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;enabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;filter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; sshd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;logpath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; /var/log/auth.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;maxretry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;bantime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;findtime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;En este ejemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;maxretry define el número máximo de intentos fallidos antes del bloqueo.&lt;/li&gt;
+&lt;li&gt;bantime indica el tiempo (en segundos) que la IP permanecerá bloqueada.&lt;/li&gt;
+&lt;li&gt;findtime establece el periodo de análisis para esos intentos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para verificar que fail2ban está funcionando correctamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo fail2ban-client status sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este comando muestra cuántas IPs han sido bloqueadas y cuáles siguen activas.&lt;/p&gt;
+&lt;h2 id="ajustar-configuración-de-ssh"&gt;Ajustar configuración de SSH
+&lt;/h2&gt;&lt;p&gt;Una configuración segura del demonio SSH (sshd) es esencial para reducir la superficie de ataque. Edita el archivo /etc/ssh/sshd_config y aplica los siguientes ajustes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambiar el puerto por defecto:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Port &lt;span class="m"&gt;2222&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto reduce los intentos automatizados dirigidos al puerto 22.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deshabilitar el acceso directo como root:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PermitRootLogin no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Evita que un atacante intente adivinar la contraseña del usuario root directamente.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usar autenticación por claves públicas en lugar de contraseñas:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PasswordAuthentication no
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PubkeyAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Las claves SSH utilizan criptografía asimétrica (RSA, Ed25519 o ECDSA) y son prácticamente imposibles de forzar por métodos de fuerza bruta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Limitar usuarios permitidos:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;AllowUsers admin devops
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Solo los usuarios listados podrán autenticarse vía SSH.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activar logs detallados:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;LogLevel VERBOSE
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto facilita auditorías y análisis de incidentes.&lt;/p&gt;
+&lt;p&gt;Una vez realizados los cambios, recarga el servicio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl reload ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="monitoreo-continuo-y-alertas"&gt;Monitoreo continuo y alertas
+&lt;/h2&gt;&lt;p&gt;Además de fail2ban, es recomendable implementar monitoreo continuo mediante herramientas como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OSSEC o Wazuh: detección de intrusiones y correlación de eventos.&lt;/li&gt;
+&lt;li&gt;Prometheus + Grafana: visualización de métricas de intentos SSH.&lt;/li&gt;
+&lt;li&gt;Syslog remoto o SIEM (Security Information and Event Management) para correlacionar eventos entre múltiples servidores.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;La protección de servicios SSH es un pilar esencial de la seguridad en servidores Linux. Detectar intentos de fuerza bruta, aplicar reglas de bloqueo automático con fail2ban y endurecer la configuración de SSH son pasos críticos para minimizar riesgos.&lt;/p&gt;
+&lt;p&gt;.&amp;gt; Estas medidas reducen significativamente el riesgo de ataques automatizados y mejoran la resiliencia general de tu infraestructura.&lt;/p&gt;</description></item><item><title>Gestión segura de contraseñas y autenticación 2FA</title><link>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</guid><description>&lt;h1 id="gestión-segura-de-contraseñas-y-autenticación-2fa"&gt;Gestión segura de contraseñas y autenticación 2FA
+&lt;/h1&gt;&lt;p&gt;La seguridad digital depende, en gran medida, de la solidez con la que protegemos nuestras credenciales. Una contraseña débil o la ausencia de autenticación adicional puede exponer sistemas, cuentas personales o incluso infraestructuras empresariales a ataques. En este artículo abordaremos las mejores prácticas técnicas para gestionar contraseñas y habilitar autenticación de dos factores (2FA).&lt;/p&gt;
+&lt;h2 id="usa-gestores-de-contraseñas"&gt;Usa gestores de contraseñas
+&lt;/h2&gt;&lt;p&gt;Los gestores de contraseñas son herramientas diseñadas para generar, almacenar y cifrar credenciales de forma segura. Evitan que el usuario tenga que memorizar múltiples contraseñas y reducen drásticamente el riesgo de reutilización.&lt;/p&gt;
+&lt;p&gt;Algunas opciones recomendadas incluyen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1Password: Solución comercial con cifrado AES-256 y sincronización segura entre dispositivos mediante un Secret Key local.&lt;/li&gt;
+&lt;li&gt;Bitwarden: Alternativa open source con almacenamiento en la nube o en servidor propio, ideal para entornos corporativos.&lt;/li&gt;
+&lt;li&gt;KeePass: Opción gratuita y local que guarda el archivo cifrado (.kdbx) sin depender de servicios externos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Desde el punto de vista técnico, estos gestores utilizan algoritmos de cifrado simétrico (como AES-256-GCM) y funciones de derivación de claves (PBKDF2, Argon2id) para reforzar la protección del archivo de contraseñas. Además, muchos implementan integraciones con autenticadores o llaves físicas (como YubiKey) para desbloquear el acceso.&lt;/p&gt;
+&lt;h2 id="configura-2fa-siempre-que-sea-posible"&gt;Configura 2FA siempre que sea posible
+&lt;/h2&gt;&lt;p&gt;La autenticación de dos factores (2FA) añade una capa adicional de seguridad que mitiga el impacto de credenciales comprometidas. El usuario debe proporcionar no solo la contraseña (factor de conocimiento), sino también un segundo factor, como un código temporal o una llave física.&lt;/p&gt;
+&lt;p&gt;Los métodos más comunes incluyen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TOTP (Time-based One-Time Passwords): Códigos generados localmente por apps como Google Authenticator, Authy o Aegis. Basados en RFC 6238, estos códigos expiran cada 30 segundos y requieren sincronización temporal precisa.&lt;/li&gt;
+&lt;li&gt;Llaves U2F/FIDO2 (hardware): Dispositivos como YubiKey o SoloKey implementan autenticación basada en criptografía asimétrica, lo que elimina la posibilidad de ataques de phishing o replay.&lt;/li&gt;
+&lt;li&gt;Push notifications o tokens biométricos: Métodos modernos integrados en sistemas de identidad corporativos (Microsoft Entra ID, Okta, Duo Security).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Implementar 2FA debería ser un requisito mínimo en cualquier servicio que gestione información sensible: correos, cuentas en la nube, paneles administrativos o repositorios de código.&lt;/p&gt;
+&lt;h2 id="evita-reutilizar-contraseñas"&gt;Evita reutilizar contraseñas
+&lt;/h2&gt;&lt;p&gt;Una de las prácticas más riesgosas es utilizar la misma contraseña en múltiples servicios. Si una base de datos es vulnerada, los atacantes suelen probar esas mismas credenciales en otras plataformas (credential stuffing).&lt;/p&gt;
+&lt;p&gt;La solución técnica pasa por usar contraseñas únicas, generadas automáticamente y almacenadas en un gestor seguro. Además, se recomienda monitorizar si alguna de tus credenciales ha sido filtrada utilizando herramientas como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have I Been Pwned (HIBP)&lt;/li&gt;
+&lt;li&gt;Firefox Monitor&lt;/li&gt;
+&lt;li&gt;Google Password Checkup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para empresas, integrar verificaciones automáticas contra listas de contraseñas comprometidas (NIST SP 800-63B Appendix A) ayuda a bloquear credenciales inseguras desde el inicio.&lt;/p&gt;
+&lt;h2 id="mejores-prácticas-adicionales"&gt;Mejores prácticas adicionales
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Habilita 2FA no solo en cuentas personales, sino también en servicios críticos: GitHub, AWS, GCP, paneles de administración, y VPNs.&lt;/li&gt;
+&lt;li&gt;Utiliza contraseñas de al menos 16 caracteres, combinando letras, números y símbolos.&lt;/li&gt;
+&lt;li&gt;Cambia inmediatamente las credenciales si detectas actividad sospechosa o una filtración pública.&lt;/li&gt;
+&lt;li&gt;Configura un mecanismo de recuperación seguro (por ejemplo, códigos de respaldo impresos o almacenados offline).&lt;/li&gt;
+&lt;li&gt;Desactiva el 2FA por SMS cuando sea posible, ya que es vulnerable a SIM swapping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Implementar una estrategia de seguridad basada en contraseñas robustas y autenticación multifactor no solo es una buena práctica, sino una necesidad. En un entorno donde las filtraciones y ataques de ingeniería social son cada vez más comunes, adoptar herramientas como gestores de contraseñas y autenticadores físicos puede marcar la diferencia entre una cuenta comprometida y una infraestructura segura.&lt;/p&gt;
+&lt;p&gt;.&amp;gt; Siguiendo estas prácticas, mejorarás notablemente la seguridad de tus cuentas y reducirás tu superficie de ataque frente a amenazas actuales.&lt;/p&gt;</description></item><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
+&lt;/h1&gt;&lt;p&gt;El SEO (Search Engine Optimization) es esencial para que tu blog sea visible y fácil de encontrar en motores de búsqueda como Google. Hugo, al ser un generador de sitios estáticos, permite implementar prácticas SEO de manera sencilla y eficiente.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos &lt;strong&gt;técnicas prácticas para mejorar el SEO de un sitio Hugo&lt;/strong&gt;, desde la configuración de títulos y meta tags, hasta la estructura de contenido y la generación de sitemap.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
+&lt;/h2&gt;&lt;p&gt;Los títulos y las descripciones son la primera impresión que los motores de búsqueda muestran en los resultados. Hugo permite definirlos en el front matter de cada página:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Optimización de sitios Hugo para SEO&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Aprende a mejorar la visibilidad de tu blog Hugo con técnicas de SEO prácticas.&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Recomendaciones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mantén títulos claros y descriptivos, incluyendo palabras clave relevantes.&lt;/li&gt;
+&lt;li&gt;Cada página debe tener una meta description única y atractiva.&lt;/li&gt;
+&lt;li&gt;La longitud recomendada: títulos entre 50-60 caracteres, meta description entre 150-160 caracteres.&lt;/li&gt;
+&lt;li&gt;Evita duplicar títulos o descripciones entre páginas.&lt;/li&gt;
+&lt;li&gt;Esto ayuda a los motores de búsqueda a entender de qué trata cada página y mejora la tasa de clics desde los resultados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="urls-limpias"&gt;URLs limpias
+&lt;/h2&gt;&lt;p&gt;Las URLs amigables son esenciales para SEO y experiencia de usuario. Hugo permite personalizar las URLs mediante el front matter o la configuración global.&lt;/p&gt;
+&lt;p&gt;Buenas prácticas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Evita caracteres especiales o acentos.&lt;/li&gt;
+&lt;li&gt;Usa guiones - en lugar de espacios.&lt;/li&gt;
+&lt;li&gt;Mantén URLs cortas y descriptivas, por ejemplo:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;seo-hugo&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto generará una URL como:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-arduino" data-lang="arduino"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//tusitio.com/seo-hugo/
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;En lugar de:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-perl" data-lang="perl"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="n"&gt;tusitio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/optimización%20sitios%20hugo/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
+&lt;/h2&gt;&lt;p&gt;La jerarquía de títulos y subtítulos es fundamental para SEO y accesibilidad:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usa un H1 por página (normalmente el título del artículo).&lt;/li&gt;
+&lt;li&gt;Utiliza H2 para secciones principales y H3 para subsecciones.&lt;/li&gt;
+&lt;li&gt;Las listas, tablas y subtítulos mejoran la legibilidad y facilitan que los motores de búsqueda indexen correctamente el contenido.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ejemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# Optimización de sitios Hugo para SEO
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="gu"&gt;## Títulos y meta description
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;### Cómo escribir meta descriptions efectivas
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
+&lt;/h2&gt;&lt;p&gt;Hugo genera automáticamente un sitemap.xml, que ayuda a los motores de búsqueda a indexar todas las páginas de tu sitio.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Asegúrate de habilitarlo en la configuración:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;sitemap&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;changefreq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;monthly&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;priority&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;filename&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;sitemap.xml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Configura robots.txt para controlar qué páginas deben ser indexadas:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;User-agent: *
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Disallow: /admin/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Allow: /
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Sitemap: https://tusitio.com/sitemap.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Esto optimiza la indexación y evita que motores de búsqueda rastreen contenido innecesario.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="otros-consejos-seo-para-hugo"&gt;Otros consejos SEO para Hugo
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Etiquetas y categorías: ayudan a organizar el contenido y mejorar la navegación.&lt;/li&gt;
+&lt;li&gt;Imágenes optimizadas: usa alt descriptivos y reduce el tamaño para mejorar velocidad de carga.&lt;/li&gt;
+&lt;li&gt;Velocidad del sitio: Hugo genera sitios estáticos ultrarrápidos, lo que mejora tu ranking.&lt;/li&gt;
+&lt;li&gt;Enlaces internos y externos: enlaza páginas relacionadas y fuentes de autoridad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Seguir estas prácticas en tu blog Hugo mejora notablemente la visibilidad en motores de búsqueda, la experiencia del usuario y la accesibilidad.&lt;/p&gt;
+&lt;p&gt;Hugo, con su estructura limpia y generación de sitios estáticos, facilita implementar SEO técnico sin depender de plugins complejos, asegurando que tu contenido sea indexado correctamente y de manera eficiente.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Optimizar tu sitio Hugo para SEO no solo ayuda a los motores de búsqueda a entender tu contenido, sino que también mejora la experiencia de tus lectores.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Docker para principiantes: contenedores desde cero</title><link>https://dev.davidalvarezp.com/p/docker-principiantes/</link><pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-principiantes/</guid><description>&lt;h1 id="docker-para-principiantes-contenedores-desde-cero"&gt;Docker para principiantes: contenedores desde cero
+&lt;/h1&gt;&lt;p&gt;Docker ha revolucionado la forma en que desarrollamos, desplegamos y ejecutamos aplicaciones. En lugar de lidiar con entornos inconsistentes o dependencias rotas, Docker permite &lt;strong&gt;empaquetar todo lo necesario&lt;/strong&gt; (código, librerías y configuraciones) dentro de &lt;strong&gt;contenedores ligeros y portables&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos cómo instalar Docker, ejecutar tu primer contenedor, crear una imagen personalizada y gestionar contenedores en tu sistema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="qué-es-un-contenedor"&gt;¿Qué es un contenedor?
+&lt;/h2&gt;&lt;p&gt;Un &lt;strong&gt;contenedor&lt;/strong&gt; es una instancia ejecutable de una imagen. Las imágenes son plantillas inmutables que definen el entorno y el software que se ejecutará dentro del contenedor.&lt;br&gt;
+A diferencia de las máquinas virtuales, los contenedores comparten el &lt;strong&gt;kernel del sistema operativo&lt;/strong&gt; del host, lo que los hace mucho más ligeros y rápidos.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ventajas principales:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aislamiento de procesos y dependencias&lt;/li&gt;
+&lt;li&gt;Portabilidad entre entornos (local, staging, producción)&lt;/li&gt;
+&lt;li&gt;Despliegues consistentes y reproducibles&lt;/li&gt;
+&lt;li&gt;Menor consumo de recursos frente a las VMs tradicionales&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="instalación-de-docker"&gt;Instalación de Docker
+&lt;/h2&gt;&lt;p&gt;En distribuciones basadas en Debian o Ubuntu, puedes instalar Docker directamente desde los repositorios oficiales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install docker.io -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Verifica que la instalación haya sido exitosa con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker --version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y prueba que el servicio esté en ejecución:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl status docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Consejo: Si prefieres evitar usar sudo cada vez, agrega tu usuario al grupo docker:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;newgrp docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="ejecutar-tu-primer-contenedor"&gt;Ejecutar tu primer contenedor
+&lt;/h2&gt;&lt;p&gt;El siguiente comando descarga la imagen oficial de Ubuntu y ejecuta un contenedor interactivo con una shell bash:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --name mi-contenedor ubuntu bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-it: Permite interactuar con el contenedor (modo terminal).&lt;/li&gt;
+&lt;li&gt;&amp;ndash;name: Asigna un nombre personalizado al contenedor.&lt;/li&gt;
+&lt;li&gt;ubuntu: Es la imagen base.&lt;/li&gt;
+&lt;li&gt;bash: El comando que se ejecutará dentro del contenedor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dentro del contenedor, notarás un prompt similar a este:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root@&amp;lt;container_id&amp;gt;:/#
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Estás dentro de un entorno aislado, con su propio sistema de archivos. Puedes instalar paquetes, ejecutar comandos, o incluso montar volúmenes externos.&lt;/p&gt;
+&lt;p&gt;Para salir sin detener el contenedor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="crear-tu-propia-imagen"&gt;Crear tu propia imagen
+&lt;/h2&gt;&lt;p&gt;Supongamos que quieres crear una imagen personalizada basada en Ubuntu que tenga curl y git instalados.
+Primero, crea un archivo llamado Dockerfile en un directorio vacío con el siguiente contenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-dockerfile" data-lang="dockerfile"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Imagen base&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;ubuntu:latest&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Instalar dependencias&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;RUN&lt;/span&gt; apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install -y curl git&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="c"&gt;# Comando por defecto&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;&lt;/span&gt;&lt;span class="k"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;bash&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Luego, construye la imagen con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker build -t mi-imagen .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;-t mi-imagen: Asigna un nombre a la imagen.&lt;/li&gt;
+&lt;li&gt;.: Indica el contexto de construcción (directorio actual).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para comprobar que se creó correctamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y puedes ejecutarla con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it mi-imagen
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="gestión-básica-de-contenedores"&gt;Gestión básica de contenedores
+&lt;/h2&gt;&lt;p&gt;Una vez que empieces a usar Docker de forma habitual, necesitarás gestionar tus contenedores activos e inactivos.&lt;/p&gt;
+&lt;p&gt;Listar contenedores en ejecución:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Listar todos los contenedores (incluidos los detenidos):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Detener un contenedor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker stop mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Eliminar un contenedor detenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rm mi-contenedor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Eliminar imágenes que ya no necesites:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker rmi mi-imagen
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y para limpiar recursos huérfanos o temporales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker system prune
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="docker-hub-el-repositorio-de-imágenes"&gt;Docker Hub: el repositorio de imágenes
+&lt;/h2&gt;&lt;p&gt;Docker Hub es el repositorio público oficial de Docker, donde puedes descargar imágenes ya preparadas o subir tus propias imágenes.
+Por ejemplo, puedes ejecutar una aplicación Node.js sin necesidad de instalar Node en tu host:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it --rm node:20 bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Docker simplifica el ciclo de vida del desarrollo al empaquetar entornos completos en contenedores reproducibles y portables.&lt;/p&gt;
+&lt;p&gt;Con unos pocos comandos, puedes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crear y ejecutar contenedores en segundos&lt;/li&gt;
+&lt;li&gt;Construir imágenes personalizadas&lt;/li&gt;
+&lt;li&gt;Mantener entornos limpios y consistentes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si sigues estos pasos básicos, tendrás las bases sólidas para adentrarte en temas más avanzados como Docker Compose, volúmenes persistentes, y redes personalizadas, que veremos en futuras entregas.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con Docker, la frase “en mi máquina sí funciona” pasa a ser cosa del pasado.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
+&lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
+Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
+&lt;p&gt;En este artículo aprenderás a configurar &lt;strong&gt;GitHub Actions&lt;/strong&gt; para construir y desplegar tu sitio Hugo en GitHub Pages o cualquier otro servicio compatible.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="por-qué-usar-cicd-con-hugo"&gt;¿Por qué usar CI/CD con Hugo?
+&lt;/h2&gt;&lt;p&gt;Cuando desarrollas un blog o documentación técnica, los pasos típicos son:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Editar contenido en Markdown.&lt;/li&gt;
+&lt;li&gt;Ejecutar &lt;code&gt;hugo&lt;/code&gt; localmente para generar el sitio.&lt;/li&gt;
+&lt;li&gt;Subir los archivos generados al servidor o repositorio de hosting.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Con &lt;strong&gt;GitHub Actions&lt;/strong&gt;, puedes automatizar completamente ese proceso.&lt;br&gt;
+Cada vez que hagas un &lt;code&gt;push&lt;/code&gt; o merges una PR, el sitio se construirá y publicará automáticamente.&lt;/p&gt;
+&lt;p&gt;Ventajas principales:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Despliegue automático y sin errores manuales&lt;/li&gt;
+&lt;li&gt;Integración directa con GitHub Pages, Netlify o Cloudflare&lt;/li&gt;
+&lt;li&gt;Builds reproducibles en entornos controlados&lt;/li&gt;
+&lt;li&gt;Posibilidad de añadir validaciones, pruebas o linting antes del deploy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="crear-el-workflow"&gt;Crear el workflow
+&lt;/h2&gt;&lt;p&gt;GitHub Actions usa archivos YAML ubicados en el directorio &lt;code&gt;.github/workflows/&lt;/code&gt;.&lt;br&gt;
+Crearemos uno llamado &lt;code&gt;deploy-hugo.yml&lt;/code&gt; con los pasos básicos para compilar y desplegar tu blog.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
 &lt;/span&gt;&lt;span class="lnt"&gt; 2
@@ -134,22 +725,204 @@
 &lt;/span&gt;&lt;span class="lnt"&gt; 8
 &lt;/span&gt;&lt;span class="lnt"&gt; 9
 &lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Documento HTML5 de ejemplo&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Prueba&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Build and Deploy Hugo&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;push&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;main&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;ubuntu-latest&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Checkout&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;actions/checkout@v3&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Setup Hugo&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;peaceiris/actions-hugo@v2&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hugo-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;latest&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Build site&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;hugo --minify&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Deploy to GitHub Pages&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;github_token&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;${{ secrets.GITHUB_TOKEN }}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;publish_dir&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;./public&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="explicación-paso-a-paso"&gt;Explicación paso a paso
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;actions/checkout@v3: descarga el código del repositorio para que el workflow pueda trabajar sobre él.&lt;/li&gt;
+&lt;li&gt;peaceiris/actions-hugo@v2: instala Hugo en la versión especificada.&lt;/li&gt;
+&lt;li&gt;hugo &amp;ndash;minify: genera el sitio estático en la carpeta public/.&lt;/li&gt;
+&lt;li&gt;peaceiris/actions-gh-pages@v3: sube automáticamente el contenido generado a la rama gh-pages, usada por GitHub Pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="configurar-github-pages"&gt;Configurar GitHub Pages
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Ve a la configuración del repositorio (Settings → Pages).&lt;/li&gt;
+&lt;li&gt;En “Source”, selecciona Deploy from a branch.&lt;/li&gt;
+&lt;li&gt;Elige la rama gh-pages y la carpeta raíz /.&lt;/li&gt;
+&lt;li&gt;Guarda los cambios.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tu sitio estará disponible en &lt;a class="link" href="https://usuario.github.io/nombre-del-repo/" target="_blank" rel="noopener"
+&gt;https://usuario.github.io/nombre-del-repo/&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Consejo: Si usas un dominio personalizado, crea un archivo CNAME en la carpeta static/ de tu proyecto con el dominio (por ejemplo, blog.midominio.com).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="personalizar-el-flujo-de-despliegue"&gt;Personalizar el flujo de despliegue
+&lt;/h2&gt;&lt;p&gt;GitHub Actions es extremadamente flexible. Puedes añadir pasos para mejorar tu pipeline, por ejemplo:&lt;/p&gt;
+&lt;h3 id="validar-el-código-antes-del-build"&gt;Validar el código antes del build
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Lint Markdown&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;npx markdownlint &amp;#34;**/*.md&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;h4 id="bloque-de-diferencias-diff"&gt;Bloque de diferencias (&lt;em&gt;diff&lt;/em&gt;)
-&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;&lt;h3 id="ejecutar-pruebas-si-tu-sitio-las-incluye"&gt;Ejecutar pruebas (si tu sitio las incluye)
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Run tests&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;npm test&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="notificar-por-slack-o-discord-al-completar-el-deploy"&gt;Notificar por Slack o Discord al completar el deploy
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Notify deployment&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;slackapi/slack-github-action@v1.23.0&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{&amp;#34;text&amp;#34;:&amp;#34;🚀 Despliegue de Hugo completado con éxito!&amp;#34;}&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;SLACK_WEBHOOK_URL&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;${{ secrets.SLACK_WEBHOOK_URL }}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="mantenimiento-del-workflow"&gt;Mantenimiento del workflow
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Actualiza las acciones periódicamente (actions/checkout, actions-hugo, etc.) para mantener compatibilidad y seguridad.&lt;/li&gt;
+&lt;li&gt;Usa secrets para tokens y credenciales en lugar de variables públicas.&lt;/li&gt;
+&lt;li&gt;Habilita la opción de require approval si quieres validar los despliegues en ramas principales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Integrar CI/CD con GitHub Actions en tu proyecto Hugo no solo ahorra tiempo, sino que garantiza despliegues consistentes y seguros.
+Cada commit se convierte en una versión pública de tu sitio, con un proceso completamente automatizado y controlado desde el repositorio.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ahora cada push construirá y desplegará automáticamente tu sitio. ¡Tu blog estará siempre al día y sin esfuerzo!&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento</title><link>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</guid><description>&lt;h1 id="buenas-prácticas-al-publicar-un-blog-técnico-seguridad-seo-y-mantenimiento"&gt;Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
+&lt;/h1&gt;&lt;p&gt;Publicar un blog técnico es una excelente manera de compartir conocimiento, construir reputación profesional y contribuir a la comunidad.&lt;br&gt;
+Sin embargo, más allá de escribir buenos artículos, es fundamental cuidar la &lt;strong&gt;seguridad&lt;/strong&gt;, la &lt;strong&gt;optimización SEO&lt;/strong&gt; y el &lt;strong&gt;mantenimiento continuo&lt;/strong&gt; del sitio.&lt;br&gt;
+Un blog descuidado puede volverse lento, inseguro o perder visibilidad en buscadores.&lt;/p&gt;
+&lt;p&gt;En esta guía práctica veremos cómo aplicar buenas prácticas en cada uno de estos pilares.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="seguridad"&gt;Seguridad
+&lt;/h2&gt;&lt;p&gt;Un blog técnico puede parecer un objetivo poco atractivo para atacantes, pero en la práctica es &lt;strong&gt;uno de los blancos más comunes&lt;/strong&gt; para bots automatizados que buscan vulnerabilidades en servidores o plataformas de publicación.&lt;/p&gt;
+&lt;p&gt;A continuación, algunos pasos esenciales para fortalecer la seguridad de tu blog:&lt;/p&gt;
+&lt;h3 id="1-actualiza-hugo-y-dependencias"&gt;1. Actualiza Hugo y dependencias
+&lt;/h3&gt;&lt;p&gt;Si usas un generador estático como &lt;strong&gt;Hugo&lt;/strong&gt;, &lt;strong&gt;Jekyll&lt;/strong&gt; o &lt;strong&gt;Next.js&lt;/strong&gt;, mantén tanto el framework como los temas y módulos actualizados. Las actualizaciones suelen incluir parches de seguridad y mejoras de rendimiento.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo version
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod get -u ./...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;También asegúrate de mantener actualizado tu entorno de despliegue (por ejemplo, GitHub Pages, Netlify o Cloudflare Pages).&lt;/p&gt;
+&lt;h3 id="2-usa-https-y-certificados-válidos"&gt;2. Usa HTTPS y certificados válidos
+&lt;/h3&gt;&lt;p&gt;Un sitio sin HTTPS no solo es inseguro, sino que también puede ser penalizado por los navegadores modernos y por Google.&lt;br&gt;
+Puedes obtener un certificado gratuito de &lt;strong&gt;Let’s Encrypt&lt;/strong&gt; y configurarlo fácilmente con Nginx o Apache:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo para Nginx:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;301&lt;/span&gt; &lt;span class="s"&gt;https://&lt;/span&gt;&lt;span class="nv"&gt;$host$request_uri&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;ssl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/fullchain.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate_key&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/privkey.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-protege-accesos-con-contraseñas-seguras-y-autenticación-2fa"&gt;3. Protege accesos con contraseñas seguras y autenticación 2FA
+&lt;/h3&gt;&lt;p&gt;Si tu flujo de publicación involucra servicios externos (como CI/CD, Netlify o Cloudflare), &lt;strong&gt;usa autenticación de dos factores (2FA)&lt;/strong&gt; y &lt;strong&gt;tokens de acceso&lt;/strong&gt; con permisos mínimos.&lt;br&gt;
+Evita almacenar contraseñas o claves API en texto plano dentro de tus repositorios.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; Usa un gestor de secretos (por ejemplo, GitHub Secrets o 1Password CLI) para guardar tus credenciales de despliegue.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="seo-optimización-para-buscadores"&gt;SEO (Optimización para buscadores)
+&lt;/h2&gt;&lt;p&gt;El SEO no solo mejora la visibilidad de tu blog, sino que también ayuda a que los lectores encuentren rápidamente el contenido que necesitan.&lt;br&gt;
+Estas prácticas básicas te ayudarán a mejorar tu posicionamiento sin complicarte.&lt;/p&gt;
+&lt;h3 id="1-meta-tags-completos-y-descriptivos"&gt;1. Meta tags completos y descriptivos
+&lt;/h3&gt;&lt;p&gt;Cada página debe incluir etiquetas &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt; y &lt;code&gt;keywords&lt;/code&gt; bien escritas. En &lt;strong&gt;Hugo&lt;/strong&gt;, puedes configurarlas desde el &lt;code&gt;front matter&lt;/code&gt; de cada post:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
@@ -158,60 +931,708 @@
 &lt;/span&gt;&lt;span class="lnt"&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-diff" data-lang="diff"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[dependencies.bevy]
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gd"&gt;- features = [&amp;#34;dynamic&amp;#34;]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gd"&gt;&lt;/span&gt;&lt;span class="gi"&gt;+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Buenas prácticas al publicar un blog técnico&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Aprende a mantener tu blog técnico seguro, optimizado y actualizado.&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;blog técnico&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;SEO&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;seguridad web&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="tipos-de-listas"&gt;Tipos de listas
-&lt;/h2&gt;&lt;h4 id="lista-ordenada"&gt;Lista ordenada
-&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;Primer elemento&lt;/li&gt;
-&lt;li&gt;Segundo elemento&lt;/li&gt;
-&lt;li&gt;Tercer elemento&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id="lista-desordenada"&gt;Lista desordenada
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Elemento de lista&lt;/li&gt;
-&lt;li&gt;Otro elemento&lt;/li&gt;
-&lt;li&gt;Y otro más&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id="lista-anidada"&gt;Lista anidada
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Fruta
-&lt;ul&gt;
-&lt;li&gt;Manzana&lt;/li&gt;
-&lt;li&gt;Naranja&lt;/li&gt;
-&lt;li&gt;Plátano&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Lácteos
-&lt;ul&gt;
-&lt;li&gt;Leche&lt;/li&gt;
-&lt;li&gt;Queso&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="otros-elementos--abbr-sub-sup-kbd-mark"&gt;Otros elementos — abbr, sub, sup, kbd, mark
-&lt;/h2&gt;&lt;p&gt;&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; es un formato de imagen de mapa de bits.&lt;/p&gt;
-&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
-&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Pulsa &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Supr&lt;/kbd&gt; para finalizar la sesión.&lt;/p&gt;
-&lt;p&gt;La mayoría de las &lt;mark&gt;salamandras&lt;/mark&gt; son nocturnas y cazan insectos, gusanos y otras criaturas pequeñas.&lt;/p&gt;
-&lt;h2 id="imagen-con-hipervínculo"&gt;Imagen con hipervínculo
-&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://google.com" target="_blank" rel="noopener"
-&gt;&lt;img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
-loading="lazy"
-alt="Google"
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class="footnotes" role="doc-endnotes"&gt;
+&lt;/div&gt;&lt;h3 id="2-urls-limpias-y-slugs-amigables"&gt;2. URLs limpias y slugs amigables
+&lt;/h3&gt;&lt;p&gt;Evita URLs largas o con caracteres extraños. Los &lt;strong&gt;slugs cortos y descriptivos&lt;/strong&gt; mejoran el SEO y la experiencia del usuario:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;✅ /buenas-practicas-blog-tecnico
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ /2025/10/20/post-numero-12345
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-sitemap-y-robotstxt"&gt;3. Sitemap y robots.txt
+&lt;/h3&gt;&lt;p&gt;Un &lt;code&gt;sitemap.xml&lt;/code&gt; facilita la indexación de tu contenido por los motores de búsqueda.&lt;br&gt;
+Hugo puede generarlo automáticamente con una simple opción en &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;enableRobotsTXT&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además, incluye un archivo &lt;code&gt;robots.txt&lt;/code&gt; que permita rastrear solo las secciones relevantes del sitio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;User-agent: *
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Disallow: /drafts/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Allow: /
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Sitemap: https://tu-dominio.com/sitemap.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Registra tu blog en &lt;strong&gt;Google Search Console&lt;/strong&gt; para monitorear el tráfico y detectar errores de indexación.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
+&lt;h2 id="mantenimiento"&gt;Mantenimiento
+&lt;/h2&gt;&lt;p&gt;El mantenimiento es el aspecto menos glamuroso, pero más crítico, de cualquier blog técnico.&lt;br&gt;
+Asegura la &lt;strong&gt;disponibilidad&lt;/strong&gt;, &lt;strong&gt;rendimiento&lt;/strong&gt; y &lt;strong&gt;salud&lt;/strong&gt; del sitio a lo largo del tiempo.&lt;/p&gt;
+&lt;h3 id="1-backups-regulares"&gt;1. Backups regulares
+&lt;/h3&gt;&lt;p&gt;Haz copias de seguridad automáticas de tu contenido y configuración.&lt;br&gt;
+Si usas Git, aprovecha los commits y repositorios remotos para tener un historial completo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;Backup automático del blog&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;También puedes usar servicios como &lt;strong&gt;rclone&lt;/strong&gt; o &lt;strong&gt;Restic&lt;/strong&gt; para enviar copias cifradas a la nube.&lt;/p&gt;
+&lt;h3 id="2-monitorización-del-servidor"&gt;2. Monitorización del servidor
+&lt;/h3&gt;&lt;p&gt;Si tu blog está en un VPS, monitorea el &lt;strong&gt;uptime&lt;/strong&gt; y rendimiento del servidor.&lt;br&gt;
+Herramientas gratuitas como &lt;strong&gt;UptimeRobot&lt;/strong&gt;, &lt;strong&gt;Netdata&lt;/strong&gt; o &lt;strong&gt;Grafana Cloud&lt;/strong&gt; te permiten recibir alertas si algo falla.&lt;/p&gt;
+&lt;h3 id="3-revisión-de-enlaces-rotos"&gt;3. Revisión de enlaces rotos
+&lt;/h3&gt;&lt;p&gt;Los enlaces rotos perjudican el SEO y la experiencia del lector.&lt;br&gt;
+Puedes automatizar su detección con herramientas como:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npx broken-link-checker https://tu-blog.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;O usar un flujo CI/CD que verifique enlaces en cada despliegue.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Publicar un blog técnico implica más que escribir artículos: también requiere &lt;strong&gt;disciplina en seguridad, SEO y mantenimiento&lt;/strong&gt;.&lt;br&gt;
+Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Automatiza tus tareas con Bash y Cron</title><link>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/automatizar-tareas-bash-cron/</guid><description>&lt;h1 id="automatiza-tus-tareas-con-bash-y-cron"&gt;Automatiza tus tareas con Bash y Cron
+&lt;/h1&gt;&lt;p&gt;La &lt;strong&gt;automatización&lt;/strong&gt; es una de las habilidades más valiosas para cualquier administrador de sistemas o desarrollador.&lt;br&gt;
+Gracias a herramientas como &lt;strong&gt;Bash&lt;/strong&gt; y &lt;strong&gt;Cron&lt;/strong&gt;, puedes programar tareas que se ejecuten automáticamente, ahorrando tiempo y reduciendo errores humanos.&lt;/p&gt;
+&lt;p&gt;En esta guía aprenderás cómo crear un &lt;strong&gt;script Bash&lt;/strong&gt; y cómo programarlo con &lt;strong&gt;Cron&lt;/strong&gt; para que se ejecute de manera periódica.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crear-un-script-bash"&gt;Crear un script Bash
+&lt;/h2&gt;&lt;p&gt;Comienza escribiendo un script simple. Por ejemplo, un script para realizar un respaldo de base de datos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Backup de la base de datos iniciado&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# comando de backup aquí&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Guárdalo como &lt;code&gt;backup.sh&lt;/code&gt; en el directorio deseado, por ejemplo &lt;code&gt;/usr/local/bin/&lt;/code&gt; o &lt;code&gt;/home/usuario/scripts/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Este script puede incluir cualquier comando o secuencia de tareas que desees automatizar: copias de seguridad, limpieza de logs, sincronización de archivos, actualizaciones, etc.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="hacerlo-ejecutable"&gt;Hacerlo ejecutable
+&lt;/h2&gt;&lt;p&gt;Antes de poder ejecutarlo, debes dar permisos de ejecución al archivo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chmod +x backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Puedes probarlo ejecutándolo manualmente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Si todo funciona correctamente, verás el mensaje en consola.&lt;br&gt;
+Recuerda que también puedes revisar logs o redirigir la salida del script a un archivo, por ejemplo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="programar-el-script-con-cron"&gt;Programar el script con Cron
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Cron&lt;/strong&gt; es un demonio del sistema que permite programar tareas recurrentes (llamadas &lt;em&gt;cron jobs&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Edita la tabla de Cron con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;crontab -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Agrega una línea como esta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * /ruta/a/backup.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto ejecutará el script &lt;strong&gt;todos los días a las 2:00 AM&lt;/strong&gt;.&lt;br&gt;
+La sintaxis de Cron sigue el formato:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌───────────── minuto (0 - 59)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌───────────── hora (0 - 23)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────── día del mes (1 - 31)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ ┌───────────── mes (1 - 12)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ ┌───────────── día de la semana (0 - 7) (domingo = 0 o 7)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* * * * * comando a ejecutar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por ejemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 3 * * 1&lt;/code&gt; → Ejecuta todos los lunes a las 3:00 AM&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*/15 * * * *&lt;/code&gt; → Ejecuta cada 15 minutos&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@reboot&lt;/code&gt; → Ejecuta el comando al iniciar el sistema&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="consejos-útiles"&gt;Consejos útiles
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Usa &lt;strong&gt;rutas absolutas&lt;/strong&gt; dentro del script (&lt;code&gt;/usr/bin/pg_dump&lt;/code&gt; en lugar de &lt;code&gt;pg_dump&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Redirige salidas de error a un log para detectar fallos:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/ruta/a/backup.sh &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Comprueba los logs de Cron si algo no funciona:
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo grep CRON /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Usa &lt;code&gt;crontab -l&lt;/code&gt; para listar las tareas programadas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con &lt;strong&gt;Bash + Cron&lt;/strong&gt;, puedes automatizar casi cualquier tarea repetitiva en tu servidor: desde respaldos y actualizaciones, hasta mantenimiento y reportes automáticos.&lt;/p&gt;
+&lt;p&gt;Implementar una estrategia de automatización no solo mejora la eficiencia, sino que también garantiza &lt;strong&gt;consistencia&lt;/strong&gt; y &lt;strong&gt;disponibilidad&lt;/strong&gt; en tus operaciones diarias.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; un buen sysadmin no trabaja más, trabaja más &lt;em&gt;automatizado&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;SvelteKit&lt;/strong&gt; es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.&lt;br&gt;
+Basado en &lt;strong&gt;Svelte&lt;/strong&gt;, aprovecha la compilación en tiempo de construcción (en lugar de en tiempo de ejecución) para generar aplicaciones altamente eficientes.&lt;/p&gt;
+&lt;p&gt;En este artículo aprenderás a crear tu primer proyecto con SvelteKit paso a paso, entendiendo su estructura y filosofía.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="instala-nodejs"&gt;Instala Node.js
+&lt;/h2&gt;&lt;p&gt;Antes de empezar, asegúrate de tener instalado &lt;strong&gt;Node.js&lt;/strong&gt; y &lt;strong&gt;npm&lt;/strong&gt; (Node Package Manager), ya que son necesarios para crear y ejecutar proyectos con SvelteKit.&lt;/p&gt;
+&lt;p&gt;Comprueba tus versiones con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Si no los tienes, puedes descargar Node.js desde &lt;a class="link" href="https://nodejs.org" target="_blank" rel="noopener"
+&gt;nodejs.org&lt;/a&gt;.&lt;br&gt;
+Te recomiendo instalar la versión LTS (Long Term Support) para mayor estabilidad.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crea-un-nuevo-proyecto-con-sveltekit"&gt;Crea un nuevo proyecto con SvelteKit
+&lt;/h2&gt;&lt;p&gt;SvelteKit incluye un asistente oficial que te permite crear un nuevo proyecto con una configuración básica en pocos segundos.&lt;/p&gt;
+&lt;p&gt;Ejecuta en tu terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm create svelte@latest my-app
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; my-app
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm install
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm run dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto hará lo siguiente:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li id="fn:1"&gt;
-&lt;p&gt;La cita anterior está extraída de la &lt;a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target="_blank" rel="noopener"
-&gt;charla&lt;/a&gt; de Rob Pike durante el Gopherfest, el 18 de noviembre de 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Creará un nuevo proyecto llamado &lt;strong&gt;my-app&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Instalará las dependencias necesarias.&lt;/li&gt;
+&lt;li&gt;Iniciará un servidor de desarrollo en &lt;code&gt;http://localhost:5173&lt;/code&gt; (o el puerto disponible).&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description></item><item><title>Archivo</title><link>https://dev.davidalvarezp.com/archivo/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/archivo/</guid><description/></item><item><title>Sobre</title><link>https://dev.davidalvarezp.com/sobre/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/sobre/</guid><description>&lt;p&gt;texto&lt;/p&gt;</description></item><item><title>Buscar</title><link>https://dev.davidalvarezp.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/search/</guid><description/></item><item><title>Enlaces</title><link>https://dev.davidalvarezp.com/enlaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/enlaces/</guid><description/></item></channel></rss>
+&lt;p&gt;Abre esa dirección en tu navegador y verás la página de inicio de SvelteKit.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="estructura-del-proyecto"&gt;Estructura del proyecto
+&lt;/h2&gt;&lt;p&gt;Una vez creado el proyecto, encontrarás una estructura similar a esta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;my-app/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── src/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── routes/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── lib/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └── app.html
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── static/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── package.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── svelte.config.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="srcroutes"&gt;&lt;code&gt;/src/routes&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Aquí defines las &lt;strong&gt;rutas y páginas&lt;/strong&gt; de tu aplicación.&lt;br&gt;
+Cada archivo &lt;code&gt;.svelte&lt;/code&gt; dentro de esta carpeta corresponde a una ruta.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, &lt;code&gt;src/routes/about/+page.svelte&lt;/code&gt; creará la página &lt;code&gt;/about&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="srclib"&gt;&lt;code&gt;/src/lib&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Contiene &lt;strong&gt;componentes reutilizables&lt;/strong&gt;, como botones, menús o layouts.&lt;/p&gt;
+&lt;h3 id="static"&gt;&lt;code&gt;/static&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;Guarda &lt;strong&gt;recursos estáticos&lt;/strong&gt; como imágenes, fuentes o íconos.&lt;br&gt;
+Todo lo que pongas aquí se servirá directamente desde la raíz del sitio.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="crea-tu-primer-componente"&gt;Crea tu primer componente
+&lt;/h2&gt;&lt;p&gt;Ahora que ya tienes el proyecto funcionando, vamos a crear un componente simple.&lt;/p&gt;
+&lt;p&gt;Edita el archivo &lt;code&gt;src/routes/+page.svelte&lt;/code&gt; y reemplázalo con el siguiente contenido:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-svelte" data-lang="svelte"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;nombre&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;David&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Hola &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;nombre&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;, ¡bienvenido a SvelteKit!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Tu primera app ya está corriendo localmente 🚀&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Guarda el archivo y verás el cambio reflejado en tiempo real gracias al &lt;strong&gt;Hot Module Reloading (HMR)&lt;/strong&gt; integrado.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="por-qué-elegir-sveltekit"&gt;¿Por qué elegir SvelteKit?
+&lt;/h2&gt;&lt;p&gt;Algunas ventajas que hacen que SvelteKit destaque frente a otros frameworks como React o Next.js:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Renderizado híbrido&lt;/strong&gt; (SSR + CSR + SSG) sin configuración extra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rendimiento superior&lt;/strong&gt; gracias a la compilación de componentes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Menor tamaño de bundle&lt;/strong&gt;, lo que se traduce en tiempos de carga más rápidos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Excelente DX (Developer Experience)&lt;/strong&gt;: sintaxis limpia, feedback instantáneo y soporte moderno.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integración fácil&lt;/strong&gt; con adaptadores para Vercel, Netlify, Cloudflare y más.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Has creado tu primer proyecto con &lt;strong&gt;SvelteKit&lt;/strong&gt;, entendido su estructura y creado un componente básico.&lt;br&gt;
+Este framework es ideal para desarrolladores que buscan &lt;strong&gt;velocidad, simplicidad y rendimiento&lt;/strong&gt; en sus aplicaciones web.&lt;/p&gt;
+&lt;p&gt;En próximos artículos profundizaremos en temas como &lt;strong&gt;rutas dinámicas&lt;/strong&gt;, &lt;strong&gt;stores&lt;/strong&gt;, &lt;strong&gt;formularios&lt;/strong&gt; y &lt;strong&gt;despliegue en producción&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; explora la documentación oficial en &lt;a class="link" href="https://kit.svelte.dev" target="_blank" rel="noopener"
+&gt;kit.svelte.dev&lt;/a&gt; para descubrir todo su potencial.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Guía práctica de hardening en Linux</title><link>https://dev.davidalvarezp.com/p/hardening-linux/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/hardening-linux/</guid><description>&lt;h1 id="guía-práctica-de-hardening-en-linux"&gt;Guía práctica de hardening en Linux
+&lt;/h1&gt;&lt;p&gt;El &lt;strong&gt;hardening&lt;/strong&gt; (o endurecimiento del sistema) es el proceso de reducir la superficie de ataque de un servidor, minimizando las vulnerabilidades y mejorando su resistencia frente a amenazas.&lt;br&gt;
+En esta guía aprenderás, paso a paso, cómo aplicar buenas prácticas de seguridad en tu servidor &lt;strong&gt;Linux&lt;/strong&gt;, desde la gestión de usuarios hasta la protección de servicios y registros del sistema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="mantén-tu-sistema-actualizado"&gt;Mantén tu sistema actualizado
+&lt;/h2&gt;&lt;p&gt;Un sistema desactualizado es uno de los principales vectores de ataque. Las actualizaciones corrigen vulnerabilidades conocidas, por lo que mantener tu distribución al día debe ser una prioridad.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además, puedes habilitar actualizaciones automáticas para paquetes críticos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install unattended-upgrades
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo dpkg-reconfigure --priority&lt;span class="o"&gt;=&lt;/span&gt;low unattended-upgrades
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Esto garantizará que tu sistema reciba parches de seguridad incluso si olvidas actualizarlos manualmente.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="gestión-segura-de-usuarios-y-permisos"&gt;Gestión segura de usuarios y permisos
+&lt;/h2&gt;&lt;p&gt;Controlar quién puede acceder al sistema es esencial. Algunas recomendaciones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deshabilita o elimina cuentas innecesarias:&lt;/strong&gt;&lt;br&gt;
+Cada cuenta es un posible punto de entrada. Usa &lt;code&gt;sudo deluser&lt;/code&gt; o &lt;code&gt;sudo usermod -L usuario&lt;/code&gt; para desactivarlas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Evita el uso del usuario root:&lt;/strong&gt;&lt;br&gt;
+Trabaja con una cuenta estándar y usa &lt;code&gt;sudo&lt;/code&gt; para tareas administrativas.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo adduser admin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo usermod -aG sudo admin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Usa contraseñas fuertes o autenticación multifactor:&lt;/strong&gt;&lt;br&gt;
+Apóyate en herramientas como &lt;code&gt;pam_cracklib&lt;/code&gt; o &lt;code&gt;libpam-pwquality&lt;/code&gt; para reforzar políticas de contraseñas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Revisa permisos de archivos críticos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;600&lt;/span&gt; /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;644&lt;/span&gt; /etc/passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="configura-un-ssh-seguro"&gt;Configura un SSH seguro
+&lt;/h2&gt;&lt;p&gt;SSH es la puerta de entrada más usada a los servidores Linux, por lo que merece especial atención.&lt;/p&gt;
+&lt;p&gt;Edita el archivo de configuración:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Y aplica las siguientes medidas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cambia el puerto por defecto&lt;/strong&gt; (por ejemplo, al 2222):
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Port 2222
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Desactiva el login directo de root:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PermitRootLogin no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Usa autenticación con clave pública:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;PasswordAuthentication no
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Habilita solo los protocolos seguros:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Protocol 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finalmente, reinicia el servicio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart ssh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="firewall-y-servicios"&gt;Firewall y servicios
+&lt;/h2&gt;&lt;p&gt;Un firewall bien configurado es la primera línea de defensa frente a accesos no deseados.&lt;br&gt;
+En Ubuntu y derivados, &lt;strong&gt;UFW (Uncomplicated Firewall)&lt;/strong&gt; simplifica esta tarea:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw &lt;span class="nb"&gt;enable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 22/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 80/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow 443/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Además:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Desactiva servicios innecesarios:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl disable nombre_servicio
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl stop nombre_servicio
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lista los servicios activos:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ss -tuln
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl list-unit-files --type&lt;span class="o"&gt;=&lt;/span&gt;service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cuantos menos servicios en ejecución, menor será la superficie de ataque.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="monitoreo-y-registros"&gt;Monitoreo y registros
+&lt;/h2&gt;&lt;p&gt;Un servidor seguro no solo se protege, también &lt;strong&gt;se vigila&lt;/strong&gt;.&lt;br&gt;
+Configura herramientas que te alerten ante comportamientos sospechosos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fail2ban:&lt;/strong&gt; bloquea IPs que realizan intentos de acceso fallidos repetidos.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Auditd:&lt;/strong&gt; registra eventos importantes del sistema.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install auditd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; auditd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Puedes revisar los logs con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo aureport -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Revisión periódica de logs:&lt;/strong&gt;
+Los archivos más relevantes se encuentran en &lt;code&gt;/var/log/&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;syslog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fail2ban&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Analizar estos registros te permitirá detectar patrones de ataque o configuraciones inseguras.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="medidas-adicionales-de-hardening"&gt;Medidas adicionales de hardening
+&lt;/h2&gt;&lt;p&gt;Si quieres ir un paso más allá:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instala &lt;strong&gt;AppArmor&lt;/strong&gt; o &lt;strong&gt;SELinux&lt;/strong&gt; para control de acceso obligatorio (MAC).&lt;/li&gt;
+&lt;li&gt;Configura &lt;strong&gt;logs remotos&lt;/strong&gt; o alertas por correo.&lt;/li&gt;
+&lt;li&gt;Implementa &lt;strong&gt;copias de seguridad cifradas&lt;/strong&gt; y regulares.&lt;/li&gt;
+&lt;li&gt;Usa &lt;strong&gt;integridad de archivos&lt;/strong&gt; con herramientas como &lt;code&gt;AIDE&lt;/code&gt; o &lt;code&gt;Tripwire&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;El &lt;strong&gt;hardening en Linux&lt;/strong&gt; no es una acción puntual, sino un proceso continuo.&lt;br&gt;
+Aplicar las prácticas básicas que hemos visto —mantener el sistema actualizado, controlar usuarios, asegurar SSH, configurar un firewall y monitorizar los registros— puede marcar la diferencia entre un servidor seguro y uno vulnerable.&lt;/p&gt;
+&lt;p&gt;Dedicar tiempo a reforzar la seguridad desde el principio te ahorrará muchos problemas en el futuro.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;Recuerda:&lt;/strong&gt; la mejor defensa es la prevención.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Sobre devbydap</title><link>https://dev.davidalvarezp.com/about/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/about/</guid><description>&lt;h1 id="sobre-devbydap"&gt;Sobre devbydap
+&lt;/h1&gt;&lt;p&gt;¡Bienvenido a &lt;strong&gt;devbydap&lt;/strong&gt;! Este proyecto nace de la pasión por la tecnología, la seguridad informática y el desarrollo. Nuestro objetivo es crear un &lt;strong&gt;blog técnico en español&lt;/strong&gt;, donde compartir conocimiento práctico, actual y de calidad, accesible para toda la comunidad hispanohablante.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="nuestra-misión"&gt;Nuestra misión
+&lt;/h2&gt;&lt;p&gt;En un mundo donde la información técnica suele estar dispersa o en inglés, queremos ofrecer &lt;strong&gt;recursos claros, actualizados y aplicables&lt;/strong&gt;, que ayuden a estudiantes, profesionales y entusiastas de la informática a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aprender &lt;strong&gt;ciberseguridad&lt;/strong&gt;, desde conceptos básicos hasta técnicas avanzadas.&lt;/li&gt;
+&lt;li&gt;Mejorar en &lt;strong&gt;administración de sistemas&lt;/strong&gt;, automatización y buenas prácticas.&lt;/li&gt;
+&lt;li&gt;Dominar &lt;strong&gt;desarrollo&lt;/strong&gt;, frameworks, herramientas y despliegues seguros.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="quiénes-somos"&gt;Quiénes somos
+&lt;/h2&gt;&lt;p&gt;Este proyecto está liderado por &lt;strong&gt;davidalvarezp&lt;/strong&gt;, con el apoyo de un pequeño equipo de jóvenes especialistas en desarrollo y sistemas. Nuestra filosofía es aprender haciendo, documentar paso a paso y compartir conocimiento &lt;strong&gt;de forma transparente y accesible&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;davidalvarezp&lt;/strong&gt; – Fundador y responsable técnico, administrador de sistemas y especialista en ciberseguridad.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt; – Expertos en desarrollo, infraestructura y seguridad, contribuyendo con artículos y revisiones técnicas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="nuestra-propuesta-de-valor"&gt;Nuestra propuesta de valor
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Contenido original en español (España)&lt;/strong&gt; – nada de traducciones automáticas ni artículos reciclados.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Calidad y profundidad técnica&lt;/strong&gt; – cada post incluye ejemplos prácticos, comandos, scripts y buenas prácticas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enfoque práctico&lt;/strong&gt; – tutoriales paso a paso para que puedas aplicar lo aprendido directamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt; – el blog está desarrollado por nosotros, sin publicidad invasiva ni agendas externas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="cómo-nos-organizamos"&gt;Cómo nos organizamos
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Publicamos &lt;strong&gt;artículos regulares&lt;/strong&gt;, con frecuencia constante para que siempre haya contenido nuevo.&lt;/li&gt;
+&lt;li&gt;Cada artículo incluye &lt;strong&gt;ejemplos, imágenes, código y referencias&lt;/strong&gt; para facilitar la comprensión.&lt;/li&gt;
+&lt;li&gt;Fomentamos la &lt;strong&gt;interacción con la comunidad&lt;/strong&gt;, a través de comentarios, sugerencias y contribuciones en GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="contacto-y-colaboración"&gt;Contacto y colaboración
+&lt;/h2&gt;&lt;p&gt;Si quieres &lt;strong&gt;colaborar&lt;/strong&gt; o &lt;strong&gt;contactarnos&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Puedes enviar un mensaje a &lt;strong&gt;&lt;a class="link" href="https://davidalvarezp.com" target="_blank" rel="noopener"
+&gt;davidalvarezp&lt;/a&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Contribuciones técnicas o revisiones de artículos son bienvenidas en nuestro &lt;a class="link" href="https://github.com/davidalvarezp/devbydap" target="_blank" rel="noopener"
+&gt;repositorio de GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nuestro compromiso es construir un recurso técnico sólido, confiable y útil para todos los que quieren aprender y crecer en ciberseguridad, administración de sistemas y desarrollo web.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Archivo de artículos</title><link>https://dev.davidalvarezp.com/archivo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/archivo/</guid><description/></item><item><title>Aviso Legal y Políticas</title><link>https://dev.davidalvarezp.com/legal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/legal/</guid><description>&lt;h1 id="aviso-legal-y-políticas"&gt;Aviso Legal y Políticas
+&lt;/h1&gt;&lt;p&gt;Bienvenido a &lt;strong&gt;devbydap&lt;/strong&gt;. En esta página encontrarás toda la información legal, de privacidad y cookies relacionada con el sitio.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="aviso-legal"&gt;Aviso Legal
+&lt;/h2&gt;&lt;p&gt;En cumplimiento con la &lt;strong&gt;Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE)&lt;/strong&gt;, se informa de los siguientes datos identificativos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Titular:&lt;/strong&gt; davidalvarezp
+&lt;strong&gt;Sitio web:&lt;/strong&gt; &lt;a class="link" href="https://dev.davidalvarezp.com" target="_blank" rel="noopener"
+&gt;https://dev.davidalvarezp.com&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Correo electrónico de contacto:&lt;/strong&gt; &lt;a class="link" href="mailto:contact@davidalvarezp.com" &gt;contact@davidalvarezp.com&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Finalidad del sitio:&lt;/strong&gt; Divulgación técnica sobre ciberseguridad, administración de sistemas y desarrollo.&lt;/p&gt;
+&lt;h3 id="condiciones-de-uso"&gt;Condiciones de uso
+&lt;/h3&gt;&lt;p&gt;El acceso y navegación en este sitio web implica la aceptación plena y sin reservas de las presentes condiciones de uso.&lt;br&gt;
+El titular se reserva el derecho de modificar en cualquier momento los contenidos y la configuración del sitio.&lt;/p&gt;
+&lt;p&gt;El usuario se compromete a hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas o contrarias a la buena fe y al orden público.&lt;/p&gt;
+&lt;h3 id="propiedad-intelectual"&gt;Propiedad intelectual
+&lt;/h3&gt;&lt;p&gt;Los artículos, textos y contenidos publicados en este sitio están protegidos por derechos de autor.&lt;br&gt;
+Su reproducción o redistribución sin autorización expresa del titular está prohibida.&lt;/p&gt;
+&lt;p&gt;El diseño y código del tema utilizado en este sitio se encuentran bajo licencia &lt;strong&gt;GNU GPL 3.0&lt;/strong&gt;, disponible en su repositorio correspondiente.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="política-de-privacidad"&gt;Política de Privacidad
+&lt;/h2&gt;&lt;p&gt;Esta política describe cómo se recopilan, utilizan y protegen los datos en &lt;strong&gt;devbydap&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="responsable-del-tratamiento"&gt;Responsable del tratamiento
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;davidalvarezp&lt;/strong&gt;&lt;br&gt;
+Correo: &lt;a class="link" href="mailto:contact@davidalvarezp.com" &gt;contact@davidalvarezp.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="datos-recogidos"&gt;Datos recogidos
+&lt;/h3&gt;&lt;p&gt;Este sitio &lt;strong&gt;no solicita datos personales directamente&lt;/strong&gt; (no hay formularios ni registro de usuarios).&lt;br&gt;
+Sin embargo, utiliza &lt;strong&gt;Google Analytics&lt;/strong&gt;, que puede recopilar información anónima sobre el uso del sitio (como dirección IP, páginas visitadas, o tipo de dispositivo).&lt;/p&gt;
+&lt;h3 id="finalidad-y-legitimación"&gt;Finalidad y legitimación
+&lt;/h3&gt;&lt;p&gt;Los datos se utilizan exclusivamente para analizar el tráfico y mejorar la experiencia del usuario.&lt;br&gt;
+La base legal para dicho tratamiento es el consentimiento del usuario, otorgado mediante la aceptación del uso de cookies.&lt;/p&gt;
+&lt;h3 id="conservación-y-derechos"&gt;Conservación y derechos
+&lt;/h3&gt;&lt;p&gt;No se almacenan datos personales directamente.&lt;br&gt;
+Los datos de navegación son gestionados por Google conforme a su propia &lt;a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+&gt;política de privacidad&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;El usuario puede configurar o eliminar las cookies desde su navegador en cualquier momento.&lt;/p&gt;
+&lt;h3 id="enlaces-externos"&gt;Enlaces externos
+&lt;/h3&gt;&lt;p&gt;Este sitio puede incluir enlaces a sitios externos de terceros.&lt;br&gt;
+El titular no se hace responsable del contenido o prácticas de privacidad de dichos sitios.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="política-de-cookies"&gt;Política de Cookies
+&lt;/h2&gt;&lt;p&gt;En &lt;strong&gt;devbydap&lt;/strong&gt; utilizamos cookies propias y de terceros con fines analíticos.&lt;/p&gt;
+&lt;h3 id="qué-son-las-cookies"&gt;¿Qué son las cookies?
+&lt;/h3&gt;&lt;p&gt;Las cookies son pequeños archivos que se almacenan en tu dispositivo al acceder a determinados sitios web.&lt;br&gt;
+Permiten mejorar la experiencia de usuario y analizar la navegación.&lt;/p&gt;
+&lt;h3 id="cookies-utilizadas"&gt;Cookies utilizadas
+&lt;/h3&gt;&lt;h4 id="-analytics"&gt;🔹 Analytics
+&lt;/h4&gt;&lt;p&gt;Herramienta de análisis web que utiliza cookies para recopilar información anónima.&lt;br&gt;
+Estos datos se usan únicamente para elaborar estadísticas de uso del sitio y mejorar su contenido.&lt;/p&gt;
+&lt;p&gt;Más información: &lt;a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+&gt;Política de privacidad de Google&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="cómo-gestionar-las-cookies"&gt;Cómo gestionar las cookies
+&lt;/h3&gt;&lt;p&gt;Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de tu navegador:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Chrome:&lt;/strong&gt; &lt;a class="link" href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener"
+&gt;Configuración de cookies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Firefox:&lt;/strong&gt; &lt;a class="link" href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web" target="_blank" rel="noopener"
+&gt;Configuración de cookies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge:&lt;/strong&gt; &lt;a class="link" href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener"
+&gt;Configuración de cookies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Safari:&lt;/strong&gt; &lt;a class="link" href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener"
+&gt;Configuración de cookies&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="consentimiento"&gt;Consentimiento
+&lt;/h3&gt;&lt;p&gt;Al navegar por este sitio web, el usuario consiente el uso de las cookies descritas.&lt;br&gt;
+En cualquier momento puede revocar su consentimiento mediante la configuración del navegador.&lt;/p&gt;</description></item><item><title>Buscar</title><link>https://dev.davidalvarezp.com/buscar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/buscar/</guid><description/></item><item><title>Recursos y enlaces recomendados</title><link>https://dev.davidalvarezp.com/enlaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/enlaces/</guid><description/></item></channel></rss>
