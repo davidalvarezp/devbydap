@@ -1,4 +1,150 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Fri, 31 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Introducción a Ansible: Automatización de configuración</title><link>https://dev.davidalvarezp.com/p/ansible-introduccion/</link><pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ansible-introduccion/</guid><description>&lt;h1 id="introducción-a-ansible-automatización-de-configuración"&gt;Introducción a Ansible: Automatización de configuración
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sat, 01 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Automatización de backups en Linux con Rsync y Cron</title><link>https://dev.davidalvarezp.com/p/backups-linux-rsync-cron/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/backups-linux-rsync-cron/</guid><description>&lt;h1 id="automatización-de-backups-en-linux-con-rsync-y-cron"&gt;Automatización de backups en Linux con Rsync y Cron
+&lt;/h1&gt;&lt;p&gt;La protección de datos es un pilar fundamental en la administración de sistemas Linux.
+El uso de Rsync combinado con Cron permite no solo realizar copias de seguridad, sino hacerlo de forma programada, incremental y eficiente, incluso para entornos con grandes volúmenes de datos.&lt;/p&gt;
+&lt;p&gt;En este artículo profundizaremos en estrategias de backup avanzadas, incluyendo control de versiones, compresión, cifrado, notificaciones y monitoreo de logs.&lt;/p&gt;
+&lt;h2 id="por-qué-usar-rsync-para-backups"&gt;Por qué usar Rsync para backups
+&lt;/h2&gt;&lt;p&gt;Rsync es una herramienta potente que sincroniza archivos entre directorios o sistemas remotos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Soporta copia incremental, transfiriendo solo los cambios&lt;/li&gt;
+&lt;li&gt;Permite preservar permisos, timestamps, links simbólicos y atributos extendidos&lt;/li&gt;
+&lt;li&gt;Puede ejecutarse local o remotamente vía SSH&lt;/li&gt;
+&lt;li&gt;Funciona con compresión y en modo silencioso, ideal para scripts automatizados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="comando-básico-de-rsync"&gt;Comando básico de Rsync
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -av --progress /ruta/origen/ /ruta/destino/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;-a: preserva permisos, propietario, timestamps y enlaces simbólicos&lt;/p&gt;
+&lt;p&gt;-v: verbose, muestra información detallada&lt;/p&gt;
+&lt;p&gt;&amp;ndash;progress: monitoriza la transferencia de archivos&lt;/p&gt;
+&lt;p&gt;Para sincronizar directorios entre servidores:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -avz -e ssh /ruta/origen/ usuario@servidor_remoto:/ruta/destino/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;-z: habilita compresión&lt;/p&gt;
+&lt;p&gt;-e ssh: utiliza SSH para conexión segura&lt;/p&gt;
+&lt;h2 id="automatización-con-cron"&gt;Automatización con Cron
+&lt;/h2&gt;&lt;p&gt;Cron es el scheduler estándar en Linux que permite ejecutar tareas de forma periódica:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editar crontab del usuario:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;crontab -e
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Ejemplo: backup diario a las 2:00 am con log:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * rsync -av /home/usuario/ /mnt/backup/home/ &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Para entornos de producción, es recomendable redirigir errores a un log separado y monitorear su tamaño:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0 2 * * * rsync -av /home/usuario/ /mnt/backup/home/ &amp;gt;&amp;gt; /var/log/backup.log 2&amp;gt;&amp;gt; /var/log/backup_error.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="estrategias-avanzadas-de-backup"&gt;Estrategias avanzadas de backup
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Control de versiones&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Mantener carpetas con timestamp para mantener varias versiones:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -av /home/usuario/ /mnt/backup/home_&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="se"&gt;\%&lt;/span&gt;F&lt;span class="k"&gt;)&lt;/span&gt;/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Esto permite restaurar datos de un día específico.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Compresión y cifrado&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Crear backups comprimidos con tar y cifrados con gpg:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tar -czf - /home/usuario/ &lt;span class="p"&gt;|&lt;/span&gt; gpg --symmetric --cipher-algo AES256 -o /mnt/backup/backup_&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="se"&gt;\%&lt;/span&gt;F&lt;span class="k"&gt;)&lt;/span&gt;.tar.gz.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Garantiza confidencialidad de datos sensibles.&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;Backup incremental con &amp;ndash;link-dest&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimiza espacio en disco usando hard links:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -av --link-dest&lt;span class="o"&gt;=&lt;/span&gt;/mnt/backup/home_2025-11-14 /home/usuario/ /mnt/backup/home_2025-11-15/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Solo copia los archivos que han cambiado desde la última versión.&lt;/p&gt;
+&lt;h2 id="notificaciones-y-monitoreo"&gt;Notificaciones y monitoreo
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Integrar envío de correo ante errores usando mail:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -av /home/usuario/ /mnt/backup/home/ 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;#34;Backup diario Linux&amp;#34;&lt;/span&gt; admin@dominio.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Usar herramientas de monitoreo como Nagios o Zabbix para validar integridad de backups.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Probar restauraciones periódicamente&lt;/li&gt;
+&lt;li&gt;Mantener backups en ubicaciones físicas y remotas&lt;/li&gt;
+&lt;li&gt;Limitar permisos de acceso al directorio de backup&lt;/li&gt;
+&lt;li&gt;Documentar scripts y cron jobs&lt;/li&gt;
+&lt;li&gt;Considerar retención y purga de backups antiguos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Automatizar backups en Linux con Rsync y Cron permite crear un sistema confiable y eficiente.
+Con control de versiones, compresión, cifrado y monitoreo, podemos garantizar la disponibilidad y seguridad de nuestros datos críticos.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Un backup bien planificado es una póliza de seguro invisible pero indispensable para cualquier infraestructura.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Introducción a Ansible: Automatización de configuración</title><link>https://dev.davidalvarezp.com/p/ansible-introduccion/</link><pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ansible-introduccion/</guid><description>&lt;h1 id="introducción-a-ansible-automatización-de-configuración"&gt;Introducción a Ansible: Automatización de configuración
 &lt;/h1&gt;&lt;p&gt;Ansible es una herramienta de automatización de configuración y administración de sistemas que permite aplicar cambios de manera repetible y sin intervención manual.
 Con Ansible puedes gestionar servidores, instalar software, ejecutar tareas y mantener entornos consistentes.&lt;/p&gt;
 &lt;p&gt;En esta entrada veremos cómo instalar Ansible, crear playbooks básicos y ejecutar tareas automatizadas en tus servidores.&lt;/p&gt;
