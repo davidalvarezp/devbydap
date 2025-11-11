@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /p/
+Disallow: /tags/
+Disallow: /tag/
+Disallow: /categories/
+Disallow: /category/
+Disallow: /archives/
+Disallow: /search/
+Disallow: /*?
+
+Sitemap: {{ "sitemap.xml" | absURL }}
