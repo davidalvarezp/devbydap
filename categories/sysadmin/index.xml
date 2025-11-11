@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Cómo detectar y mitigar ataques de fuerza bruta en SSH</title><link>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</link><pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</guid><description>&lt;h1 id="cómo-detectar-y-mitigar-ataques-de-fuerza-bruta-en-ssh"&gt;Cómo detectar y mitigar ataques de fuerza bruta en SSH
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SysAdmin on devbydap</title><link>https://dev.davidalvarezp.com/categories/sysadmin/</link><description>Recent content in SysAdmin on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/sysadmin/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
+&lt;/h1&gt;&lt;p&gt;En entornos modernos, la observabilidad es fundamental para garantizar la disponibilidad y el rendimiento de los sistemas. Prometheus y Grafana forman una de las combinaciones más potentes para recolectar, almacenar y visualizar métricas de servidores y servicios.&lt;/p&gt;
+&lt;p&gt;Prometheus se encarga de recopilar y almacenar métricas mediante un modelo pull (consultando endpoints /metrics), mientras que Grafana actúa como interfaz visual, permitiendo construir paneles interactivos y alertas basadas en esas métricas.&lt;/p&gt;
+&lt;h2 id="instalar-prometheus"&gt;Instalar Prometheus
+&lt;/h2&gt;&lt;p&gt;Para comenzar, instala Prometheus desde los repositorios oficiales:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El servicio Prometheus se instala y se ejecuta automáticamente como un demonio del sistema (prometheus.service). Puedes verificar su estado con:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl status prometheus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Por defecto, Prometheus expone su interfaz web en el puerto 9090, accesible desde http://&amp;lt;ip_servidor&amp;gt;:9090. Desde ahí puedes ejecutar consultas PromQL (Prometheus Query Language) para inspeccionar métricas.&lt;/p&gt;
+&lt;p&gt;La configuración principal se encuentra en /etc/prometheus/prometheus.yml, donde puedes definir los targets (hosts o servicios) desde los cuales se recopilarán métricas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;scrape_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;job_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;servidores&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;static_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;targets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;localhost:9100&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Para obtener métricas de sistemas Linux (CPU, RAM, red, disco, etc.), instala el exporter correspondiente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install prometheus-node-exporter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Este componente expone métricas del sistema en :9100/metrics, que luego Prometheus recolectará automáticamente.&lt;/p&gt;
+&lt;h2 id="instalar-grafana"&gt;Instalar Grafana
+&lt;/h2&gt;&lt;p&gt;Grafana es la capa de visualización de la pila de monitorización. Permite crear dashboards personalizables y configurar alertas.&lt;/p&gt;
+&lt;p&gt;Instala Grafana con los siguientes comandos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install grafana
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start grafana-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;El servicio se ejecuta por defecto en el puerto 3000 (http://&amp;lt;ip_servidor&amp;gt;:3000) y las credenciales iniciales son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usuario: admin&lt;/li&gt;
+&lt;li&gt;Contraseña: admin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Se recomienda cambiar la contraseña en el primer inicio de sesión.&lt;/p&gt;
+&lt;p&gt;Una vez dentro, el siguiente paso es conectar Prometheus como fuente de datos (Data Source):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En el panel lateral, ve a Connections → Data sources → Add data source.&lt;/li&gt;
+&lt;li&gt;Selecciona Prometheus.&lt;/li&gt;
+&lt;li&gt;En el campo URL, introduce:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http://localhost:9090
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Guarda la configuración haciendo clic en Save &amp;amp; Test.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="configurar-dashboards"&gt;Configurar dashboards
+&lt;/h2&gt;&lt;p&gt;Una vez establecida la conexión, puedes crear dashboards personalizados para visualizar métricas clave.&lt;/p&gt;
+&lt;p&gt;Algunos ejemplos de paneles recomendados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU Usage: métrica node_cpu_seconds_total filtrada por modo idle o user.&lt;/li&gt;
+&lt;li&gt;Memoria RAM: node_memory_MemAvailable_bytes y node_memory_MemTotal_bytes.&lt;/li&gt;
+&lt;li&gt;Tráfico de red: node_network_receive_bytes_total y node_network_transmit_bytes_total.&lt;/li&gt;
+&lt;li&gt;Espacio en disco: node_filesystem_avail_bytes y node_filesystem_size_bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Puedes importar dashboards preconstruidos desde grafana.com/grafana/dashboards
+Un ejemplo muy usado es el Node Exporter Full (ID: 1860), que ofrece visualizaciones completas para hosts Linux.&lt;/p&gt;
+&lt;p&gt;Para importar un dashboard:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En Grafana, ve a Dashboards → Import.&lt;/li&gt;
+&lt;li&gt;Introduce el ID (1860) y selecciona la fuente de datos Prometheus.&lt;/li&gt;
+&lt;li&gt;Haz clic en Load y luego Import.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="buenas-prácticas-de-monitorización"&gt;Buenas prácticas de monitorización
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Mantén Prometheus y Grafana actualizados a la última versión estable.&lt;/li&gt;
+&lt;li&gt;Limita el acceso web mediante autenticación o VPN.&lt;/li&gt;
+&lt;li&gt;Configura retención de métricas según tus necesidades (&amp;ndash;storage.tsdb.retention.time=15d).&lt;/li&gt;
+&lt;li&gt;Crea alertas en Grafana para CPU alta, uso de memoria o pérdida de conectividad.&lt;/li&gt;
+&lt;li&gt;Centraliza la monitorización de múltiples servidores en una misma instancia de Prometheus mediante federation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Con Prometheus y Grafana, puedes obtener una visión completa del estado de tus servidores y anticiparte a problemas de rendimiento o disponibilidad. Esta combinación permite implementar una cultura de observabilidad, clave en entornos DevOps y de producción moderna.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con esto podrás monitorizar tus servidores y anticiparte a problemas de rendimiento.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Cómo detectar y mitigar ataques de fuerza bruta en SSH</title><link>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</link><pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/mitigar-fuerza-bruta-ssh/</guid><description>&lt;h1 id="cómo-detectar-y-mitigar-ataques-de-fuerza-bruta-en-ssh"&gt;Cómo detectar y mitigar ataques de fuerza bruta en SSH
 &lt;/h1&gt;&lt;p&gt;Los ataques de fuerza bruta son intentos automatizados y repetitivos para adivinar contraseñas de usuarios a través del servicio SSH (Secure Shell). Este tipo de ataque aprovecha configuraciones débiles o credenciales predecibles, y puede comprometer por completo un servidor si no se aplican medidas de protección adecuadas.&lt;/p&gt;
 &lt;h2 id="revisar-intentos-de-acceso"&gt;Revisar intentos de acceso
 &lt;/h2&gt;&lt;p&gt;El primer paso para mitigar un ataque de fuerza bruta es detectar los intentos fallidos de autenticación. El log del sistema registra estos eventos en /var/log/auth.log (en distribuciones basadas en Debian) o /var/log/secure (en Red Hat y derivados).&lt;/p&gt;
