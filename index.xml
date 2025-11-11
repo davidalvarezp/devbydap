@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap | SysAdmin &amp; CyberSec on devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content in devbydap | SysAdmin &amp; CyberSec on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitorización de contenedores con cAdvisor y Prometheus</title><link>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</link><pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</guid><description>&lt;h1 id="monitorización-de-contenedores-con-cadvisor-y-prometheus"&gt;Monitorización de contenedores con cAdvisor y Prometheus
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap | SysAdmin &amp; CyberSec on devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content in devbydap | SysAdmin &amp; CyberSec on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Infraestructura como código avanzada con AWS CDK</title><link>https://dev.davidalvarezp.com/p/iac-aws-cdk/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/iac-aws-cdk/</guid><description>&lt;h1 id="monitorización-de-contenedores-con-cadvisor-y-prometheus"&gt;Monitorización de contenedores con cAdvisor y Prometheus
+&lt;/h1&gt;&lt;p&gt;cAdvisor proporciona métricas en tiempo real de contenedores Docker. Combinado con Prometheus, permite análisis histórico y alertas basadas en uso de recursos.&lt;/p&gt;
+&lt;h2 id="instalación-de-cadvisor"&gt;Instalación de cAdvisor
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run --volume&lt;span class="o"&gt;=&lt;/span&gt;/:/rootfs:ro --volume&lt;span class="o"&gt;=&lt;/span&gt;/var/run:/var/run:rw --volume&lt;span class="o"&gt;=&lt;/span&gt;/sys:/sys:ro --volume&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/docker/:/var/lib/docker:ro --publish&lt;span class="o"&gt;=&lt;/span&gt;8080:8080 --detach&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; --name&lt;span class="o"&gt;=&lt;/span&gt;cadvisor google/cadvisor:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="integración-con-prometheus"&gt;Integración con Prometheus
+&lt;/h2&gt;&lt;p&gt;Agregar un job en &lt;code&gt;prometheus.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;scrape_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;job_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cadvisor&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;static_configs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;targets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;host.docker.internal:8080&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Configurar dashboards Grafana para métricas de CPU, memoria y red&lt;/li&gt;
+&lt;li&gt;Definir alertas para uso elevado de recursos&lt;/li&gt;
+&lt;li&gt;Monitorear containers críticos y estado de replicación&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;cAdvisor + Prometheus permite &lt;strong&gt;monitorización detallada de contenedores&lt;/strong&gt;, asegurando estabilidad y rendimiento de la infraestructura Docker.&lt;/p&gt;</description></item><item><title>Monitorización de contenedores con cAdvisor y Prometheus</title><link>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</link><pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-cadvisor-prometheus/</guid><description>&lt;h1 id="monitorización-de-contenedores-con-cadvisor-y-prometheus"&gt;Monitorización de contenedores con cAdvisor y Prometheus
 &lt;/h1&gt;&lt;p&gt;cAdvisor proporciona métricas en tiempo real de contenedores Docker. Combinado con Prometheus, permite análisis histórico y alertas basadas en uso de recursos.&lt;/p&gt;
 &lt;h2 id="instalación-de-cadvisor"&gt;Instalación de cAdvisor
 &lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
