@@ -20,9 +20,9 @@
         {{ end }}
 
         {{- $Generator := `` -}}
-        {{- $DevelopedBy := `<a>hola</a>` -}}
+        {{- $Theme := `<a>hola</a>` -}}
         {{- $DesignedBy := `<a href="https://davidalvarezp.com" target="_blank" rel="noopener">davidalvarezp</a> & <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
 
-        {{ T "footer.designedBy" ($DevelopedBy $DesignedBy) | safeHTML }}
+        {{ T "footer.designedBy" ($Theme $DesignedBy) | safeHTML }}
     </section>
 </footer>
