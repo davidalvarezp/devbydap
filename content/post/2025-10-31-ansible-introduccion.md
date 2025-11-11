@@ -3,7 +3,7 @@ author: "davidalvarezp"
 title: "Introducción a Ansible: Automatización de configuración"
 slug: "ansible-introduccion"
 description: "Aprende a automatizar la configuración y administración de servidores con Ansible, usando playbooks y roles para entornos reproducibles."
-tags: ["Ansible", "Automation", "DevOps"]
+tags: ["Ansible", "Automatización", "DevOps"]
 categories: ["SysAdmin"]
 date: "2025-10-31"
 keywords: ["ansible", "automatización", "playbooks", "roles", "configuración de servidores"]
