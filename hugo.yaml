@@ -44,6 +44,7 @@ params:
 
     sidebar:
         emoji: ✔
+        title: devbydap
         subtitle: SysAdmin | Dev | CyberSec
         avatar:
             enabled: true
