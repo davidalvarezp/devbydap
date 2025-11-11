@@ -1,7 +1,7 @@
 baseurl: https://dev.davidalvarezp.com/
 languageCode: es
 theme: dev
-title: devbydap
+title: devbydap | SysAdmin & CyberSec
 copyright: davidalvarezp
 
 # Theme i18n support
@@ -33,8 +33,6 @@ params:
     featuredImageField: image
     rssFullContent: true
     favicon: /favicon.png # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
-
-    description: "Blog técnico de David Alvarez sobre DevOps, SysAdmin y ciberseguridad. Guías, configuraciones y tutoriales para profesionales IT."
 
     footer:
         since: 2025
