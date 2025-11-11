@@ -221,6 +221,20 @@ related:
         - name: categories
           weight: 200
 
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
+
+
+outputs:
+  home: ["HTML", "RSS", "SITEMAP", "ROBOTS"]
+  page: ["HTML"]
+  section: ["HTML"]
+  taxonomy: ["HTML"]        # sin "SITEMAP" → excluye tags y categorías
+  taxonomyTerm: ["HTML"]    # idem
+
+
 markup:
     goldmark:
         extensions:
