@@ -52,7 +52,60 @@
 &lt;li&gt;Revisar patrones de alertas y ajustar reglas&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Loki + Alertmanager permite &lt;strong&gt;monitorización centralizada de logs y alertas&lt;/strong&gt;, mejorando tiempos de respuesta ante incidentes.&lt;/p&gt;</description></item><item><title>Despliegue de contenedores con Docker Compose y Kubernetes</title><link>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</link><pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</guid><description>&lt;h1 id="despliegue-de-contenedores-con-docker-compose-y-kubernetes"&gt;Despliegue de contenedores con Docker Compose y Kubernetes
+&lt;/h2&gt;&lt;p&gt;Loki + Alertmanager permite &lt;strong&gt;monitorización centralizada de logs y alertas&lt;/strong&gt;, mejorando tiempos de respuesta ante incidentes.&lt;/p&gt;</description></item><item><title>Optimización de bases de datos MySQL y PostgreSQL</title><link>https://dev.davidalvarezp.com/p/optimizacion-mysql-postgresql/</link><pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/optimizacion-mysql-postgresql/</guid><description>&lt;h1 id="optimización-de-bases-de-datos-mysql-y-postgresql"&gt;Optimización de bases de datos MySQL y PostgreSQL
+&lt;/h1&gt;&lt;p&gt;El rendimiento de las bases de datos depende de &lt;strong&gt;configuración, índices y consultas optimizadas&lt;/strong&gt;. Veremos tuning avanzado para MySQL y PostgreSQL.&lt;/p&gt;
+&lt;h2 id="mysql"&gt;MySQL
+&lt;/h2&gt;&lt;h3 id="configuración-principal-en-mycnf"&gt;Configuración principal en &lt;code&gt;my.cnf&lt;/code&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;[mysqld]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;buffer_pool_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1G&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;max_connections&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;query_cache_type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;query_cache_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;innodb_flush_log_at_trx_commit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Crear índices adecuados para consultas frecuentes&lt;/li&gt;
+&lt;li&gt;Monitorear slow queries con &lt;code&gt;mysqldumpslow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Ajustar conexiones y buffers según carga&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="postgresql"&gt;PostgreSQL
+&lt;/h2&gt;&lt;h3 id="configuración-principal-en-postgresqlconf"&gt;Configuración principal en &lt;code&gt;postgresql.conf&lt;/code&gt;
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;shared_buffers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;1GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;work_mem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;16MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;maintenance_work_mem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;256MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;max_connections&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="na"&gt;effective_cache_size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;3GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="optimización"&gt;Optimización
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;VACUUM y ANALYZE periódicos&lt;/li&gt;
+&lt;li&gt;Uso de EXPLAIN para plan de consultas&lt;/li&gt;
+&lt;li&gt;Configurar WAL y checkpoints según carga&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;El tuning de MySQL y PostgreSQL permite &lt;strong&gt;mejorar rendimiento y escalabilidad&lt;/strong&gt;, reduciendo latencia y tiempos de respuesta.&lt;/p&gt;</description></item><item><title>Despliegue de contenedores con Docker Compose y Kubernetes</title><link>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</link><pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</guid><description>&lt;h1 id="despliegue-de-contenedores-con-docker-compose-y-kubernetes"&gt;Despliegue de contenedores con Docker Compose y Kubernetes
 &lt;/h1&gt;&lt;p&gt;Docker Compose facilita el desarrollo y prueba de aplicaciones multi-contenedor, mientras Kubernetes permite &lt;strong&gt;escalar y gestionar producción&lt;/strong&gt; de forma automatizada.&lt;/p&gt;
 &lt;h2 id="docker-compose"&gt;Docker Compose
 &lt;/h2&gt;&lt;h3 id="instalación"&gt;Instalación
