@@ -1,0 +1,20 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- /* Homepage */}}
+  <url>
+    <loc>{{ .Site.BaseURL }}</loc>
+    {{- with .Site.Home.Lastmod }}<lastmod>{{ . }}</lastmod>{{ end }}
+    {{- with .Site.Sitemap.ChangeFreq }}<changefreq>{{ . }}</changefreq>{{ end }}
+    {{- with .Site.Sitemap.Priority }}<priority>{{ . }}</priority>{{ end }}
+  </url>
+
+  {{- /* Todas las páginas y posts, excluyendo taxonomías */}}
+  {{- range .Site.RegularPages }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- with .Lastmod }}<lastmod>{{ . }}</lastmod>{{ end }}
+    {{- with $.Site.Sitemap.ChangeFreq }}<changefreq>{{ . }}</changefreq>{{ end }}
+    {{- with $.Site.Sitemap.Priority }}<priority>{{ . }}</priority>{{ end }}
+  </url>
+  {{- end }}
+</urlset>
