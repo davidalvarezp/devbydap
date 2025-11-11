@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on devbydap</title><link>https://dev.davidalvarezp.com/post/</link><description>Recent content in Posts on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on devbydap</title><link>https://dev.davidalvarezp.com/post/</link><description>Recent content in Posts on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Mon, 27 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Gestión segura de contraseñas y autenticación 2FA</title><link>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</link><pubDate>Mon, 27 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gestion-contrase%C3%B1as-2fa/</guid><description>&lt;h1 id="gestión-segura-de-contraseñas-y-autenticación-2fa"&gt;Gestión segura de contraseñas y autenticación 2FA
+&lt;/h1&gt;&lt;p&gt;La seguridad digital depende, en gran medida, de la solidez con la que protegemos nuestras credenciales. Una contraseña débil o la ausencia de autenticación adicional puede exponer sistemas, cuentas personales o incluso infraestructuras empresariales a ataques. En este artículo abordaremos las mejores prácticas técnicas para gestionar contraseñas y habilitar autenticación de dos factores (2FA).&lt;/p&gt;
+&lt;h2 id="usa-gestores-de-contraseñas"&gt;Usa gestores de contraseñas
+&lt;/h2&gt;&lt;p&gt;Los gestores de contraseñas son herramientas diseñadas para generar, almacenar y cifrar credenciales de forma segura. Evitan que el usuario tenga que memorizar múltiples contraseñas y reducen drásticamente el riesgo de reutilización.&lt;/p&gt;
+&lt;p&gt;Algunas opciones recomendadas incluyen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1Password: Solución comercial con cifrado AES-256 y sincronización segura entre dispositivos mediante un Secret Key local.&lt;/li&gt;
+&lt;li&gt;Bitwarden: Alternativa open source con almacenamiento en la nube o en servidor propio, ideal para entornos corporativos.&lt;/li&gt;
+&lt;li&gt;KeePass: Opción gratuita y local que guarda el archivo cifrado (.kdbx) sin depender de servicios externos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Desde el punto de vista técnico, estos gestores utilizan algoritmos de cifrado simétrico (como AES-256-GCM) y funciones de derivación de claves (PBKDF2, Argon2id) para reforzar la protección del archivo de contraseñas. Además, muchos implementan integraciones con autenticadores o llaves físicas (como YubiKey) para desbloquear el acceso.&lt;/p&gt;
+&lt;h2 id="configura-2fa-siempre-que-sea-posible"&gt;Configura 2FA siempre que sea posible
+&lt;/h2&gt;&lt;p&gt;La autenticación de dos factores (2FA) añade una capa adicional de seguridad que mitiga el impacto de credenciales comprometidas. El usuario debe proporcionar no solo la contraseña (factor de conocimiento), sino también un segundo factor, como un código temporal o una llave física.&lt;/p&gt;
+&lt;p&gt;Los métodos más comunes incluyen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TOTP (Time-based One-Time Passwords): Códigos generados localmente por apps como Google Authenticator, Authy o Aegis. Basados en RFC 6238, estos códigos expiran cada 30 segundos y requieren sincronización temporal precisa.&lt;/li&gt;
+&lt;li&gt;Llaves U2F/FIDO2 (hardware): Dispositivos como YubiKey o SoloKey implementan autenticación basada en criptografía asimétrica, lo que elimina la posibilidad de ataques de phishing o replay.&lt;/li&gt;
+&lt;li&gt;Push notifications o tokens biométricos: Métodos modernos integrados en sistemas de identidad corporativos (Microsoft Entra ID, Okta, Duo Security).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Implementar 2FA debería ser un requisito mínimo en cualquier servicio que gestione información sensible: correos, cuentas en la nube, paneles administrativos o repositorios de código.&lt;/p&gt;
+&lt;h2 id="evita-reutilizar-contraseñas"&gt;Evita reutilizar contraseñas
+&lt;/h2&gt;&lt;p&gt;Una de las prácticas más riesgosas es utilizar la misma contraseña en múltiples servicios. Si una base de datos es vulnerada, los atacantes suelen probar esas mismas credenciales en otras plataformas (credential stuffing).&lt;/p&gt;
+&lt;p&gt;La solución técnica pasa por usar contraseñas únicas, generadas automáticamente y almacenadas en un gestor seguro. Además, se recomienda monitorizar si alguna de tus credenciales ha sido filtrada utilizando herramientas como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have I Been Pwned (HIBP)&lt;/li&gt;
+&lt;li&gt;Firefox Monitor&lt;/li&gt;
+&lt;li&gt;Google Password Checkup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para empresas, integrar verificaciones automáticas contra listas de contraseñas comprometidas (NIST SP 800-63B Appendix A) ayuda a bloquear credenciales inseguras desde el inicio.&lt;/p&gt;
+&lt;h2 id="mejores-prácticas-adicionales"&gt;Mejores prácticas adicionales
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Habilita 2FA no solo en cuentas personales, sino también en servicios críticos: GitHub, AWS, GCP, paneles de administración, y VPNs.&lt;/li&gt;
+&lt;li&gt;Utiliza contraseñas de al menos 16 caracteres, combinando letras, números y símbolos.&lt;/li&gt;
+&lt;li&gt;Cambia inmediatamente las credenciales si detectas actividad sospechosa o una filtración pública.&lt;/li&gt;
+&lt;li&gt;Configura un mecanismo de recuperación seguro (por ejemplo, códigos de respaldo impresos o almacenados offline).&lt;/li&gt;
+&lt;li&gt;Desactiva el 2FA por SMS cuando sea posible, ya que es vulnerable a SIM swapping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Implementar una estrategia de seguridad basada en contraseñas robustas y autenticación multifactor no solo es una buena práctica, sino una necesidad. En un entorno donde las filtraciones y ataques de ingeniería social son cada vez más comunes, adoptar herramientas como gestores de contraseñas y autenticadores físicos puede marcar la diferencia entre una cuenta comprometida y una infraestructura segura.&lt;/p&gt;
+&lt;p&gt;.&amp;gt; Siguiendo estas prácticas, mejorarás notablemente la seguridad de tus cuentas y reducirás tu superficie de ataque frente a amenazas actuales.&lt;/p&gt;</description></item><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
 &lt;/h1&gt;&lt;p&gt;El SEO (Search Engine Optimization) es esencial para que tu blog sea visible y fácil de encontrar en motores de búsqueda como Google. Hugo, al ser un generador de sitios estáticos, permite implementar prácticas SEO de manera sencilla y eficiente.&lt;/p&gt;
 &lt;p&gt;En este artículo veremos &lt;strong&gt;técnicas prácticas para mejorar el SEO de un sitio Hugo&lt;/strong&gt;, desde la configuración de títulos y meta tags, hasta la estructura de contenido y la generación de sitemap.&lt;/p&gt;
 &lt;hr&gt;
