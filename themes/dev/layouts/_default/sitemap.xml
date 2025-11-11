@@ -5,11 +5,14 @@
     <loc>{{ .Site.BaseURL }}</loc>
   </url>
 
-  {{- /* Todas las páginas y posts, excluyendo taxonomías */}}
+  {{- /* Todas las páginas y posts, excluyendo taxonomías y páginas específicas */}}
   {{- range .Site.RegularPages }}
-  <url>
-    <loc>{{ .Permalink }}</loc>
-    {{- with .Lastmod }}<lastmod>{{ . }}</lastmod>{{ end }}
-  </url>
+    {{- $slug := .File.Path | lower }}
+    {{- if not (or (in $slug "archivo") (in $slug "buscar") (in $slug "legal")) }}
+      <url>
+        <loc>{{ .Permalink }}</loc>
+        {{- with .Lastmod }}<lastmod>{{ . }}</lastmod>{{ end }}
+      </url>
+    {{- end }}
   {{- end }}
 </urlset>
