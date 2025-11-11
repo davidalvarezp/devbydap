@@ -34,6 +34,9 @@ params:
     rssFullContent: true
     favicon: /favicon.png # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
+    description: "Blog técnico de David Alvarez sobre DevOps, SysAdmin y ciberseguridad. Guías, configuraciones y tutoriales para profesionales IT."
+    author: "davidalvarezp"
+
     footer:
         since: 2025
         customText:
