@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap | SysAdmin &amp; CyberSec on devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content in devbydap | SysAdmin &amp; CyberSec on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devbydap | SysAdmin &amp; CyberSec on devbydap</title><link>https://dev.davidalvarezp.com/</link><description>Recent content in devbydap | SysAdmin &amp; CyberSec on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Thu, 30 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Introducción a Terraform: Infraestructura como Código</title><link>https://dev.davidalvarezp.com/p/terraform-introduccion/</link><pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/terraform-introduccion/</guid><description>&lt;h1 id="introducción-a-terraform-infraestructura-como-código"&gt;Introducción a Terraform: Infraestructura como Código
+&lt;/h1&gt;&lt;p&gt;Terraform es una herramienta de Infraestructura como Código (IaC) que permite definir, provisionar y gestionar infraestructura en la nube de forma declarativa. Con Terraform puedes crear recursos en AWS, Azure, Google Cloud y otros proveedores de manera consistente y reproducible.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos cómo instalar Terraform, crear un proyecto básico y desplegar recursos en la nube.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="qué-es-infraestructura-como-código"&gt;¿Qué es Infraestructura como Código?
+&lt;/h2&gt;&lt;p&gt;La Infraestructura como Código permite gestionar infraestructura de manera similar al software, con ventajas como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Versionamiento y control de cambios&lt;/li&gt;
+&lt;li&gt;Reproducibilidad de entornos&lt;/li&gt;
+&lt;li&gt;Automatización y reducción de errores manuales&lt;/li&gt;
+&lt;li&gt;Integración con pipelines CI/CD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Terraform utiliza un lenguaje declarativo llamado HCL (HashiCorp Configuration Language) para describir los recursos que necesitamos.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="instalación-de-terraform"&gt;Instalación de Terraform
+&lt;/h2&gt;&lt;p&gt;En sistemas Linux puedes instalar Terraform siguiendo estos pasos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install wget unzip -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;unzip terraform_1.6.0_linux_amd64.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo mv terraform /usr/local/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;terraform version .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Consejo: Terraform se actualiza frecuentemente, revisa la última versión oficial en la web de HashiCorp&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="primer-proyecto-con-terraform"&gt;Primer proyecto con Terraform
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Crea un directorio para tu proyecto:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir terraform-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; terraform-demo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="2"&gt;
+&lt;li&gt;Crea un archivo main.tf con el siguiente contenido para desplegar un recurso simple, por ejemplo, un bucket en AWS S3:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-hcl" data-lang="hcl"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;provider&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;aws&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt; region&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;us-east-1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;resource&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;aws_s3_bucket&amp;#34; &amp;#34;mi_bucket&amp;#34;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt; bucket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;terraform-demo-bucket-12345&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt; acl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;private&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="3"&gt;
+&lt;li&gt;Inicializa el proyecto:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;terraform init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="4"&gt;
+&lt;li&gt;Previsualiza los cambios que se aplicarán:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;terraform plan
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="5"&gt;
+&lt;li&gt;Aplica la configuración:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;terraform apply
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Terraform creará el bucket en tu cuenta de AWS siguiendo exactamente lo definido en main.tf.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="gestión-y-mantenimiento-de-infraestructura"&gt;Gestión y mantenimiento de infraestructura
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Actualizar recursos: Modifica tu main.tf y vuelve a ejecutar terraform apply.&lt;/li&gt;
+&lt;li&gt;Eliminar infraestructura:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;terraform destroy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Estado de la infraestructura: Terraform mantiene un archivo terraform.tfstate para rastrear los recursos. Nunca lo modifiques manualmente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Versionar el código en Git&lt;/li&gt;
+&lt;li&gt;Usar workspaces para separar entornos (dev, staging, prod)&lt;/li&gt;
+&lt;li&gt;Mantener variables sensibles en archivos .tfvars y no en el repositorio&lt;/li&gt;
+&lt;li&gt;Revisar cambios con terraform plan antes de aplicar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Terraform simplifica la gestión de infraestructura y permite integrar prácticas de DevOps de manera más eficiente y segura.
+Con un poco de práctica, podrás:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatizar despliegues en múltiples proveedores&lt;/li&gt;
+&lt;li&gt;Mantener entornos consistentes y reproducibles&lt;/li&gt;
+&lt;li&gt;Reducir errores manuales y optimizar tu flujo de trabajo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Con Terraform, tu infraestructura se convierte en código que evoluciona contigo.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Monitoriza tus servidores con Prometheus y Grafana</title><link>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</link><pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/monitorizacion-prometheus-grafana/</guid><description>&lt;h1 id="monitoriza-tus-servidores-con-prometheus-y-grafana"&gt;Monitoriza tus servidores con Prometheus y Grafana
 &lt;/h1&gt;&lt;p&gt;En entornos modernos, la observabilidad es fundamental para garantizar la disponibilidad y el rendimiento de los sistemas. Prometheus y Grafana forman una de las combinaciones más potentes para recolectar, almacenar y visualizar métricas de servidores y servicios.&lt;/p&gt;
 &lt;p&gt;Prometheus se encarga de recopilar y almacenar métricas mediante un modelo pull (consultando endpoints /metrics), mientras que Grafana actúa como interfaz visual, permitiendo construir paneles interactivos y alertas basadas en esas métricas.&lt;/p&gt;
 &lt;h2 id="instalar-prometheus"&gt;Instalar Prometheus
