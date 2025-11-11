@@ -21,7 +21,7 @@ services:
         id: "G-LYELG1GGF4"
 
 pagination:
-    pagerSize: 3
+    pagerSize: 6
 
 permalinks:
     post: /p/:slug/
