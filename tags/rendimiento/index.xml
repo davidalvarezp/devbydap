@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rendimiento on devbydap</title><link>https://dev.davidalvarezp.com/tags/rendimiento/</link><description>Recent content in Rendimiento on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/rendimiento/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización y tuning de Redis y Memcached</title><link>https://dev.davidalvarezp.com/p/optimizar-redis-memcached/</link><pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/optimizar-redis-memcached/</guid><description>&lt;h1 id="optimización-y-tuning-de-redis-y-memcached"&gt;Optimización y tuning de Redis y Memcached
+&lt;/h1&gt;&lt;p&gt;Redis y Memcached son &lt;strong&gt;bases de datos en memoria&lt;/strong&gt; que aceleran el acceso a datos críticos. Para maximizar su rendimiento, se requiere un tuning cuidadoso y monitoreo de métricas.&lt;/p&gt;
+&lt;h2 id="configuración-de-redis"&gt;Configuración de Redis
+&lt;/h2&gt;&lt;p&gt;Parámetros importantes en &lt;code&gt;redis.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;maxmemory 2gb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;maxmemory-policy allkeys-lru
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;appendonly yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;save 900 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;save 300 10
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;save 60 10000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Monitoreo de uso de memoria:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis-cli INFO memory
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis-cli MONITOR
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="configuración-de-memcached"&gt;Configuración de Memcached
+&lt;/h2&gt;&lt;p&gt;Iniciar Memcached con parámetros ajustados:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;memcached -m &lt;span class="m"&gt;1024&lt;/span&gt; -p &lt;span class="m"&gt;11211&lt;/span&gt; -u memcache -c &lt;span class="m"&gt;1024&lt;/span&gt; -d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Monitoreo de stats:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; stats &lt;span class="p"&gt;|&lt;/span&gt; nc localhost &lt;span class="m"&gt;11211&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Ajustar políticas de expiración y tamaño de caché&lt;/li&gt;
+&lt;li&gt;Evitar operaciones pesadas de persistencia en memoria&lt;/li&gt;
+&lt;li&gt;Monitorear latencia y tasas de hits/misses&lt;/li&gt;
+&lt;li&gt;Integrar métricas con Prometheus/Grafana para alertas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Un tuning adecuado de Redis y Memcached asegura &lt;strong&gt;alto rendimiento y baja latencia&lt;/strong&gt; para aplicaciones críticas, manteniendo la escalabilidad.&lt;/p&gt;</description></item></channel></rss>
