@@ -15,15 +15,9 @@
     </section>
     
     <section class="powerby">
-        <a href="/legal/#aviso-legal">Aviso Legal</a> · 
-        {{ with .Site.Params.footer.customText }}
-            {{ . | safeHTML }} <br/>
-        {{ end }}
-
-        {{- $Generator := `` -}}
-        {{- $Theme := `<a>hola</a>` -}}
-        {{- $DesignedBy := `<a href="https://davidalvarezp.com" target="_blank" rel="noopener">davidalvarezp</a> & <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
-
-        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+        <p>
+        Desarrollado por <a href="https://davidalvarezp.com" target="_blank" rel="dofollow">davidalvarezp</a>
+        Diseñado por <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        </p>
     </section>
 </footer>
