@@ -1,17 +1,15 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{- /* Homepage */}}
   <url>
     <loc>{{ .Site.BaseURL }}</loc>
   </url>
 
-  {{- /* Todas las páginas y posts, excluyendo taxonomías y páginas específicas */}}
   {{- range .Site.RegularPages }}
-    {{- $slug := .File.Path | lower }}
-    {{- if not (or (in $slug "archivo") (in $slug "buscar") (in $slug "legal")) }}
+    {{- $rel := .RelPermalink | lower }}
+    {{- if not (or (in $rel "/archivo/") (in $rel "/buscar/") (in $rel "/legal/")) }}
       <url>
         <loc>{{ .Permalink }}</loc>
-        {{- with .Lastmod }}<lastmod>{{ . }}</lastmod>{{ end }}
+        {{- with .Lastmod }}<lastmod>{{ .Format "2006-01-02" }}</lastmod>{{ end }}
       </url>
     {{- end }}
   {{- end }}
