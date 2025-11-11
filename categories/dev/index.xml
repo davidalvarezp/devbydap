@@ -1,162 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev on devbydap</title><link>https://dev.davidalvarezp.com/categories/dev/</link><description>Recent content in Dev on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Optimización de sitios Hugo para SEO</title><link>https://dev.davidalvarezp.com/p/seo-hugo/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/seo-hugo/</guid><description>&lt;h1 id="optimización-de-sitios-hugo-para-seo"&gt;Optimización de sitios Hugo para SEO
-&lt;/h1&gt;&lt;p&gt;El SEO (Search Engine Optimization) es esencial para que tu blog sea visible y fácil de encontrar en motores de búsqueda como Google. Hugo, al ser un generador de sitios estáticos, permite implementar prácticas SEO de manera sencilla y eficiente.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos &lt;strong&gt;técnicas prácticas para mejorar el SEO de un sitio Hugo&lt;/strong&gt;, desde la configuración de títulos y meta tags, hasta la estructura de contenido y la generación de sitemap.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="títulos-y-meta-description"&gt;Títulos y meta description
-&lt;/h2&gt;&lt;p&gt;Los títulos y las descripciones son la primera impresión que los motores de búsqueda muestran en los resultados. Hugo permite definirlos en el front matter de cada página:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Optimización de sitios Hugo para SEO&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Aprende a mejorar la visibilidad de tu blog Hugo con técnicas de SEO prácticas.&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Recomendaciones:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mantén títulos claros y descriptivos, incluyendo palabras clave relevantes.&lt;/li&gt;
-&lt;li&gt;Cada página debe tener una meta description única y atractiva.&lt;/li&gt;
-&lt;li&gt;La longitud recomendada: títulos entre 50-60 caracteres, meta description entre 150-160 caracteres.&lt;/li&gt;
-&lt;li&gt;Evita duplicar títulos o descripciones entre páginas.&lt;/li&gt;
-&lt;li&gt;Esto ayuda a los motores de búsqueda a entender de qué trata cada página y mejora la tasa de clics desde los resultados.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="urls-limpias"&gt;URLs limpias
-&lt;/h2&gt;&lt;p&gt;Las URLs amigables son esenciales para SEO y experiencia de usuario. Hugo permite personalizar las URLs mediante el front matter o la configuración global.&lt;/p&gt;
-&lt;p&gt;Buenas prácticas:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Evita caracteres especiales o acentos.&lt;/li&gt;
-&lt;li&gt;Usa guiones - en lugar de espacios.&lt;/li&gt;
-&lt;li&gt;Mantén URLs cortas y descriptivas, por ejemplo:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;seo-hugo&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Esto generará una URL como:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-arduino" data-lang="arduino"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//tusitio.com/seo-hugo/
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;En lugar de:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-perl" data-lang="perl"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="n"&gt;tusitio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/optimización%20sitios%20hugo/&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="estructura-de-contenido"&gt;Estructura de contenido
-&lt;/h2&gt;&lt;p&gt;La jerarquía de títulos y subtítulos es fundamental para SEO y accesibilidad:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Usa un H1 por página (normalmente el título del artículo).&lt;/li&gt;
-&lt;li&gt;Utiliza H2 para secciones principales y H3 para subsecciones.&lt;/li&gt;
-&lt;li&gt;Las listas, tablas y subtítulos mejoran la legibilidad y facilitan que los motores de búsqueda indexen correctamente el contenido.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ejemplo:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# Optimización de sitios Hugo para SEO
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="gu"&gt;## Títulos y meta description
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;### Cómo escribir meta descriptions efectivas
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="sitemap-y-robotstxt"&gt;Sitemap y robots.txt
-&lt;/h2&gt;&lt;p&gt;Hugo genera automáticamente un sitemap.xml, que ayuda a los motores de búsqueda a indexar todas las páginas de tu sitio.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Asegúrate de habilitarlo en la configuración:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;sitemap&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;changefreq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;monthly&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;priority&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;filename&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;sitemap.xml&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Configura robots.txt para controlar qué páginas deben ser indexadas:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;User-agent: *
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Disallow: /admin/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Allow: /
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Sitemap: https://tusitio.com/sitemap.xml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;Esto optimiza la indexación y evita que motores de búsqueda rastreen contenido innecesario.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev on devbydap</title><link>https://dev.davidalvarezp.com/categories/dev/</link><description>Recent content in Dev on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/categories/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía Sintaxis Markdown</title><link>https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/</guid><description>&lt;img src="https://dev.davidalvarezp.com/p/gu%C3%ADa-sintaxis-markdown/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Guía Sintaxis Markdown" /&gt;&lt;p&gt;Este artículo ofrece un ejemplo de la sintaxis básica de &lt;strong&gt;Markdown&lt;/strong&gt; que puede utilizarse en los archivos de contenido de &lt;strong&gt;Hugo&lt;/strong&gt;, y además muestra cómo se decoran los elementos HTML básicos con CSS dentro de un tema de Hugo.&lt;/p&gt;
+&lt;h2 id="encabezados"&gt;Encabezados
+&lt;/h2&gt;&lt;p&gt;Los elementos HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; representan seis niveles de encabezados de sección. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; es el nivel más alto, mientras que &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; es el más bajo.&lt;/p&gt;
+&lt;h1 id="h1"&gt;H1
+&lt;/h1&gt;&lt;h2 id="h2"&gt;H2
+&lt;/h2&gt;&lt;h3 id="h3"&gt;H3
+&lt;/h3&gt;&lt;h4 id="h4"&gt;H4
+&lt;/h4&gt;&lt;h5 id="h5"&gt;H5
+&lt;/h5&gt;&lt;h6 id="h6"&gt;H6
+&lt;/h6&gt;&lt;h2 id="párrafos"&gt;Párrafos
+&lt;/h2&gt;&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;
+&lt;p&gt;¿Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.&lt;/p&gt;
+&lt;h2 id="citas-en-bloque"&gt;Citas en bloque
+&lt;/h2&gt;&lt;p&gt;El elemento &lt;em&gt;blockquote&lt;/em&gt; representa contenido citado de otra fuente, opcionalmente con una referencia o cita dentro de un elemento &lt;code&gt;footer&lt;/code&gt; o &lt;code&gt;cite&lt;/code&gt;, y con posibles cambios en línea como anotaciones o abreviaturas.&lt;/p&gt;
+&lt;h4 id="cita-sin-atribución"&gt;Cita sin atribución
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;Tiam, ad mint andaepu dandae nostion secatur sequo quae.&lt;br&gt;
+&lt;strong&gt;Nota&lt;/strong&gt; que puedes usar &lt;em&gt;sintaxis Markdown&lt;/em&gt; dentro de una cita.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="otros-consejos-seo-para-hugo"&gt;Otros consejos SEO para Hugo
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Etiquetas y categorías: ayudan a organizar el contenido y mejorar la navegación.&lt;/li&gt;
-&lt;li&gt;Imágenes optimizadas: usa alt descriptivos y reduce el tamaño para mejorar velocidad de carga.&lt;/li&gt;
-&lt;li&gt;Velocidad del sitio: Hugo genera sitios estáticos ultrarrápidos, lo que mejora tu ranking.&lt;/li&gt;
-&lt;li&gt;Enlaces internos y externos: enlaza páginas relacionadas y fuentes de autoridad.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Seguir estas prácticas en tu blog Hugo mejora notablemente la visibilidad en motores de búsqueda, la experiencia del usuario y la accesibilidad.&lt;/p&gt;
-&lt;p&gt;Hugo, con su estructura limpia y generación de sitios estáticos, facilita implementar SEO técnico sin depender de plugins complejos, asegurando que tu contenido sea indexado correctamente y de manera eficiente.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Optimizar tu sitio Hugo para SEO no solo ayuda a los motores de búsqueda a entender tu contenido, sino que también mejora la experiencia de tus lectores.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Integración de CI/CD con GitHub Actions en proyectos Hugo</title><link>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/ci-cd-github-actions/</guid><description>&lt;h1 id="integración-de-cicd-con-github-actions-en-proyectos-hugo"&gt;Integración de CI/CD con GitHub Actions en proyectos Hugo
-&lt;/h1&gt;&lt;p&gt;El desarrollo moderno de sitios web estáticos, como los generados con &lt;strong&gt;Hugo&lt;/strong&gt;, se beneficia enormemente de la automatización.&lt;br&gt;
-Configurar un pipeline de &lt;strong&gt;CI/CD (Integración y Despliegue Continuos)&lt;/strong&gt; permite que cada cambio que hagas en tu repositorio se construya y publique automáticamente, sin intervención manual.&lt;/p&gt;
-&lt;p&gt;En este artículo aprenderás a configurar &lt;strong&gt;GitHub Actions&lt;/strong&gt; para construir y desplegar tu sitio Hugo en GitHub Pages o cualquier otro servicio compatible.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="por-qué-usar-cicd-con-hugo"&gt;¿Por qué usar CI/CD con Hugo?
-&lt;/h2&gt;&lt;p&gt;Cuando desarrollas un blog o documentación técnica, los pasos típicos son:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Editar contenido en Markdown.&lt;/li&gt;
-&lt;li&gt;Ejecutar &lt;code&gt;hugo&lt;/code&gt; localmente para generar el sitio.&lt;/li&gt;
-&lt;li&gt;Subir los archivos generados al servidor o repositorio de hosting.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Con &lt;strong&gt;GitHub Actions&lt;/strong&gt;, puedes automatizar completamente ese proceso.&lt;br&gt;
-Cada vez que hagas un &lt;code&gt;push&lt;/code&gt; o merges una PR, el sitio se construirá y publicará automáticamente.&lt;/p&gt;
-&lt;p&gt;Ventajas principales:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Despliegue automático y sin errores manuales&lt;/li&gt;
-&lt;li&gt;Integración directa con GitHub Pages, Netlify o Cloudflare&lt;/li&gt;
-&lt;li&gt;Builds reproducibles en entornos controlados&lt;/li&gt;
-&lt;li&gt;Posibilidad de añadir validaciones, pruebas o linting antes del deploy&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="crear-el-workflow"&gt;Crear el workflow
-&lt;/h2&gt;&lt;p&gt;GitHub Actions usa archivos YAML ubicados en el directorio &lt;code&gt;.github/workflows/&lt;/code&gt;.&lt;br&gt;
-Crearemos uno llamado &lt;code&gt;deploy-hugo.yml&lt;/code&gt; con los pasos básicos para compilar y desplegar tu blog.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;h4 id="cita-con-atribución"&gt;Cita con atribución
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;No comuniques compartiendo memoria, comparte memoria comunicándote.&lt;br&gt;
+— &lt;cite&gt;Rob Pike&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="tablas"&gt;Tablas
+&lt;/h2&gt;&lt;p&gt;Las tablas no forman parte del estándar básico de Markdown, pero &lt;strong&gt;Hugo&lt;/strong&gt; las admite de forma nativa.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
+&lt;th&gt;Edad&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Bob&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alicia&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id="markdown-en-línea-dentro-de-tablas"&gt;Markdown en línea dentro de tablas
+&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Italics&lt;/th&gt;
+&lt;th&gt;Bold&lt;/th&gt;
+&lt;th&gt;Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;A&lt;/th&gt;
+&lt;th&gt;B&lt;/th&gt;
+&lt;th&gt;C&lt;/th&gt;
+&lt;th&gt;D&lt;/th&gt;
+&lt;th&gt;E&lt;/th&gt;
+&lt;th&gt;F&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
+&lt;td&gt;Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.&lt;/td&gt;
+&lt;td&gt;Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus&lt;/td&gt;
+&lt;td&gt;Proin sit amet velit nec enim imperdiet vehicula.&lt;/td&gt;
+&lt;td&gt;Ut bibendum vestibulum quam, eu egestas turpis gravida nec&lt;/td&gt;
+&lt;td&gt;Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="bloques-de-código"&gt;Bloques de código
+&lt;/h2&gt;&lt;h4 id="bloque-de-código-con-comillas-invertidas"&gt;Bloque de código con comillas invertidas
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
 &lt;/span&gt;&lt;span class="lnt"&gt; 2
@@ -168,156 +95,34 @@ Crearemos uno llamado &lt;code&gt;deploy-hugo.yml&lt;/code&gt; con los pasos bá
 &lt;/span&gt;&lt;span class="lnt"&gt; 8
 &lt;/span&gt;&lt;span class="lnt"&gt; 9
 &lt;/span&gt;&lt;span class="lnt"&gt;10
-&lt;/span&gt;&lt;span class="lnt"&gt;11
-&lt;/span&gt;&lt;span class="lnt"&gt;12
-&lt;/span&gt;&lt;span class="lnt"&gt;13
-&lt;/span&gt;&lt;span class="lnt"&gt;14
-&lt;/span&gt;&lt;span class="lnt"&gt;15
-&lt;/span&gt;&lt;span class="lnt"&gt;16
-&lt;/span&gt;&lt;span class="lnt"&gt;17
-&lt;/span&gt;&lt;span class="lnt"&gt;18
-&lt;/span&gt;&lt;span class="lnt"&gt;19
-&lt;/span&gt;&lt;span class="lnt"&gt;20
-&lt;/span&gt;&lt;span class="lnt"&gt;21
-&lt;/span&gt;&lt;span class="lnt"&gt;22
-&lt;/span&gt;&lt;span class="lnt"&gt;23
-&lt;/span&gt;&lt;span class="lnt"&gt;24
-&lt;/span&gt;&lt;span class="lnt"&gt;25
-&lt;/span&gt;&lt;span class="lnt"&gt;26
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Build and Deploy Hugo&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;push&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;branches&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;main&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;ubuntu-latest&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Checkout&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;actions/checkout@v3&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Setup Hugo&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;peaceiris/actions-hugo@v2&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;hugo-version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;latest&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Build site&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;hugo --minify&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Deploy to GitHub Pages&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;peaceiris/actions-gh-pages@v3&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;github_token&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;${{ secrets.GITHUB_TOKEN }}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;publish_dir&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;./public&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="explicación-paso-a-paso"&gt;Explicación paso a paso
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;actions/checkout@v3: descarga el código del repositorio para que el workflow pueda trabajar sobre él.&lt;/li&gt;
-&lt;li&gt;peaceiris/actions-hugo@v2: instala Hugo en la versión especificada.&lt;/li&gt;
-&lt;li&gt;hugo &amp;ndash;minify: genera el sitio estático en la carpeta public/.&lt;/li&gt;
-&lt;li&gt;peaceiris/actions-gh-pages@v3: sube automáticamente el contenido generado a la rama gh-pages, usada por GitHub Pages.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="configurar-github-pages"&gt;Configurar GitHub Pages
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Ve a la configuración del repositorio (Settings → Pages).&lt;/li&gt;
-&lt;li&gt;En “Source”, selecciona Deploy from a branch.&lt;/li&gt;
-&lt;li&gt;Elige la rama gh-pages y la carpeta raíz /.&lt;/li&gt;
-&lt;li&gt;Guarda los cambios.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Tu sitio estará disponible en &lt;a class="link" href="https://usuario.github.io/nombre-del-repo/" target="_blank" rel="noopener"
-&gt;https://usuario.github.io/nombre-del-repo/&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Consejo: Si usas un dominio personalizado, crea un archivo CNAME en la carpeta static/ de tu proyecto con el dominio (por ejemplo, blog.midominio.com).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="personalizar-el-flujo-de-despliegue"&gt;Personalizar el flujo de despliegue
-&lt;/h2&gt;&lt;p&gt;GitHub Actions es extremadamente flexible. Puedes añadir pasos para mejorar tu pipeline, por ejemplo:&lt;/p&gt;
-&lt;h3 id="validar-el-código-antes-del-build"&gt;Validar el código antes del build
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Lint Markdown&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;npx markdownlint &amp;#34;**/*.md&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="ejecutar-pruebas-si-tu-sitio-las-incluye"&gt;Ejecutar pruebas (si tu sitio las incluye)
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Run tests&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;run&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;npm test&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="notificar-por-slack-o-discord-al-completar-el-deploy"&gt;Notificar por Slack o Discord al completar el deploy
-&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;span class="lnt"&gt;5
-&lt;/span&gt;&lt;span class="lnt"&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Notify deployment&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;slackapi/slack-github-action@v1.23.0&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{&amp;#34;text&amp;#34;:&amp;#34;🚀 Despliegue de Hugo completado con éxito!&amp;#34;}&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;env&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;SLACK_WEBHOOK_URL&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;${{ secrets.SLACK_WEBHOOK_URL }}&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="mantenimiento-del-workflow"&gt;Mantenimiento del workflow
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Actualiza las acciones periódicamente (actions/checkout, actions-hugo, etc.) para mantener compatibilidad y seguridad.&lt;/li&gt;
-&lt;li&gt;Usa secrets para tokens y credenciales en lugar de variables públicas.&lt;/li&gt;
-&lt;li&gt;Habilita la opción de require approval si quieres validar los despliegues en ramas principales.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Integrar CI/CD con GitHub Actions en tu proyecto Hugo no solo ahorra tiempo, sino que garantiza despliegues consistentes y seguros.
-Cada commit se convierte en una versión pública de tu sitio, con un proceso completamente automatizado y controlado desde el repositorio.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ahora cada push construirá y desplegará automáticamente tu sitio. ¡Tu blog estará siempre al día y sin esfuerzo!&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento</title><link>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/buenas-practicas-blog-tecnico/</guid><description>&lt;h1 id="buenas-prácticas-al-publicar-un-blog-técnico-seguridad-seo-y-mantenimiento"&gt;Buenas prácticas al publicar un blog técnico: seguridad, SEO y mantenimiento
-&lt;/h1&gt;&lt;p&gt;Publicar un blog técnico es una excelente manera de compartir conocimiento, construir reputación profesional y contribuir a la comunidad.&lt;br&gt;
-Sin embargo, más allá de escribir buenos artículos, es fundamental cuidar la &lt;strong&gt;seguridad&lt;/strong&gt;, la &lt;strong&gt;optimización SEO&lt;/strong&gt; y el &lt;strong&gt;mantenimiento continuo&lt;/strong&gt; del sitio.&lt;br&gt;
-Un blog descuidado puede volverse lento, inseguro o perder visibilidad en buscadores.&lt;/p&gt;
-&lt;p&gt;En esta guía práctica veremos cómo aplicar buenas prácticas en cada uno de estos pilares.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="seguridad"&gt;Seguridad
-&lt;/h2&gt;&lt;p&gt;Un blog técnico puede parecer un objetivo poco atractivo para atacantes, pero en la práctica es &lt;strong&gt;uno de los blancos más comunes&lt;/strong&gt; para bots automatizados que buscan vulnerabilidades en servidores o plataformas de publicación.&lt;/p&gt;
-&lt;p&gt;A continuación, algunos pasos esenciales para fortalecer la seguridad de tu blog:&lt;/p&gt;
-&lt;h3 id="1-actualiza-hugo-y-dependencias"&gt;1. Actualiza Hugo y dependencias
-&lt;/h3&gt;&lt;p&gt;Si usas un generador estático como &lt;strong&gt;Hugo&lt;/strong&gt;, &lt;strong&gt;Jekyll&lt;/strong&gt; o &lt;strong&gt;Next.js&lt;/strong&gt;, mantén tanto el framework como los temas y módulos actualizados. Las actualizaciones suelen incluir parches de seguridad y mejoras de rendimiento.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo version
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo mod get -u ./...
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Documento HTML5 de ejemplo&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Prueba&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;También asegúrate de mantener actualizado tu entorno de despliegue (por ejemplo, GitHub Pages, Netlify o Cloudflare Pages).&lt;/p&gt;
-&lt;h3 id="2-usa-https-y-certificados-válidos"&gt;2. Usa HTTPS y certificados válidos
-&lt;/h3&gt;&lt;p&gt;Un sitio sin HTTPS no solo es inseguro, sino que también puede ser penalizado por los navegadores modernos y por Google.&lt;br&gt;
-Puedes obtener un certificado gratuito de &lt;strong&gt;Let’s Encrypt&lt;/strong&gt; y configurarlo fácilmente con Nginx o Apache:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ejemplo para Nginx:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;&lt;h4 id="bloque-de-código-con-indentación-de-cuatro-espacios"&gt;Bloque de código con indentación de cuatro espacios
+&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;es&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Documento HTML5 de ejemplo&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Prueba&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="bloque-de-código-con-el-shortcode-interno-de-resaltado-de-hugo"&gt;Bloque de código con el shortcode interno de resaltado de Hugo
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
 &lt;/span&gt;&lt;span class="lnt"&gt; 2
@@ -329,43 +134,22 @@ Puedes obtener un certificado gratuito de &lt;strong&gt;Let’s Encrypt&lt;/stro
 &lt;/span&gt;&lt;span class="lnt"&gt; 8
 &lt;/span&gt;&lt;span class="lnt"&gt; 9
 &lt;/span&gt;&lt;span class="lnt"&gt;10
-&lt;/span&gt;&lt;span class="lnt"&gt;11
-&lt;/span&gt;&lt;span class="lnt"&gt;12
-&lt;/span&gt;&lt;span class="lnt"&gt;13
-&lt;/span&gt;&lt;span class="lnt"&gt;14
-&lt;/span&gt;&lt;span class="lnt"&gt;15
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;301&lt;/span&gt; &lt;span class="s"&gt;https://&lt;/span&gt;&lt;span class="nv"&gt;$host$request_uri&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;ssl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;tu-dominio.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/fullchain.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate_key&lt;/span&gt; &lt;span class="s"&gt;/etc/letsencrypt/live/tu-dominio.com/privkey.pem&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Documento HTML5 de ejemplo&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Prueba&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="3-protege-accesos-con-contraseñas-seguras-y-autenticación-2fa"&gt;3. Protege accesos con contraseñas seguras y autenticación 2FA
-&lt;/h3&gt;&lt;p&gt;Si tu flujo de publicación involucra servicios externos (como CI/CD, Netlify o Cloudflare), &lt;strong&gt;usa autenticación de dos factores (2FA)&lt;/strong&gt; y &lt;strong&gt;tokens de acceso&lt;/strong&gt; con permisos mínimos.&lt;br&gt;
-Evita almacenar contraseñas o claves API en texto plano dentro de tus repositorios.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; Usa un gestor de secretos (por ejemplo, GitHub Secrets o 1Password CLI) para guardar tus credenciales de despliegue.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="seo-optimización-para-buscadores"&gt;SEO (Optimización para buscadores)
-&lt;/h2&gt;&lt;p&gt;El SEO no solo mejora la visibilidad de tu blog, sino que también ayuda a que los lectores encuentren rápidamente el contenido que necesitan.&lt;br&gt;
-Estas prácticas básicas te ayudarán a mejorar tu posicionamiento sin complicarte.&lt;/p&gt;
-&lt;h3 id="1-meta-tags-completos-y-descriptivos"&gt;1. Meta tags completos y descriptivos
-&lt;/h3&gt;&lt;p&gt;Cada página debe incluir etiquetas &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;description&lt;/code&gt; y &lt;code&gt;keywords&lt;/code&gt; bien escritas. En &lt;strong&gt;Hugo&lt;/strong&gt;, puedes configurarlas desde el &lt;code&gt;front matter&lt;/code&gt; de cada post:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;/div&gt;
+&lt;h4 id="bloque-de-diferencias-diff"&gt;Bloque de diferencias (&lt;em&gt;diff&lt;/em&gt;)
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
 &lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
 &lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
 &lt;/span&gt;&lt;span class="lnt"&gt;2
@@ -374,214 +158,60 @@ Estas prácticas básicas te ayudarán a mejorar tu posicionamiento sin complica
 &lt;/span&gt;&lt;span class="lnt"&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Buenas prácticas al publicar un blog técnico&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Aprende a mantener tu blog técnico seguro, optimizado y actualizado.&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nt"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;blog técnico&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;SEO&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;seguridad web&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-diff" data-lang="diff"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;[dependencies.bevy]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git = &amp;#34;https://github.com/bevyengine/bevy&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rev = &amp;#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gd"&gt;- features = [&amp;#34;dynamic&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gd"&gt;&lt;/span&gt;&lt;span class="gi"&gt;+ features = [&amp;#34;jpeg&amp;#34;, &amp;#34;dynamic&amp;#34;]
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="2-urls-limpias-y-slugs-amigables"&gt;2. URLs limpias y slugs amigables
-&lt;/h3&gt;&lt;p&gt;Evita URLs largas o con caracteres extraños. Los &lt;strong&gt;slugs cortos y descriptivos&lt;/strong&gt; mejoran el SEO y la experiencia del usuario:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;✅ /buenas-practicas-blog-tecnico
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ /2025/10/20/post-numero-12345
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="3-sitemap-y-robotstxt"&gt;3. Sitemap y robots.txt
-&lt;/h3&gt;&lt;p&gt;Un &lt;code&gt;sitemap.xml&lt;/code&gt; facilita la indexación de tu contenido por los motores de búsqueda.&lt;br&gt;
-Hugo puede generarlo automáticamente con una simple opción en &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;enableRobotsTXT&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Además, incluye un archivo &lt;code&gt;robots.txt&lt;/code&gt; que permita rastrear solo las secciones relevantes del sitio:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;User-agent: *
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Disallow: /drafts/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Allow: /
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Sitemap: https://tu-dominio.com/sitemap.xml
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Registra tu blog en &lt;strong&gt;Google Search Console&lt;/strong&gt; para monitorear el tráfico y detectar errores de indexación.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="mantenimiento"&gt;Mantenimiento
-&lt;/h2&gt;&lt;p&gt;El mantenimiento es el aspecto menos glamuroso, pero más crítico, de cualquier blog técnico.&lt;br&gt;
-Asegura la &lt;strong&gt;disponibilidad&lt;/strong&gt;, &lt;strong&gt;rendimiento&lt;/strong&gt; y &lt;strong&gt;salud&lt;/strong&gt; del sitio a lo largo del tiempo.&lt;/p&gt;
-&lt;h3 id="1-backups-regulares"&gt;1. Backups regulares
-&lt;/h3&gt;&lt;p&gt;Haz copias de seguridad automáticas de tu contenido y configuración.&lt;br&gt;
-Si usas Git, aprovecha los commits y repositorios remotos para tener un historial completo:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add .
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;Backup automático del blog&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push origin main
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;También puedes usar servicios como &lt;strong&gt;rclone&lt;/strong&gt; o &lt;strong&gt;Restic&lt;/strong&gt; para enviar copias cifradas a la nube.&lt;/p&gt;
-&lt;h3 id="2-monitorización-del-servidor"&gt;2. Monitorización del servidor
-&lt;/h3&gt;&lt;p&gt;Si tu blog está en un VPS, monitorea el &lt;strong&gt;uptime&lt;/strong&gt; y rendimiento del servidor.&lt;br&gt;
-Herramientas gratuitas como &lt;strong&gt;UptimeRobot&lt;/strong&gt;, &lt;strong&gt;Netdata&lt;/strong&gt; o &lt;strong&gt;Grafana Cloud&lt;/strong&gt; te permiten recibir alertas si algo falla.&lt;/p&gt;
-&lt;h3 id="3-revisión-de-enlaces-rotos"&gt;3. Revisión de enlaces rotos
-&lt;/h3&gt;&lt;p&gt;Los enlaces rotos perjudican el SEO y la experiencia del lector.&lt;br&gt;
-Puedes automatizar su detección con herramientas como:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npx broken-link-checker https://tu-blog.com
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;O usar un flujo CI/CD que verifique enlaces en cada despliegue.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Publicar un blog técnico implica más que escribir artículos: también requiere &lt;strong&gt;disciplina en seguridad, SEO y mantenimiento&lt;/strong&gt;.&lt;br&gt;
-Siguiendo estas prácticas, tu blog será más confiable, rápido y mejor posicionado en buscadores.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Recuerda:&lt;/strong&gt; la profesionalidad de tu blog refleja la calidad de tu trabajo técnico.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Introducción a SvelteKit: crea tu primer proyecto</title><link>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</link><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/sveltekit-introduccion/</guid><description>&lt;h1 id="introducción-a-sveltekit-crea-tu-primer-proyecto"&gt;Introducción a SvelteKit: crea tu primer proyecto
-&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;SvelteKit&lt;/strong&gt; es un framework moderno para construir aplicaciones web rápidas, ligeras y optimizadas.&lt;br&gt;
-Basado en &lt;strong&gt;Svelte&lt;/strong&gt;, aprovecha la compilación en tiempo de construcción (en lugar de en tiempo de ejecución) para generar aplicaciones altamente eficientes.&lt;/p&gt;
-&lt;p&gt;En este artículo aprenderás a crear tu primer proyecto con SvelteKit paso a paso, entendiendo su estructura y filosofía.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="instala-nodejs"&gt;Instala Node.js
-&lt;/h2&gt;&lt;p&gt;Antes de empezar, asegúrate de tener instalado &lt;strong&gt;Node.js&lt;/strong&gt; y &lt;strong&gt;npm&lt;/strong&gt; (Node Package Manager), ya que son necesarios para crear y ejecutar proyectos con SvelteKit.&lt;/p&gt;
-&lt;p&gt;Comprueba tus versiones con:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;node -v
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm -v
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Si no los tienes, puedes descargar Node.js desde &lt;a class="link" href="https://nodejs.org" target="_blank" rel="noopener"
-&gt;nodejs.org&lt;/a&gt;.&lt;br&gt;
-Te recomiendo instalar la versión LTS (Long Term Support) para mayor estabilidad.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="crea-un-nuevo-proyecto-con-sveltekit"&gt;Crea un nuevo proyecto con SvelteKit
-&lt;/h2&gt;&lt;p&gt;SvelteKit incluye un asistente oficial que te permite crear un nuevo proyecto con una configuración básica en pocos segundos.&lt;/p&gt;
-&lt;p&gt;Ejecuta en tu terminal:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm create svelte@latest my-app
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; my-app
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm install
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm run dev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Esto hará lo siguiente:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Creará un nuevo proyecto llamado &lt;strong&gt;my-app&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Instalará las dependencias necesarias.&lt;/li&gt;
-&lt;li&gt;Iniciará un servidor de desarrollo en &lt;code&gt;http://localhost:5173&lt;/code&gt; (o el puerto disponible).&lt;/li&gt;
+&lt;/div&gt;&lt;h2 id="tipos-de-listas"&gt;Tipos de listas
+&lt;/h2&gt;&lt;h4 id="lista-ordenada"&gt;Lista ordenada
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Primer elemento&lt;/li&gt;
+&lt;li&gt;Segundo elemento&lt;/li&gt;
+&lt;li&gt;Tercer elemento&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Abre esa dirección en tu navegador y verás la página de inicio de SvelteKit.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="estructura-del-proyecto"&gt;Estructura del proyecto
-&lt;/h2&gt;&lt;p&gt;Una vez creado el proyecto, encontrarás una estructura similar a esta:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;span class="lnt"&gt;5
-&lt;/span&gt;&lt;span class="lnt"&gt;6
-&lt;/span&gt;&lt;span class="lnt"&gt;7
-&lt;/span&gt;&lt;span class="lnt"&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;my-app/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── src/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── routes/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ├── lib/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └── app.html
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── static/
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── package.json
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── svelte.config.js
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id="srcroutes"&gt;&lt;code&gt;/src/routes&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;Aquí defines las &lt;strong&gt;rutas y páginas&lt;/strong&gt; de tu aplicación.&lt;br&gt;
-Cada archivo &lt;code&gt;.svelte&lt;/code&gt; dentro de esta carpeta corresponde a una ruta.&lt;/p&gt;
-&lt;p&gt;Por ejemplo, &lt;code&gt;src/routes/about/+page.svelte&lt;/code&gt; creará la página &lt;code&gt;/about&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id="srclib"&gt;&lt;code&gt;/src/lib&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;Contiene &lt;strong&gt;componentes reutilizables&lt;/strong&gt;, como botones, menús o layouts.&lt;/p&gt;
-&lt;h3 id="static"&gt;&lt;code&gt;/static&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;Guarda &lt;strong&gt;recursos estáticos&lt;/strong&gt; como imágenes, fuentes o íconos.&lt;br&gt;
-Todo lo que pongas aquí se servirá directamente desde la raíz del sitio.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="crea-tu-primer-componente"&gt;Crea tu primer componente
-&lt;/h2&gt;&lt;p&gt;Ahora que ya tienes el proyecto funcionando, vamos a crear un componente simple.&lt;/p&gt;
-&lt;p&gt;Edita el archivo &lt;code&gt;src/routes/+page.svelte&lt;/code&gt; y reemplázalo con el siguiente contenido:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;span class="lnt"&gt;5
-&lt;/span&gt;&lt;span class="lnt"&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-svelte" data-lang="svelte"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;nombre&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;David&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Hola &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;nombre&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;, ¡bienvenido a SvelteKit!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Tu primera app ya está corriendo localmente 🚀&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Guarda el archivo y verás el cambio reflejado en tiempo real gracias al &lt;strong&gt;Hot Module Reloading (HMR)&lt;/strong&gt; integrado.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="por-qué-elegir-sveltekit"&gt;¿Por qué elegir SvelteKit?
-&lt;/h2&gt;&lt;p&gt;Algunas ventajas que hacen que SvelteKit destaque frente a otros frameworks como React o Next.js:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Renderizado híbrido&lt;/strong&gt; (SSR + CSR + SSG) sin configuración extra.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rendimiento superior&lt;/strong&gt; gracias a la compilación de componentes.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Menor tamaño de bundle&lt;/strong&gt;, lo que se traduce en tiempos de carga más rápidos.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Excelente DX (Developer Experience)&lt;/strong&gt;: sintaxis limpia, feedback instantáneo y soporte moderno.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integración fácil&lt;/strong&gt; con adaptadores para Vercel, Netlify, Cloudflare y más.&lt;/li&gt;
+&lt;h4 id="lista-desordenada"&gt;Lista desordenada
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Elemento de lista&lt;/li&gt;
+&lt;li&gt;Otro elemento&lt;/li&gt;
+&lt;li&gt;Y otro más&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h4 id="lista-anidada"&gt;Lista anidada
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Fruta
+&lt;ul&gt;
+&lt;li&gt;Manzana&lt;/li&gt;
+&lt;li&gt;Naranja&lt;/li&gt;
+&lt;li&gt;Plátano&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lácteos
+&lt;ul&gt;
+&lt;li&gt;Leche&lt;/li&gt;
+&lt;li&gt;Queso&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="otros-elementos--abbr-sub-sup-kbd-mark"&gt;Otros elementos — abbr, sub, sup, kbd, mark
+&lt;/h2&gt;&lt;p&gt;&lt;abbr title="Graphics Interchange Format"&gt;GIF&lt;/abbr&gt; es un formato de imagen de mapa de bits.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Pulsa &lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;Supr&lt;/kbd&gt; para finalizar la sesión.&lt;/p&gt;
+&lt;p&gt;La mayoría de las &lt;mark&gt;salamandras&lt;/mark&gt; son nocturnas y cazan insectos, gusanos y otras criaturas pequeñas.&lt;/p&gt;
+&lt;h2 id="imagen-con-hipervínculo"&gt;Imagen con hipervínculo
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://google.com" target="_blank" rel="noopener"
+&gt;&lt;img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+loading="lazy"
+alt="Google"
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class="footnotes" role="doc-endnotes"&gt;
 &lt;hr&gt;
-&lt;h2 id="conclusión"&gt;Conclusión
-&lt;/h2&gt;&lt;p&gt;Has creado tu primer proyecto con &lt;strong&gt;SvelteKit&lt;/strong&gt;, entendido su estructura y creado un componente básico.&lt;br&gt;
-Este framework es ideal para desarrolladores que buscan &lt;strong&gt;velocidad, simplicidad y rendimiento&lt;/strong&gt; en sus aplicaciones web.&lt;/p&gt;
-&lt;p&gt;En próximos artículos profundizaremos en temas como &lt;strong&gt;rutas dinámicas&lt;/strong&gt;, &lt;strong&gt;stores&lt;/strong&gt;, &lt;strong&gt;formularios&lt;/strong&gt; y &lt;strong&gt;despliegue en producción&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Consejo:&lt;/strong&gt; explora la documentación oficial en &lt;a class="link" href="https://kit.svelte.dev" target="_blank" rel="noopener"
-&gt;kit.svelte.dev&lt;/a&gt; para descubrir todo su potencial.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;La cita anterior está extraída de la &lt;a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c" target="_blank" rel="noopener"
+&gt;charla&lt;/a&gt; de Rob Pike durante el Gopherfest, el 18 de noviembre de 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description></item></channel></rss>
