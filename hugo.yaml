@@ -1,7 +1,7 @@
 baseurl: https://dev.davidalvarezp.com/
 languageCode: es
 theme: dev
-title: devbydap | SysAdmin & CyberSec
+title: devbydap
 copyright: davidalvarezp
 
 # Theme i18n support
@@ -44,7 +44,6 @@ params:
 
     sidebar:
         emoji: ✔
-        title: devbydap
         subtitle: SysAdmin | Dev | CyberSec
         avatar:
             enabled: true
