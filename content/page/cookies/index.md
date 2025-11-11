@@ -6,6 +6,7 @@ author: "davidalvarezp"
 lang: "es-ES"
 license: false
 readingtime: false
+robots: noindex
 ---
 
 # Aviso Legal y Políticas
