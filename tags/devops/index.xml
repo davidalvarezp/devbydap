@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on devbydap</title><link>https://dev.davidalvarezp.com/tags/devops/</link><description>Recent content in DevOps on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Sun, 09 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Despliegue de contenedores con Docker Compose y Kubernetes</title><link>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</link><pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</guid><description>&lt;h1 id="despliegue-de-contenedores-con-docker-compose-y-kubernetes"&gt;Despliegue de contenedores con Docker Compose y Kubernetes
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on devbydap</title><link>https://dev.davidalvarezp.com/tags/devops/</link><description>Recent content in DevOps on devbydap</description><generator>Hugo -- gohugo.io</generator><language>es</language><copyright>davidalvarezp</copyright><lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://dev.davidalvarezp.com/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Infraestructura como código con Pulumi en la nube</title><link>https://dev.davidalvarezp.com/p/iac-pulumi-nube/</link><pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/iac-pulumi-nube/</guid><description>&lt;h1 id="infraestructura-como-código-con-pulumi-en-la-nube"&gt;Infraestructura como código con Pulumi en la nube
+&lt;/h1&gt;&lt;p&gt;Pulumi permite definir infraestructura en la nube usando &lt;strong&gt;lenguajes de programación modernos&lt;/strong&gt; como TypeScript o Python, facilitando despliegues reproducibles y versionados.&lt;/p&gt;
+&lt;h2 id="instalación-de-pulumi"&gt;Instalación de Pulumi
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -fsSL https://get.pulumi.com &lt;span class="p"&gt;|&lt;/span&gt; sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pulumi version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="crear-proyecto"&gt;Crear proyecto
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pulumi new typescript -n mi-infraestructura
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="ejemplo-de-stack-en-aws"&gt;Ejemplo de stack en AWS
+&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-typescript" data-lang="typescript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kr"&gt;as&lt;/span&gt; &lt;span class="nx"&gt;pulumi&lt;/span&gt; &lt;span class="kr"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;@pulumi/pulumi&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="kr"&gt;as&lt;/span&gt; &lt;span class="nx"&gt;aws&lt;/span&gt; &lt;span class="kr"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;@pulumi/aws&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bucket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;aws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;s3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Bucket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;mi-bucket&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;versioning&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;enabled&lt;/span&gt;: &lt;span class="kt"&gt;true&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;export&lt;/span&gt; &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bucketName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;bucket&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="buenas-prácticas"&gt;Buenas prácticas
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Versionar código en Git&lt;/li&gt;
+&lt;li&gt;Separar entornos dev/prod con stacks diferentes&lt;/li&gt;
+&lt;li&gt;Integrar con CI/CD para despliegues automáticos&lt;/li&gt;
+&lt;li&gt;Revisar cambios antes de aplicar con &lt;code&gt;pulumi preview&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusión"&gt;Conclusión
+&lt;/h2&gt;&lt;p&gt;Pulumi permite &lt;strong&gt;gestionar infraestructura como código con seguridad y reproducibilidad&lt;/strong&gt;, integrándose con flujos DevOps modernos.&lt;/p&gt;</description></item><item><title>Despliegue de contenedores con Docker Compose y Kubernetes</title><link>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</link><pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate><guid>https://dev.davidalvarezp.com/p/docker-compose-kubernetes/</guid><description>&lt;h1 id="despliegue-de-contenedores-con-docker-compose-y-kubernetes"&gt;Despliegue de contenedores con Docker Compose y Kubernetes
 &lt;/h1&gt;&lt;p&gt;Docker Compose facilita el desarrollo y prueba de aplicaciones multi-contenedor, mientras Kubernetes permite &lt;strong&gt;escalar y gestionar producción&lt;/strong&gt; de forma automatizada.&lt;/p&gt;
 &lt;h2 id="docker-compose"&gt;Docker Compose
 &lt;/h2&gt;&lt;h3 id="instalación"&gt;Instalación
