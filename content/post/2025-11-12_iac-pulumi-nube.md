@@ -9,7 +9,7 @@ draft: false
 keywords: ["pulumi", "iac", "infraestructura", "cloud", "devops"]
 date: "2025-11-12"
 ---
-
+ 
 # Infraestructura como código con Pulumi en la nube
 
 Pulumi permite definir infraestructura en la nube usando **lenguajes de programación modernos** como TypeScript o Python, facilitando despliegues reproducibles y versionados.
