@@ -94,14 +94,14 @@ The site will be available at:
 
 Edit your `config.toml` (or `config.yaml`) to adjust:
 
-- `baseURL` → your deployment URL (e.g., https://dev.davidalvarezp.com)
+- `baseURL` → your deployment URL (e.g., https://blog.davidalvarezp.com)
 - `title`, `languageCode`, `author`, etc.
 - Analytics and Search Console meta tags (should add in `layouts/partials/head-custom.html`)
 
 Example:
 
 ```toml
-baseURL = "https://dev.davidalvarezp.com"
+baseURL = "https://blog.davidalvarezp.com"
 languageCode = "es-ES"
 title = "devbydap"
 theme = "dev-theme"
@@ -140,7 +140,7 @@ and is licensed under the **GNU General Public License v3.0**.
 You are free to fork, modify, and redistribute the theme under the terms of the GPLv3.
 
 However, **all written content, blog posts, and original media** published on  
-[dev.davidalvarezp.com](https://dev.davidalvarezp.com) are **copyright © 2025 davidalvarezp**  
+[blog.davidalvarezp.com](https://blog.davidalvarezp.com) are **copyright © 2025 davidalvarezp**  
 and **may not be reused, redistributed, or reproduced** without explicit permission from the author.
 
 In summary:
@@ -151,7 +151,7 @@ In summary:
 
 ## 🌐 Links
 
-- 🌍 Website: [https://dev.davidalvarezp.com](https://dev.davidalvarezp.com)
+- 🌍 Website: [https://blog.davidalvarezp.com](https://blog.davidalvarezp.com)
 - 💼 Portfolio: [https://davidalvarezp.com](https://davidalvarezp.com)
 - 🐙 GitHub: [@davidalvarezp](https://github.com/davidalvarezp)
 - 🐦 Twitter: [@davidalvarezp_](https://twitter.com/devbydap)
