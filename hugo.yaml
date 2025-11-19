@@ -19,7 +19,7 @@ services:
 #        shortname: "devbydap"
     # GA Tracking ID
     googleAnalytics:
-        id: "G-LYELG1GGF4"
+        id: "G-VM2KTKS5N0"
 
 pagination:
     pagerSize: 6
