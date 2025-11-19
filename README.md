@@ -10,9 +10,6 @@ The project aims to become a **Spanish-language reference blog** for **cybersecu
 
 The site is built entirely in **Hugo**, using the custom [Dev](https://github.com/davidalvarezp/dev-theme) theme, which is based on [Stack](https://github.com/CaiJimmy/hugo-theme-stack).
 
-
-![Preview](imgs/preview.png)
-
 ---
 
 ## Contributing
