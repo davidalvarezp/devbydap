@@ -1,6 +1,6 @@
 <img align="center" alt="banner" src="static/banner.png">
 
-# devbydap ([dev.davidalvarezp.com](https://dev.davidalvarezp.com))
+# devbydap ([blog.davidalvarezp.com](https://blog.davidalvarezp.com))
 
 ## Overview
 
