@@ -20,8 +20,11 @@ Bienvenido a **devbydap**. En esta página encontrarás toda la información leg
 En cumplimiento con la **Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE)**, se informa de los siguientes datos identificativos:
 
 **Titular:** davidalvarezp
-**Sitio web:** [https://dev.davidalvarezp.com](https://dev.davidalvarezp.com)  
-**Correo electrónico de contacto:** contact@davidalvarezp.com  
+
+**Sitio web:** [https://blog.davidalvarezp.com](https://blog.davidalvarezp.com)
+
+**Correo electrónico de contacto:** contact@davidalvarezp.com
+
 **Finalidad del sitio:** Divulgación técnica sobre ciberseguridad, administración de sistemas y desarrollo.
 
 ### Condiciones de uso
