@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /p/
+Disallow: /page/
 Disallow: /archivo/
 Disallow: /buscar/
 Disallow: /legal/
