@@ -177,4 +177,4 @@ Aplicar las prácticas básicas que hemos visto —mantener el sistema actualiza
 
 Dedicar tiempo a reforzar la seguridad desde el principio te ahorrará muchos problemas en el futuro.  
 
-> 💡 **Recuerda:** la mejor defensa es la prevención.
+> **Recuerda:** la mejor defensa es la prevención.
